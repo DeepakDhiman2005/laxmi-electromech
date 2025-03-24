@@ -1,5 +1,5 @@
 import { Outlet, ScrollRestoration } from "react-router-dom";
-import PublicAppBar from "../../components/Appbar/PublicAppBar";
+import Navbar from "../../components/Appbar/Navbar";
 import Footer from './../../components/Footer';
 
 
@@ -9,9 +9,9 @@ const PublicRouter = () => {
 
     return (
         <>
-            {/* {!hideLayout && <PublicAppBar />} */}
+            {/* {!hideLayout && <Navbar />} */}
             <ScrollRestoration />
-            <PublicAppBar />
+            <Navbar />
             <Outlet />
             <Footer />
             {/* {!hideLayout && <Footer />} */}

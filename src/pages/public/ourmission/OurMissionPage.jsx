@@ -61,7 +61,9 @@ const OurMissionPage = () => {
 
     return (
         <Box sx={{
-            py: 3, px: { xs: 2, sm: 2, md: 2, lg: 12, xl: 12 },
+            py: 3, 
+            // px: { xs: 2, sm: 2, md: 2, lg: 12, xl: 12 },
+            px: { md: 2, lg: 6, xl: 6, xs: 2 },
             background: '#f1f2f9',
         }}>
             <Box sx={{ pb: 2, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -87,7 +89,7 @@ const OurMissionPage = () => {
                                     zIndex: 9999,
                                 }}
                             />
-                            <Card sx={{ background: section.bgColor1, p: 3, height: '360px' }} elevation={0}>
+                            <Card sx={{ background: section.bgColor1, p: 3, height: '440px' }} elevation={0}>
                                 <CardContent>
                                     <Stack spacing={2}>
                                         <Typography variant="h4" textAlign={'center'}>{section.title}</Typography>

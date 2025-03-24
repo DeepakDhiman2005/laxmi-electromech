@@ -29,7 +29,8 @@ const OurServices = () => {
                 // backgroundAttachment: "fixed",
                 // backgroundPosition: "center",
                 py: { xs: 2, sm: 5, md: 5, lg: 5 },
-                px: { xs: 2, sm: 5, md: 5, lg: 8 },
+                // px: { xs: 2, sm: 5, md: 5, lg: 8 },
+                px: { md: 2, lg: 6, xl: 6, xs: 2 },
             }}
         >
             <Box sx={{ pb: 2, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>

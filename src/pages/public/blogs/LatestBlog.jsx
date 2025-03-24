@@ -1,17 +1,29 @@
-import { Box, Divider, Grid, Typography, useTheme } from "@mui/material";
+import { Box, Button, Divider, Grid, Typography, useTheme } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import { useMemo } from "react";
-import { blogData } from "./blogData";
+import { Swiper, SwiperSlide } from "swiper/react";
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import "swiper/swiper-bundle.css";
 import BlogCard from "../../../utils/BlogCard";
+import { blogData } from "./blogData";
+import { useRef } from "react";
 
 const LatestBlog = () => {
     const navigate = useNavigate();
     const theme = useTheme();
 
-    // Memoized sorted blogs by latest date
-    const sortedBlogs = useMemo(() =>
-        [...blogData].sort((a, b) => new Date(b.createDate) - new Date(a.createDate)).slice(0, 4)
-        , [blogData]);
+    // Refs for navigation buttons
+    const prevRef = useRef(null);
+    const nextRef = useRef(null);
+
+    const buttonStyle = {
+        outline: 'none',
+        border: '1px solid gray',
+        color: 'gray',
+        minWidth: 'auto',
+        px: 1
+    };
 
     const handleClick = (id) => {
         const selectedBlog = blogData.find((item) => item.id === id);
@@ -22,19 +34,83 @@ const LatestBlog = () => {
     };
 
     return (
-        <Box sx={{ background: "#F1F2F9", py: 2, px: { md: 2, lg: 8, xl: 8, xs: 2 } }}>
-            <Box sx={{ pb: 2, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <Typography variant="h4" fontWeight="bold">
-                    Our <Typography component="span" sx={{ color: "primary.main", fontWeight: "bold" }} variant="h4">Latest Blogs</Typography>
-                    <Divider sx={{ background: theme.palette.primary.deep, height: "3px", width: "50px" }} />
-                </Typography>
-            </Box>
-            <Grid container spacing={2}>
-                {sortedBlogs.map((blog) => (
-                    <Grid key={blog.id} item xs={12} sm={6} md={6} lg={4} xl={3}>
-                        <BlogCard blog={blog} handleClick={handleClick} />
-                    </Grid>
-                ))}
+        <Box sx={{ background: "#F1F2F9", py: 4, px: { md: 2, lg: 6, xl: 6, xs: 2 } }}>
+            <Grid container spacing={3} alignItems="center">
+                {/* Left Side - Swiper Slider */}
+                <Grid item xs={12} md={8} >
+                    <Box
+                        sx={{
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            alignItems: 'center',
+                            mb: 1
+                        }}
+                    >
+                        <Box>
+                            <Typography variant="h5" fontWeight="bold">
+                                Our <Typography component="span" sx={{ color: "primary.main", fontWeight: "bold" }} variant="h5">Blogs</Typography>
+                            </Typography>
+                            <Divider sx={{ background: theme.palette.primary.deep, height: "3px", width: "50px", mt: 1 }} />
+                        </Box>
+
+                        {/* Custom Navigation Buttons */}
+                        <Box sx={{ display: 'flex', gap: 1 }}>
+                            <Button ref={prevRef} variant="outlined" sx={buttonStyle}>
+                                <ArrowBackIosIcon sx={{ fontSize: 20 }} />
+                            </Button>
+                            <Button ref={nextRef} variant="outlined" sx={buttonStyle}>
+                                <ArrowForwardIosIcon sx={{ fontSize: 20 }} />
+                            </Button>
+                        </Box>
+                    </Box>
+
+                    <Swiper
+                        modules={[Navigation, Pagination, Autoplay]}
+                        spaceBetween={20}
+                        pagination={{ clickable: true }}
+                        autoplay={{ delay: 3000 }}
+                        breakpoints={{
+                            0: { slidesPerView: 1 },
+                            600: { slidesPerView: 1 },
+                            900: { slidesPerView: 2 },
+                        }}
+                        onSwiper={(swiper) => {
+                            setTimeout(() => {
+                                swiper.params.navigation.prevEl = prevRef.current;
+                                swiper.params.navigation.nextEl = nextRef.current;
+                                swiper.navigation.init();
+                                swiper.navigation.update();
+                            });
+                        }}
+                    >
+                        {blogData.slice(1).map((blog) => (
+                            <SwiperSlide key={blog.id}>
+                                <BlogCard blog={blog} handleClick={handleClick} />
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                </Grid>
+
+                {/* Right Side - Latest Blog */}
+                <Grid item xs={12} md={4}>
+                    {blogData.length > 0 && (
+                        <Box
+                            sx={{
+                                px: 1.5,
+                                py: 1,
+                                background: "#fff",
+                                borderRadius: "10px",
+                                boxShadow: "0px 4px 10px rgba(0,0,0,0.1)",
+                                textAlign: "center",
+                            }}
+                        >
+                            <Typography variant="h5" fontWeight="bold" sx={{ mb: 1, color: "primary.main" }}>
+                                Latest Blog
+                            </Typography>
+                            <BlogCard blog={blogData[0]} handleClick={handleClick} />
+                        </Box>
+                    )}
+                </Grid>
             </Grid>
         </Box>
     );

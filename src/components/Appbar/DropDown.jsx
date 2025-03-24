@@ -20,12 +20,11 @@ const DropdownContent = styled("div")(({ theme }) => ({
     color: "#fff",
     zIndex: 1301,
     minWidth: "200px",
-    // boxShadow: "0px 4px 10px rgba(0,0,0,0.2)",
     transition: "all 0.3s ease-in-out",
     overflow: "visible",
     top: "100%", // Positions the dropdown below the button
     left: 0,
-    boxShadow: '0px 1px 3px 1px #e0e0e0'
+    boxShadow: "0px 1px 3px 1px #e0e0e0",
 }));
 
 const StyledButton = styled(Button)(({ active }) => ({
@@ -33,10 +32,12 @@ const StyledButton = styled(Button)(({ active }) => ({
     justifyContent: "space-between",
     alignItems: "center",
     width: "100%",
-    textTransform: 'none',
+    height: "40px", // Ensuring uniform height
+    textTransform: "none",
     borderBottom: active ? "3px solid #1C85C6" : "none",
     color: active ? "#1C85C6" : "#000",
-    "&:hover": { color: "#1C85C6", },
+    borderRadius: "2px",
+    "&:hover": { color: "#1C85C6" },
 }));
 
 const DropdownMenu = ({ items }) => {
@@ -44,9 +45,11 @@ const DropdownMenu = ({ items }) => {
     const [nestedIndex, setNestedIndex] = useState(null);
     const navigate = useNavigate();
     const location = useLocation();
+
     useEffect(() => {
         AOS.init({ duration: 500 });
     }, []);
+
     return items?.map((item, index) => (
         <Dropdown
             key={index}
@@ -54,11 +57,19 @@ const DropdownMenu = ({ items }) => {
             onMouseLeave={() => setOpenIndex(null)}
         >
             <StyledButton
-                sx={{ display: "flex", alignItems: "center" }}
+                sx={{
+                    background: "#1C85C6",
+                    color: "white",
+                    "&:hover": { color: "white" },
+                    py: 0,
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                }}
                 onClick={() => item.route && navigate(item.route)}
                 active={location.pathname === item.route}
             >
-                <Typography variant="body2">{item.name}</Typography>
+                <Typography variant="body2" sx={{ my: 0, py: 0 }}>{item.name}</Typography>
                 {item.subMenu && (openIndex === index ? <KeyboardArrowUpOutlined /> : <KeyboardArrowDown />)}
             </StyledButton>
 
@@ -74,7 +85,7 @@ const DropdownMenu = ({ items }) => {
                                 onClick={() => subItem.route && navigate(subItem.route)}
                                 active={location.pathname === subItem.route}
                             >
-                                <Typography variant="body2" sx={{ textAlign: 'start' }}>{subItem.name}</Typography>
+                                <Typography variant="body2" sx={{ textAlign: "start" }}>{subItem.name}</Typography>
                                 {subItem.subMenu &&
                                     (nestedIndex === subIndex ? <KeyboardArrowDown /> : <KeyboardArrowRight />)}
                             </StyledButton>

@@ -31,7 +31,12 @@ const Certifications = () => {
     }, []);
 
     return (
-        <Box sx={{ py: 4, px: { xs: 3, sm: 6, md: 10 }, textAlign: "center", bgcolor: "background.paper", overflow: 'hidden' }}>
+        <Box sx={{
+            py: 4, 
+            // px: { xs: 3, sm: 6, md: 10 }, 
+            px: { md: 2, lg: 6, xl: 6, xs: 2 },
+            textAlign: "center", bgcolor: "background.paper", overflow: 'hidden'
+        }}>
             <Box sx={{ pb: 3, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <Typography variant="h4" fontWeight="bold">
                     Certifications <Typography component="span" sx={{ color: "primary.main", fontWeight: "bold" }} variant="h4">& Accreditations</Typography>

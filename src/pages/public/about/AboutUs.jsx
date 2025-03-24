@@ -32,52 +32,53 @@ const AboutUs = () => {
             />
             {/* <Box sx={{ px: { xs: 2, sm: 2, md: 2, lg: 12, xl: 12 }, }}> */}
             <Box>
-                <Box sx={{
-                    py: 4,
-                    px: { xs: 2, sm: 2, md: 2, lg: 6, xl: 8 },
-                }}>
-                    {/* <Typography variant='h4' color='primary'>About Us</Typography> */}
-                    <Box sx={{ pb: 2, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <Box sx={{ py: 3, px: { xs: 2, md: 4, lg: 6 } }}>
+                    {/* Header */}
+                    <Box sx={{ pb: 0.5, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                         <Typography variant="h4" fontWeight="bold">
                             About <Typography component="span" sx={{ color: "primary.main", fontWeight: "bold" }} variant="h4">Us</Typography>
                             <Divider sx={{ background: theme.palette.primary.deep, height: "3px", width: "50px" }} />
                         </Typography>
                     </Box>
-                    <Grid container spacing={3}>
-                        <Grid item xs={12} sm={6} md={4} lg={7}>
-                            <Typography variant='h5'>
+
+                    <Grid container spacing={3} alignItems="center">
+                        {/* Text Content */}
+                        <Grid item xs={12} md={7}>
+                            <Typography variant="h5" fontWeight="bold" gutterBottom>
                                 Powering Innovation, Delivering Excellence
                             </Typography>
-                            <Typography variant='body2' sx={{ textTransform: 'none' }}>
-                                Laxmi Electromech Pvt. Ltd. is a leading provider of comprehensive electrical solutions, specializing in electrical automation, panel manufacturing, and EPC contracts. With a strong commitment to innovation, quality, and customer satisfaction, we deliver tailored solutions that meet the unique needs of our clients. Our team of experts has years of experience in designing, manufacturing, and installing electrical panels, automation systems, and EPC solutions for various industries, including industrial, commercial, and infrastructure projects.
+                            <Typography variant="body1" sx={{ mb: 2 }}>
+                                Laxmi Electromech Pvt. Ltd. is a leading provider of comprehensive electrical solutions, specializing in automation, panel manufacturing, and EPC contracts. We are committed to innovation, quality, and customer satisfaction, delivering tailored solutions that meet diverse industry needs.
                             </Typography>
 
-                            <Grid container spacing={3}>
-                                <Grid item xs={12} lg={6}>
-                                    <Stack>
-                                        <Typography variant='h6'>
+                            <Grid container spacing={2}>
+                                <Grid item xs={12} sm={6}>
+                                    <Stack spacing={1}>
+                                        <Typography variant="h6" fontWeight="bold">
                                             Trusted Electrical Solutions
                                         </Typography>
-                                        <Typography variant='body2'>
+                                        <Typography variant="body2">
                                             Empowering industries with innovative, reliable, and high-quality electrical products for over 25 years.
                                         </Typography>
                                     </Stack>
                                 </Grid>
-                                <Grid item xs={12} lg={6}>
-                                    <Stack>
-                                        <Typography variant='h6'>
+                                <Grid item xs={12} sm={6}>
+                                    <Stack spacing={1}>
+                                        <Typography variant="h6" fontWeight="bold">
                                             Customized for Excellence
                                         </Typography>
-                                        <Typography variant='body2'>
-                                            Tailored solutions in Switchboards, Panels, and Power Distribution to meet your unique requirements.
+                                        <Typography variant="body2">
+                                            Tailored solutions in switchboards, panels, and power distribution to meet your unique requirements.
                                         </Typography>
                                     </Stack>
                                 </Grid>
                             </Grid>
                         </Grid>
-                        <Grid item xs={12} lg={5}>
-                            <Box sx={{ height: '350px', width: { md: '100%', xs: '100%' } }}>
-                                <img src={A1} alt="Interior" height={'100%'} width={'100%'} />
+
+                        {/* Image Section */}
+                        <Grid item xs={12} md={5}>
+                            <Box sx={{ height: 300, width: "100%", borderRadius: 2, overflow: "hidden", display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                                <img src={A1} alt="About Us" style={{ width: "80%", objectFit: "cover" }} />
                             </Box>
                         </Grid>
                     </Grid>

@@ -45,17 +45,29 @@ const Banner = () => {
                     <SwiperSlide key={i}>
                         <Card elevation={0} >
                             {/* Card Media (Image) */}
-                            <Box sx={{ position: "relative", width: "100%", height: { xl: "82vh", md: "70vh", sm: "70vh", xs: "50vh" } }}>
-                                <Box
+                            <Box
+                                sx={{
+                                    position: "relative", width: "100%",
+                                    height: 'auto'
+                                    // height: { xl: "82vh", md: "70vh", sm: "70vh", xs: "50vh" }
+                                }}>
+                                {/* <Box
                                     sx={{
                                         background: `url(${item.imagePath}) no-repeat center/cover`,
                                         objectFit: "cover",
                                         height: "100%",
                                     }}
+                                /> */}
+                                <img
+                                    src={item.imagePath}
+                                    alt={"banner image"}
+                                    style={{
+                                        width: '100%'
+                                    }}
                                 />
 
                                 {/* Overlay Card Content */}
-                                <Stack
+                                {/* <Stack
                                     sx={{
                                         position: "absolute",
                                         top: { xs: "10%", sm: "20%", md: "30%" },
@@ -76,7 +88,7 @@ const Banner = () => {
                                     <Box>
                                         <Button variant="contained" color="primary" sx={{ mt: 2 }}>View Details</Button>
                                     </Box>
-                                </Stack>
+                                </Stack> */}
                             </Box>
                         </Card>
                     </SwiperSlide>

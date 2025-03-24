@@ -6,13 +6,25 @@ export const bannerData = [
     {
         id: 1,
         title: "DESIGN AND ENGINEERING",
-        imagePath: E1,
+        imagePath: '/banners/electrical-control-panel.png',
         description: "CUSTOM DESIGN AND ENGINEERING OF ELECTRICAL AUTOMATION SYSTEMS.",
     },
     {
         id: 2,
-        title: "PANEL BUILDING",
-        imagePath: E2,
+        title: "PLC Control Panel",
+        imagePath: '/banners/plc-control-panel.png',
+        description: "MANUFACTURING OF ELECTRICAL CONTROL PANELS, MOTOR CONTROL CENTERS, AND OTHER AUTOMATION PANELS."
+    },
+    {
+        id: 3,
+        title: "Automation Control Panel",
+        imagePath: '/banners/automation-control-banner.png',
+        description: "MANUFACTURING OF ELECTRICAL CONTROL PANELS, MOTOR CONTROL CENTERS, AND OTHER AUTOMATION PANELS."
+    },
+    {
+        id: 4,
+        title: "Automation Control Panel",
+        imagePath: '/banners/power-distribution-banner.png',
         description: "MANUFACTURING OF ELECTRICAL CONTROL PANELS, MOTOR CONTROL CENTERS, AND OTHER AUTOMATION PANELS."
     },
 ];

@@ -6,10 +6,10 @@ const LatestBlogCard = ({ blog, image, onClick }) => {
     return (
         <>
             <Card elevation={0} onClick={onClick}
-                sx={{ display: "flex", alignItems: "center", gap: 2, cursor: "pointer" }}
+                sx={{ display: "flex", alignItems: "center", gap: 2, cursor: "pointer", height: "auto", my: 1, }}
             >
                 <CardMedia component="img" image={image} alt="Blog Image"
-                    sx={{ height: "10vh", width: "100px", objectFit: "cover", borderRadius: 1 }}
+                    sx={{ height: "auto", width: "100px", objectFit: "cover", borderRadius: 1 }}
                 />
                 <Stack>
                     <Typography variant="body1">{blog.title}</Typography>

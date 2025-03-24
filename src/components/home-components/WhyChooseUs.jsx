@@ -31,7 +31,8 @@ const WhyChooseUs = () => {
         <Box
             sx={{
                 py: 8,
-                px: { xs: 3, sm: 6, md: 10 },
+                // px: { xs: 3, sm: 6, md: 10 },
+                px: { md: 2, lg: 6, xl: 6, xs: 2 },
                 backgroundImage: `url('/images/banners/banner1.jpg')`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
