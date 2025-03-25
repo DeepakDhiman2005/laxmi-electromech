@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/swiper-bundle.css";
+import Heading from "../../../components/heading/Heading";
 
 // Team Members Data
 const teamMembers = [
@@ -116,13 +117,17 @@ const TeamCard = ({ testimonial }) => {
 const OurTeam = () => {
     const theme = useTheme();
     return (
-        <Box sx={{ bgcolor: "grey.100", py: 4, textAlign: "center" }}>
-            <Box sx={{ pb: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <Box sx={{ bgcolor: "grey.100", py: 3, textAlign: "center" }}>
+            {/* <Box sx={{ pb: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <Typography variant="h4" fontWeight="bold">
                     Our <Typography component="span" sx={{ color: "primary.main", fontWeight: "bold" }} variant="h4">Team</Typography>
                     <Divider sx={{ background: theme.palette.primary.deep, height: "3px", width: "50px" }} />
                 </Typography>
-            </Box>
+            </Box> */}
+            <Heading
+                startText="Our"
+                endText="Team"
+            />
             <Typography variant="h6" fontWeight="bold" color="text.primary">
                 Leadership & Key Team Members
             </Typography>

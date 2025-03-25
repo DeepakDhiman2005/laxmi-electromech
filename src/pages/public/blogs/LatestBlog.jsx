@@ -8,6 +8,7 @@ import "swiper/swiper-bundle.css";
 import BlogCard from "../../../utils/BlogCard";
 import { blogData } from "./blogData";
 import { useRef } from "react";
+import Heading from "../../../components/heading/Heading";
 
 const LatestBlog = () => {
     const navigate = useNavigate();
@@ -46,12 +47,18 @@ const LatestBlog = () => {
                             mb: 1
                         }}
                     >
-                        <Box>
+                        {/* <Box>
                             <Typography variant="h5" fontWeight="bold">
                                 Our <Typography component="span" sx={{ color: "primary.main", fontWeight: "bold" }} variant="h5">Blogs</Typography>
                             </Typography>
                             <Divider sx={{ background: theme.palette.primary.deep, height: "3px", width: "50px", mt: 1 }} />
-                        </Box>
+                        </Box> */}
+                        <Heading
+                            startText="Our"
+                            endText="Blogs"
+                            variant="h5"
+                            pb={0}
+                        />
 
                         {/* Custom Navigation Buttons */}
                         <Box sx={{ display: 'flex', gap: 1 }}>

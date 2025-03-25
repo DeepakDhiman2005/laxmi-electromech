@@ -4,6 +4,8 @@ import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/swiper-bundle.css";
+import Heading from "../heading/Heading";
+import GradeIcon from '@mui/icons-material/Grade';
 
 const testimonials = [
     {
@@ -65,8 +67,8 @@ const TestimonialCard = ({ testimonial }) => {
                 height: "100%",
                 p: 3,
                 pb: 0,
-                my: 2,
-                mb: 6,
+                my: 1,
+                mb: 4.5,
                 textAlign: "center",
                 position: "relative",
                 boxShadow: 3,
@@ -78,8 +80,8 @@ const TestimonialCard = ({ testimonial }) => {
             <Box
                 sx={{
                     position: "absolute",
-                    top: 0,
-                    left: 0,
+                    top: -8,
+                    left: -8,
                     width: 100,
                     height: 100,
                     bgcolor: "#1C85C6",
@@ -92,16 +94,16 @@ const TestimonialCard = ({ testimonial }) => {
                 <FormatQuoteIcon sx={{ fontSize: 35, transform: "rotate(180deg)", color: "white" }} />
             </Box>
 
-            <CardContent sx={{ flexGrow: 1, mt: 4 }}>
+            <CardContent sx={{ flexGrow: 1, mt: 1 }}>
                 <Typography variant="h6" fontWeight="bold" color="#1C85C6">
                     {testimonial.title}
                 </Typography>
-                <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
+                <Typography variant="body2" color="text.secondary" sx={{ mt: 0 }}>
                     {testimonial.feedback}
                 </Typography>
 
-                <Box sx={{ mt: 3, display: "flex", flexDirection: "column", alignItems: "center" }}>
-                    <Avatar
+                <Box sx={{ mt: 1, display: "flex", flexDirection: "column", alignItems: "center" }}>
+                    {/* <Avatar
                         src={testimonial.image}
                         alt={testimonial.name}
                         sx={{
@@ -109,8 +111,22 @@ const TestimonialCard = ({ testimonial }) => {
                             height: 60,
                             border: "2px solid #1C85C6",
                         }}
-                    />
-                    <Typography fontWeight="bold" color="primary.dark" sx={{ mt: 1 }}>
+                    /> */}
+                    <Box
+                    sx={{
+                        display:'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        gap: 1,
+                    }}
+                    >
+                        {
+                            Array(5).fill(0).map((_,index) => (
+                                <GradeIcon key={index} sx={{ color: "#facc15" }} fontSize="22px" />
+                            ))
+                        }
+                    </Box>
+                    <Typography fontWeight="bold" color="primary.dark" sx={{ mt: 0.5 }}>
                         {testimonial.name}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
@@ -125,19 +141,24 @@ const TestimonialCard = ({ testimonial }) => {
 const ClientTestimonials = () => {
     const theme = useTheme();
     return (
-        <Box sx={{ bgcolor: "grey.100", py: 3, textAlign: "center" }}>
-            <Box sx={{ pb: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <Box sx={{ bgcolor: "grey.100", py: 2, textAlign: "center" }}>
+            {/* <Box sx={{ pb: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <Typography variant="h4" fontWeight="bold">
                     Client <Typography component="span" sx={{ color: "primary.main", fontWeight: "bold" }} variant="h4">Testimonials</Typography>
                     <Divider sx={{ background: theme.palette.primary.deep, height: "3px", width: "50px" }} />
                 </Typography>
-            </Box>
-            <Typography variant="h6" fontWeight="bold" color="text.primary">
+            </Box> */}
+            <Heading
+                startText="Client"
+                endText="Testimonials"
+                pb={0}
+            />
+            <Typography variant="h6" fontWeight="bold" color="text.primary" sx={{ pb: 0, mb: 0 }}>
                 What our customers say
             </Typography>
 
             {/* Swiper Slider for Testimonials */}
-            <Box sx={{ px: 2 }}>
+            <Box sx={{ px: 2, mb: 0, pb: 0 }}>
                 <Swiper
                     modules={[Navigation, Pagination, Autoplay]}
                     spaceBetween={20}

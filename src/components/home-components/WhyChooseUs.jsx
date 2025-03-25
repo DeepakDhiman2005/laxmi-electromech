@@ -1,37 +1,35 @@
-import { Box, Grid, Typography, Card, CardContent, Divider, useTheme } from "@mui/material";
+import { Box, Grid, Typography, Card, CardContent } from "@mui/material";
 import { Verified, Speed, SupportAgent, Insights } from "@mui/icons-material";
+import Heading from "../heading/Heading";
 
 const uniqueSellingPoints = [
     {
         title: "Proven Expertise",
         description: "Years of experience in delivering cutting-edge solutions.",
-        icon: <Verified fontSize="large" sx={{ color: "white" }} />,
+        icon: <Verified fontSize="medium" sx={{ color: "white" }} />,
     },
     {
         title: "Fast & Efficient",
         description: "Quick turnaround times with top-tier quality assurance.",
-        icon: <Speed fontSize="large" sx={{ color: "white" }} />,
+        icon: <Speed fontSize="medium" sx={{ color: "white" }} />,
     },
     {
         title: "24/7 Support",
         description: "Dedicated customer support available round the clock.",
-        icon: <SupportAgent fontSize="large" sx={{ color: "white" }} />,
+        icon: <SupportAgent fontSize="medium" sx={{ color: "white" }} />,
     },
     {
         title: "Data-Driven Insights",
         description: "Leveraging AI & analytics for smarter decision-making.",
-        icon: <Insights fontSize="large" sx={{ color: "white" }} />,
+        icon: <Insights fontSize="medium" sx={{ color: "white" }} />,
     },
 ];
 
 const WhyChooseUs = () => {
-    const theme = useTheme();
-
     return (
         <Box
             sx={{
-                py: 8,
-                // px: { xs: 3, sm: 6, md: 10 },
+                py: 5,
                 px: { md: 2, lg: 6, xl: 6, xs: 2 },
                 backgroundImage: `url('/images/banners/banner1.jpg')`,
                 backgroundSize: "cover",
@@ -55,12 +53,7 @@ const WhyChooseUs = () => {
 
             {/* Content Wrapper */}
             <Box sx={{ position: "relative", zIndex: 2 }}>
-                <Box sx={{ pb: 2, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <Typography variant="h4" fontWeight="bold">
-                        Why <Typography component="span" sx={{ color: "primary.main", fontWeight: "bold" }} variant="h4">Choose Us?</Typography>
-                        <Divider sx={{ background: theme.palette.primary.deep, height: "3px", width: "50px" }} />
-                    </Typography>
-                </Box>
+                <Heading startText="Why" endText="Choose Us?" />
 
                 <Grid container spacing={4} justifyContent="center">
                     {uniqueSellingPoints.map((point, index) => (
@@ -68,37 +61,40 @@ const WhyChooseUs = () => {
                             <Card
                                 sx={{
                                     textAlign: "center",
-                                    p: 3,
+                                    p: 2,
                                     borderRadius: 3,
                                     boxShadow: 4,
                                     transition: "0.4s",
                                     bgcolor: "white",
                                     display: "flex",
                                     flexDirection: "column",
+                                    height: "150px", // Set height to 180px
                                     flexGrow: 1,
                                     "&:hover": { boxShadow: 8, transform: "translateY(-5px)" },
                                 }}
                             >
                                 <Box
                                     sx={{
-                                        width: 60,
-                                        height: 60,
+                                        width: 40, // Adjusted for better fit
+                                        height: 40, // Adjusted for better fit
                                         borderRadius: "50%",
                                         bgcolor: "primary.main",
-                                        display: "flex",
+                                        display: "inline-flex",
                                         alignItems: "center",
                                         justifyContent: "center",
                                         mx: "auto",
-                                        mb: 2,
+                                        mb: 1,
+                                        p: 0.8, // Padding for better spacing
                                     }}
                                 >
                                     {point.icon}
                                 </Box>
-                                <CardContent sx={{ flexGrow: 1 }}>
-                                    <Typography variant="h6" fontWeight="bold">
+
+                                <CardContent sx={{ flexGrow: 1, p: 1 }}>
+                                    <Typography variant="h6" fontWeight="bold" sx={{ fontSize: "1rem" }}>
                                         {point.title}
                                     </Typography>
-                                    <Typography variant="body2" color="textSecondary" mt={1}>
+                                    <Typography variant="body2" color="textSecondary" mt={0.5} sx={{ fontSize: "0.85rem" }}>
                                         {point.description}
                                     </Typography>
                                 </CardContent>

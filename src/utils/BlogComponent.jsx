@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { Box, Grid, Stack, Typography, useTheme, Card, CardMedia, CardContent, Breadcrumbs, Divider } from "@mui/material";
+import { Box, Grid, Stack, Typography, useTheme, Card, CardMedia, CardContent, Breadcrumbs, Divider, useMediaQuery } from "@mui/material";
 import { AccessTime, KeyboardDoubleArrowRight } from "@mui/icons-material";
 import { format, parseISO, isValid } from "date-fns";
 import { Link, useNavigate } from "react-router-dom";
@@ -8,9 +8,10 @@ import S1 from '../assets/images/footer.webp';
 import LatestBlogCard from "../pages/public/blogs/LatestBlogCard";
 
 const BlogComponent = ({ blog, latestBlogs }) => {
-    const { palette } = useTheme();
+    const { palette, breakpoints } = useTheme();
     const navigate = useNavigate();
     const descriptionRef = useRef(null); // Ref for description
+    const isMobile = useMediaQuery(breakpoints.down("md"));
 
     const formattedDate = isValid(parseISO(blog.createDate))
         ? format(parseISO(blog.createDate), "MMM dd, yyyy")
@@ -40,7 +41,7 @@ const BlogComponent = ({ blog, latestBlogs }) => {
 
     return (
         <>
-            <Banner
+            {/* <Banner
                 title="Blogs"
                 image={S1}
                 height={{ sm: '40vh', md: '40vh', xs: '40vh', lg: '50vh', xl: '50vh' }}
@@ -49,7 +50,12 @@ const BlogComponent = ({ blog, latestBlogs }) => {
                 spacingConfig={{ lg: 12, md: 2, xs: 1 }}
                 containerStyles={{ overflow: "hidden" }}
                 text="Single Blogs"
-            />
+            /> */}
+            <Box
+                sx={{ width: '100%' }}
+            >
+                <img src={isMobile ? "/banners/blog-banner-mobile.png" : "/banners/blog-banner.png"} alt="image" style={{ width: '100%', height: 'auto' }} />
+            </Box>
 
             <Box sx={{ background: "#F1F2F9", py: 1, px: { md: 2, lg: 6, xl: 6, xs: 2 }, position: 'relative' }}>
                 <Box sx={{ p: 1, my: 2, background: palette.info.light }}>

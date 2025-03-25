@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react'
 import { blogData } from './blogData';
 import { useNavigate } from 'react-router-dom';
-import { Box, Pagination, Stack, useTheme } from '@mui/material';
+import { Box, Pagination, Stack, useMediaQuery, useTheme } from '@mui/material';
 import Ab from '../../../assets/images/blog.avif'
 import BlogCard from '../../../utils/BlogCard';
 import { Grid } from '@mui/material';
@@ -11,6 +11,8 @@ import { Title } from 'react-head';
 const Blogs = () => {
     const navigate = useNavigate();
     const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
     const itemsPerPage = 8;
     const [page, setPage] = useState(1);
 
@@ -30,7 +32,7 @@ const Blogs = () => {
     return (
         <>
             <Title>Blogs</Title>
-            <Banner
+            {/* <Banner
                 title="Blog"
                 image={Ab}
                 // height={{ sm: '35vh', md: '45vh', xs: '40vh', lg: '40vh', xl: '40vh' }}
@@ -40,7 +42,12 @@ const Blogs = () => {
                 spacingConfig={{ xl: 6, lg: 6, md: 2, xs: 1 }}
                 containerStyles={{ overflow: "hidden" }}
                 text="Blogs"
-            />
+            /> */}
+            <Box
+                sx={{ width: '100%' }}
+            >
+                <img src={isMobile ? "/banners/blog-banner-mobile.png" : "/banners/blog-banner.png"} alt="image" style={{ width: '100%', height: 'auto' }} />
+            </Box>
             {/* <Box sx={{ background: "#F1F2F9", py: 2, px: { md: 2, lg: 12, xl: 12, xs: 2 } }}> */}
             <Box sx={{ background: "#F1F2F9", py: 2, px: { md: 2, lg: 6, xl: 6, xs: 2 } }}>
                 <Grid container spacing={2}>

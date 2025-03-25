@@ -1,28 +1,36 @@
 import { Box, Typography, Grid, Card, CardContent, Divider, useTheme } from "@mui/material";
 import RecyclingIcon from '@mui/icons-material/Recycling';
 import PublicIcon from "@mui/icons-material/Public";
+import Heading from "../../../components/heading/Heading";
 
 const SustainabilitySection = () => {
     const theme = useTheme();
     return (
-        <Box sx={{ py: 6, px: { xs: 3, sm: 6 } }}>
+        <Box sx={{ py: 3, px: { xs: 3, sm: 6 } }}>
             <Grid container spacing={4} alignItems="center">
                 {/* Text Content */}
                 <Grid item xs={12} md={6}>
-                    <Box sx={{ pb: 0, display: 'flex', alignItems: 'center', justifyContent: 'start' }}>
+                    {/* <Box sx={{ pb: 0, display: 'flex', alignItems: 'center', justifyContent: 'start' }}>
                         <Typography variant="h4" fontWeight="bold">
                             Sustainability <Typography component="span" sx={{ color: "primary.main", fontWeight: "bold" }} variant="h4">& Responsibility</Typography>
                             <Divider sx={{ background: theme.palette.primary.deep, height: "3px", width: "50px" }} />
                         </Typography>
-                    </Box>
+                    </Box> */}
+                    <Heading
+                        startText="Sustainability"
+                        endText="& Responsibility"
+                        justify="start"
+                        variant="h4"
+                        pb={0}
+                    />
 
                     <Typography variant="body1" color="text.secondary" sx={{ mt: 2 }}>
                         Eco-friendly Initiatives & Corporate Social Responsibility (CSR)
                     </Typography>
 
-                    <Card sx={{ mt: 3, px: 3, py: 1, display: "flex", flexDirection: { xs: "column", sm: "row" }, alignItems: "center" }}>
+                    <Card sx={{ mt: 3, px: 3, display: "flex", flexDirection: { xs: "column", sm: "row" }, alignItems: "center" }}>
                         <RecyclingIcon sx={{ fontSize: 50, color: "#2E7D32", mr: { xs: 0, sm: 2 }, mb: { xs: 1, sm: 0 } }} />
-                        <CardContent sx={{ textAlign: { xs: "center", sm: "left" } }}>
+                        <CardContent sx={{ textAlign: { xs: "center", sm: "left", my: 0 } }}>
                             <Typography variant="h6" fontWeight="bold">
                                 Eco-friendly Initiatives
                             </Typography>
@@ -32,7 +40,7 @@ const SustainabilitySection = () => {
                         </CardContent>
                     </Card>
 
-                    <Card sx={{ mt: 2, px: 3, py: 1, display: "flex", flexDirection: { xs: "column", sm: "row" }, alignItems: "center" }}>
+                    <Card sx={{ mt: 2, px: 3, py: 0, display: "flex", flexDirection: { xs: "column", sm: "row" }, alignItems: "center" }}>
                         <PublicIcon sx={{ fontSize: 50, color: "#1565C0", mr: { xs: 0, sm: 2 }, mb: { xs: 1, sm: 0 } }} />
                         <CardContent sx={{ textAlign: { xs: "center", sm: "left" } }}>
                             <Typography variant="h6" fontWeight="bold">

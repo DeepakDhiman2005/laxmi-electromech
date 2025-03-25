@@ -3,6 +3,7 @@ import { Bolt, Dns, Build } from "@mui/icons-material";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Heading from "../heading/Heading";
 
 const productCategories = [
     {
@@ -40,12 +41,16 @@ const ProductCategoriesSection = () => {
             px: { md: 2, lg: 6, xl: 6, xs: 2 },
             overflow: 'hidden'
         }}>
-            <Box sx={{ pb: 2, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            {/* <Box sx={{ pb: 2, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <Typography variant="h4" fontWeight="bold">
                     Product <Typography component="span" sx={{ color: "primary.main", fontWeight: "bold" }} variant="h4">Categories</Typography>
                     <Divider sx={{ background: theme.palette.primary.deep, height: "3px", width: "50px" }} />
                 </Typography>
-            </Box>
+            </Box> */}
+            <Heading
+                startText="Product"
+                endText="Categories"
+            />
             <Grid container spacing={3} justifyContent="center">
                 {productCategories.map((category, index) => (
                     <Grid item xs={12} sm={6} md={4} key={index}>

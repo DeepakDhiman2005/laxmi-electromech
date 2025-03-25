@@ -2,6 +2,7 @@ import { Box, Typography, Grid, Card, CardMedia, CardContent, Divider, useTheme 
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Heading from "../heading/Heading";
 
 const certifications = [
     {
@@ -32,20 +33,21 @@ const Certifications = () => {
 
     return (
         <Box sx={{
-            py: 4, 
+            py: 3,
             // px: { xs: 3, sm: 6, md: 10 }, 
             px: { md: 2, lg: 6, xl: 6, xs: 2 },
             textAlign: "center", bgcolor: "background.paper", overflow: 'hidden'
         }}>
-            <Box sx={{ pb: 3, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            {/* <Box sx={{ pb: 3, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <Typography variant="h4" fontWeight="bold">
                     Certifications <Typography component="span" sx={{ color: "primary.main", fontWeight: "bold" }} variant="h4">& Accreditations</Typography>
                     <Divider sx={{ background: theme.palette.primary.deep, height: "3px", width: "50px" }} />
                 </Typography>
-            </Box>
-            {/* <Typography variant="h4" fontWeight="bold" mb={3}>
-                Certifications & Accreditations
-            </Typography> */}
+            </Box> */}
+            <Heading
+                startText="Certifications"
+                endText="& Accreditations"
+            />
 
             <Grid container spacing={4} justifyContent="center">
                 {certifications.map((cert, index) => (
@@ -53,6 +55,9 @@ const Certifications = () => {
                         <Card
                             sx={{
                                 textAlign: "center",
+                                // maxWidth: 280, // Decreased width
+                                width: "100%", // Responsive width
+                                mx: "auto", // Centers the card
                                 borderRadius: 3,
                                 boxShadow: 4,
                                 transition: "0.3s",
@@ -60,21 +65,20 @@ const Certifications = () => {
                             }}
                             data-aos={index === 0 ? "fade-right" : index === 1 ? "fade-up" : "fade-left"}
                         >
+
                             <CardMedia
                                 component="img"
                                 image={cert.image}
                                 alt={cert.title}
                                 sx={{
-                                    maxHeight: 200, // Adjust this value as needed
+                                    maxHeight: 130, // Adjust this value as needed
                                     maxWidth: "100%", // Ensures it doesn't exceed card width
                                     objectFit: "contain",
-                                    p: 2,
                                     bgcolor: "#f5f5f5",
                                 }}
                             />
-
-                            <CardContent>
-                                <Typography variant="h6" fontWeight="bold">
+                            <CardContent sx={{ padding: "0", textAlign: "center", pb: '5px !important', pt: '5px !important' }}>
+                                <Typography variant="body1" fontWeight="bold" sx={{ margin: 0, padding: 0 }}>
                                     {cert.title}
                                 </Typography>
                             </CardContent>

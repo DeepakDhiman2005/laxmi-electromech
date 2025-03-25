@@ -2,6 +2,7 @@ import React from "react";
 import { Accordion, AccordionSummary, AccordionDetails, Typography, Container, Box, Divider, useTheme, useMediaQuery } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import faqsData from "../../constants/faqs";
+import Heading from "../heading/Heading";
 
 const FAQs = () => {
     const theme = useTheme();
@@ -9,12 +10,17 @@ const FAQs = () => {
 
     return (
         <Container maxWidth="xl" sx={{ my: 2, width: "100%", px: { md: 2, lg: 6, xl: 6, xs: 2 } }}>
-            <Box sx={{ pb: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            {/* <Box sx={{ pb: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <Typography variant="h4" fontWeight="bold">
                     FAQs - <Typography component="span" sx={{ color: "primary.main", fontWeight: "bold" }} variant="h4">Frequently Asked Questions</Typography>
                     <Divider sx={{ background: theme.palette.primary.deep, height: "3px", width: "50px" }} />
                 </Typography>
-            </Box>
+            </Box> */}
+            <Heading
+                startText="FAQs -"
+                endText="Frequently Asked Questions"
+                pb={1}
+            />
 
             <Box
                 sx={{

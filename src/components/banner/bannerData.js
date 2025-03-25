@@ -7,6 +7,7 @@ export const bannerData = [
         id: 1,
         title: "DESIGN AND ENGINEERING",
         imagePath: '/banners/electrical-control-panel.png',
+        mobilePath: '/banners/electrical-control-banner-mobile.png',
         description: "CUSTOM DESIGN AND ENGINEERING OF ELECTRICAL AUTOMATION SYSTEMS.",
     },
     {

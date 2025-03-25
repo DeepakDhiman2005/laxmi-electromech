@@ -143,7 +143,7 @@ const Navbar = ({ isVisible }) => {
                 {/* Desktop Navigation */}
 
             </Toolbar>
-            <Toolbar elevation={1} sx={{ background: '#fff', display: { xs: "none", md: "flex" } }}>
+            <Toolbar elevation={1} sx={{ background: '#fff', display: { xs: "none", md: "flex" }, justifyContent: 'center' }}>
                 <Stack
                     direction="row"
                     sx={{ alignItems: "center", gap: 2 }}

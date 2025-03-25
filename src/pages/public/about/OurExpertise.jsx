@@ -1,18 +1,23 @@
 import { Container, Typography, Grid, Box, Divider, useTheme, useMediaQuery } from "@mui/material";
+import Heading from "../../../components/heading/Heading";
 
 const OurExpertise = () => {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
     return (
-        <Container maxWidth="xl" sx={{ py: 5, width: "100%" }}>
+        <Container maxWidth="xl" sx={{ py: 3, width: "100%" }}>
             {/* Title Section */}
-            <Box sx={{ pb: 2, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            {/* <Box sx={{ pb: 2, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <Typography variant="h4" fontWeight="bold">
                     Our <Typography component="span" sx={{ color: "primary.main", fontWeight: "bold" }} variant="h4">Expertise</Typography>
                     <Divider sx={{ background: theme.palette.primary.deep, height: "3px", width: "50px" }} />
                 </Typography>
-            </Box>
+            </Box> */}
+            <Heading
+                startText="Our"
+                endText="Expertise"
+            />
 
             <Grid container spacing={4} alignItems="center">
                 {/* Left Side: Image */}

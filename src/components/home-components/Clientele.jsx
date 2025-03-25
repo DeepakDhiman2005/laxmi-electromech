@@ -1,6 +1,7 @@
 import React, { useMemo } from "react";
 import { Box, Typography, Divider, Grid, Card, CardMedia, CardContent } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
+import Heading from "../heading/Heading";
 
 const Clientele = React.memo(() => {
     const theme = useTheme();
@@ -16,14 +17,19 @@ const Clientele = React.memo(() => {
     ], []);
 
     return (
-        <Box py={3} bgcolor="grey.100">
+        <Box py={2}>
             <Box maxWidth="lg" mx="auto" textAlign="center">
-                <Box sx={{ pb: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                {/* <Box sx={{ pb: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     <Typography variant="h4" fontWeight="bold">
                         Our <Typography component="span" sx={{ color: "primary.main", fontWeight: "bold" }} variant="h4">Clientele</Typography>
                         <Divider sx={{ background: theme.palette.primary.deep, height: "3px", width: "50px" }} />
                     </Typography>
-                </Box>
+                </Box> */}
+                <Heading
+                    startText="Our"
+                    endText="Clientele"
+                    pb={1}
+                />
                 <Typography color="textSecondary" mt={1}>
                     Trusted by leading industries in manufacturing, infrastructure, and commercial sectors.
                 </Typography>

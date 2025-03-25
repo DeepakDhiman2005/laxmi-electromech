@@ -1,5 +1,5 @@
 import { useMemo, useCallback } from 'react';
-import { Box, Button, Card, CardContent, Divider, Grid, Stack, TextField, Typography, IconButton } from '@mui/material';
+import { Box, Button, Card, CardContent, Divider, Grid, Stack, TextField, Typography, IconButton, useMediaQuery } from '@mui/material';
 import { useTheme } from '@emotion/react';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
@@ -12,6 +12,7 @@ import { Title } from 'react-head';
 
 const ContactUs = () => {
     const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
     // Validation Schema
     const validationSchema = useMemo(
@@ -79,7 +80,7 @@ const ContactUs = () => {
     return (
         <>
             <Title>Contact Us</Title>
-            <Banner
+            {/* <Banner
                 title="Contact"
                 image={C1}
                 // height={{ sm: '35vh', md: '45vh', xs: '40vh', lg: '40vh', xl: '40vh' }}
@@ -89,7 +90,12 @@ const ContactUs = () => {
                 spacingConfig={{ xl: 6, lg: 6, md: 2, xs: 1 }}
                 containerStyles={{ overflow: "hidden" }}
                 text="ContactUs"
-            />
+            /> */}
+            <Box
+                sx={{ width: '100%' }}
+            >
+                <img src={isMobile ? "/banners/contact-us-banner-mobile.png" : "/banners/contact-us-banner.png"} alt="image" style={{ width: '100%', height: 'auto' }} />
+            </Box>
             {/* Contact Information */}
             {/* <Box sx={{ py: 2, px: { lg: 12, md: 2, sm: 2, xs: 2 }, background: theme.palette.info.main }}> */}
             <Box sx={{ py: 2, px: { lg: 6, md: 2, sm: 2, xs: 2 }, background: theme.palette.info.main }}>

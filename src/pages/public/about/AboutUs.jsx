@@ -1,4 +1,4 @@
-import { Box, Stack, Typography, Grid, Divider, useTheme } from '@mui/material'
+import { Box, Stack, Typography, Grid, Divider, useTheme, useMediaQuery } from '@mui/material'
 import React from 'react'
 import Banner from '../../../utils/Banner'
 import Ab from '../../../assets/images/aboutabnner.webp'
@@ -16,10 +16,11 @@ import { Title } from 'react-head'
 
 const AboutUs = () => {
     const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down("md"));
     return (
         <>
             <Title>About Us</Title>
-            <Banner
+            {/* <Banner
                 title="About"
                 image={Ab}
                 // height={{ sm: '35vh', md: '45vh', xs: '40vh', lg: '40vh', xl: '40vh' }}
@@ -29,7 +30,12 @@ const AboutUs = () => {
                 spacingConfig={{ xl: 6, lg: 6, md: 2, xs: 1 }}
                 containerStyles={{ overflow: "hidden" }}
                 text="About Us"
-            />
+            /> */}
+            <Box
+                sx={{ width: '100%' }}
+            >
+                <img src={isMobile ? "/banners/about-us-banner-mobile.png": "/banners/about-us-banner.png"} alt="image" style={{ width: '100%', height: 'auto' }} />
+            </Box>
             {/* <Box sx={{ px: { xs: 2, sm: 2, md: 2, lg: 12, xl: 12 }, }}> */}
             <Box>
                 <Box sx={{ py: 3, px: { xs: 2, md: 4, lg: 6 } }}>
