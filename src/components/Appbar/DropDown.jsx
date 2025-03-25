@@ -32,9 +32,22 @@ const StyledButton = styled(Button)(({ active }) => ({
     justifyContent: "space-between",
     alignItems: "center",
     width: "100%",
-    height: "40px", // Ensuring uniform height
+    // height: "40px", // Ensuring uniform height
     textTransform: "none",
     borderBottom: active ? "3px solid #1C85C6" : "none",
+    color: active ? "#1C85C6" : "#000",
+    borderRadius: "2px",
+    "&:hover": { color: "#1C85C6" },
+}));
+
+const MainStyledButton = styled(Button)(({ active }) => ({
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    width: "100%",
+    height: "30px", // Ensuring uniform height
+    textTransform: "none",
+    // borderBottom: active ? "3px solid #1C85C6" : "none",
     color: active ? "#1C85C6" : "#000",
     borderRadius: "2px",
     "&:hover": { color: "#1C85C6" },
@@ -56,7 +69,7 @@ const DropdownMenu = ({ items }) => {
             onMouseEnter={() => setOpenIndex(index)}
             onMouseLeave={() => setOpenIndex(null)}
         >
-            <StyledButton
+            <MainStyledButton
                 sx={{
                     background: "#1C85C6",
                     color: "white",
@@ -71,7 +84,7 @@ const DropdownMenu = ({ items }) => {
             >
                 <Typography variant="body2" sx={{ my: 0, py: 0 }}>{item.name}</Typography>
                 {item.subMenu && (openIndex === index ? <KeyboardArrowUpOutlined /> : <KeyboardArrowDown />)}
-            </StyledButton>
+            </MainStyledButton>
 
             {openIndex === index && item.subMenu && (
                 <DropdownContent data-aos="fade-up" data-aos-duration="300">
