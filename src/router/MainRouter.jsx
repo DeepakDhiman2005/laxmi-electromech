@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider, ScrollRestoration } from "react-router-dom";
+import { createBrowserRouter, Outlet, RouterProvider, ScrollRestoration } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import PublicRouter from "./routes/PublicRouter";
 import Product from "../pages/public/products/Product";
@@ -14,6 +14,11 @@ const ProductCategory = lazy(() => import("../pages/public/products/ProductCateg
 const ProductDetails = lazy(() => import('../pages/public/products/ProductDetails'));
 // Loading fallback componeimport AboutUs from './../pages/public/about/AboutUs';
 
+// admin
+const Dashboard = lazy(() => import('../admin/dashboard/Dashboard'));
+const AdminProducts = lazy(() => import("../admin/products/AdminProducts"));
+const AdminBlogs = lazy(() => import("../admin/blogs/AdminBlogs"));
+
 // Define routes
 const routes = [
     { path: "/", element: <Home />, index: true },
@@ -23,6 +28,24 @@ const routes = [
     { path: "/singleblog/:id", element: <SingleBlogPage /> },
     { path: '/product-category/*', element: <ProductCategory /> },
     { path: '/product-details/*', element: <ProductDetails /> },
+    {
+        path: '/admin',
+        element: <Outlet />,
+        children: [
+            {
+                path: 'dashboard',
+                element: <Dashboard />,
+            },
+            {
+                path: 'products',
+                element: <AdminProducts />,
+            },
+            {
+                path: 'blogs',
+                element: <AdminBlogs />,
+            }
+        ]
+    },
     {
         path: '/category/*',
         element: <Product />,   

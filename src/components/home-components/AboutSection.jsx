@@ -30,7 +30,14 @@ const AboutSection = () => {
                 <Grid item xs={12} md={6} data-aos="fade-right">
                     <Heading startText="About" endText="Us" justify="start" />
                     <Typography variant="h6" sx={{ lineHeight: 1.8, fontSize: 16 }}>
-                        Laxmi Electromech Pvt. Ltd. has been a trusted name in the industry, delivering high-quality electrical and mechanical solutions for years. With a strong foundation built on expertise and innovation, we take pride in offering cutting-edge solutions that cater to various industries. Our commitment to excellence ensures that we exceed customer expectations, establishing ourselves as a reliable partner in the field with superior products and services that stand the test of time.
+                        LEPL is a new generation professionally managed engineering organization with dedicated
+                        team having in depth knowledge of designing, manufacturing and execution of Switchboards
+                        & Bus ducts upto 415 V.
+                        Established by engineering professionals with experience of more than 25 years in the field
+                        of LV / MV Switchboards & bus ducts manufacturing and has earned itself a distinguished
+                        reputation within industry for its innovative product design, unmatched quality, prompt
+                        Delivery & After Sales Service.
+                        Laxmi Electromech Pvt. Ltd. has state of the art manufacturing facility in NOIDA.
                     </Typography>
                 </Grid>
                 <Grid item xs={12} md={6} data-aos="fade-left">

@@ -14,6 +14,7 @@ import TopBar from './TopBar';
 import { menuData } from './menuData';
 import DropdownMenu from './DropDown';
 import AccordionMenu from './AccordionMenu';
+import QuoteButton from '../buttons/QuoteButton';
 
 const Logo = () => (
     <Typography variant="h5" sx={{ fontWeight: 'bold' }}>
@@ -110,6 +111,8 @@ const Navbar = ({ isVisible }) => {
 
                     {/* Icons */}
                     <Stack direction="row" alignItems={'center'} gap={1}>
+                      <QuoteButton />
+
                         <IconButton
                             sx={{
                                 display: { xs: "none", md: "flex" },

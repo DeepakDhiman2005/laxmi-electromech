@@ -6,7 +6,6 @@ import PointerBox from "../../../utils/PointerBox";
 import Img1 from '../../../assets/icons/goal.png';
 import Img2 from '../../../assets/icons/binocular.png';
 import Img3 from '../../../assets/icons/value.png';
-import Heading from "../../../components/heading/Heading";
 
 const OurMissionPage = () => {
     const theme = useTheme();
@@ -63,14 +62,11 @@ const OurMissionPage = () => {
     return (
         <Box sx={{
             py: 2,
+            pt: 4,
             // px: { xs: 2, sm: 2, md: 2, lg: 12, xl: 12 },
             px: { md: 2, lg: 6, xl: 6, xs: 2 },
             background: '#f1f2f9',
         }}>
-            <Heading
-                startText="Our"
-                endText="Mission"
-            />
             <Grid container spacing={3}>
                 {sections.map((section, index) => (
                     <Grid item xs={12} lg={4} key={index}>

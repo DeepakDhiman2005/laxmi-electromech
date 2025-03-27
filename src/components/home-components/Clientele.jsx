@@ -1,62 +1,63 @@
 import React, { useMemo } from "react";
-import { Box, Typography, Divider, Grid, Card, CardMedia, CardContent } from "@mui/material";
+import { Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import Heading from "../heading/Heading";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper-bundle.css";
+import SwiperCore from "swiper";
+import { Autoplay } from "swiper/modules";
+
+// Register Autoplay module
+SwiperCore.use([Autoplay]);
 
 const Clientele = React.memo(() => {
-    const theme = useTheme();
+  const theme = useTheme();
 
-    // Memoize clients array to prevent re-renders
-    const clients = useMemo(() => [
-        { name: "Manufacturing", image: "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=300&h=200&auto=format&fit=crop" },
-        { name: "Infrastructure", image: "https://images.unsplash.com/photo-1505238680356-667803448bb6?w=300&h=200&auto=format&fit=crop" },
-        { name: "Commercial", image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=300&h=200&auto=format&fit=crop" },
-        { name: "Automotive", image: "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=300&h=200&auto=format&fit=crop" },
-        { name: "Healthcare", image: "https://images.unsplash.com/photo-1576091160501-bbe57469278b?w=300&h=200&auto=format&fit=crop" },
-        { name: "Technology", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=300&h=200&auto=format&fit=crop" },
-    ], []);
+  return (
+    <div className="py-2 w-full">
+      <div className="w-full mx-auto text-center">
+        <Heading startText="Our" endText="Valuable Clients" pb={1} />
+        <Typography color="textSecondary" className="mt-1">
+          Trusted by leading industries in manufacturing, infrastructure, and commercial sectors.
+        </Typography>
 
-    return (
-        <Box py={2}>
-            <Box maxWidth="lg" mx="auto" textAlign="center">
-                {/* <Box sx={{ pb: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <Typography variant="h4" fontWeight="bold">
-                        Our <Typography component="span" sx={{ color: "primary.main", fontWeight: "bold" }} variant="h4">Clientele</Typography>
-                        <Divider sx={{ background: theme.palette.primary.deep, height: "3px", width: "50px" }} />
-                    </Typography>
-                </Box> */}
-                <Heading
-                    startText="Our"
-                    endText="Clientele"
-                    pb={1}
+        {/* Swiper Slider */}
+        <Swiper
+          spaceBetween={0} // No space between slides
+          slidesPerView={9} // Adjusted to match max breakpoint for consistency
+          centeredSlides={true}
+          loop={true}
+          autoplay={{
+            delay: 0,
+            disableOnInteraction: false,
+            speed: 1500,
+          }}
+          speed={5000}
+          pagination={false}
+          navigation={false}
+          className="w-full"
+          breakpoints={{
+            0: { slidesPerView: 1, spaceBetween: 0 },
+            600: { slidesPerView: 3, spaceBetween: 0 },
+            960: { slidesPerView: 4, spaceBetween: 0 },
+            1280: { slidesPerView: 9, spaceBetween: 0 },
+          }}
+        >
+          {Array(12)
+            .fill(0)
+            .map((_, index) => (
+              <SwiperSlide key={index} className="py-3 m-0 flex justify-center items-center">
+                <img
+                  src={`/images/clients/${index + 1}.png`}
+                  alt={`Client ${index + 1}`}
+                  className="w-24 h-24 object-contain rounded-lg m-0 p-0" // Added h-24 for consistent height
                 />
-                <Typography color="textSecondary" mt={1}>
-                    Trusted by leading industries in manufacturing, infrastructure, and commercial sectors.
-                </Typography>
-                <Grid container spacing={3} mt={1}>
-                    {clients.map((client, index) => (
-                        <Grid item xs={6} md={4} lg={2} key={index}>
-                            <Card sx={{ borderRadius: 2, boxShadow: 1, textAlign: 'center' }}> {/* Lowered boxShadow */}
-                                <CardMedia
-                                    component="img"
-                                    height="100"
-                                    image={client.image || "https://via.placeholder.com/150"}
-                                    alt={client.name}
-                                    sx={{ objectFit: "cover" }}
-                                    loading="lazy" // Lazy load images
-                                />
-                                <CardContent>
-                                    <Typography fontWeight={600} color="textPrimary">
-                                        {client.name}
-                                    </Typography>
-                                </CardContent>
-                            </Card>
-                        </Grid>
-                    ))}
-                </Grid>
-            </Box>
-        </Box>
-    );
+              </SwiperSlide>
+            ))}
+        </Swiper>
+      </div>
+    </div>
+  );
 });
 
 export default Clientele;

@@ -3,6 +3,7 @@ import { Accordion, AccordionSummary, AccordionDetails, Typography, Container, B
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import faqsData from "../../constants/faqs";
 import Heading from "../heading/Heading";
+import HTMLLoad from "../loadData/HTMLLoad";
 
 const FAQs = () => {
     const theme = useTheme();
@@ -45,7 +46,7 @@ const FAQs = () => {
                             </AccordionSummary>
                             <AccordionDetails>
                                 <Typography component="div" sx={{ whiteSpace: "pre-line" }}>
-                                    {faq.answer}
+                                    <HTMLLoad htmlData={faq.answer} />
                                 </Typography>
                             </AccordionDetails>
                         </Accordion>
@@ -68,7 +69,7 @@ const FAQs = () => {
                                     </AccordionSummary>
                                     <AccordionDetails>
                                         <Typography component="div" sx={{ whiteSpace: "pre-line" }}>
-                                            {faq.answer}
+                                            <HTMLLoad htmlData={faq.answer} />
                                         </Typography>
                                     </AccordionDetails>
                                 </Accordion>
@@ -90,7 +91,7 @@ const FAQs = () => {
                                     </AccordionSummary>
                                     <AccordionDetails>
                                         <Typography component="div" sx={{ whiteSpace: "pre-line" }}>
-                                            {faq.answer}
+                                            <HTMLLoad htmlData={faq.answer} />
                                         </Typography>
                                     </AccordionDetails>
                                 </Accordion>
@@ -112,7 +113,7 @@ const FAQs = () => {
                                     </AccordionSummary>
                                     <AccordionDetails>
                                         <Typography component="div" sx={{ whiteSpace: "pre-line" }}>
-                                            {faq.answer}
+                                            <HTMLLoad htmlData={faq.answer} />
                                         </Typography>
                                     </AccordionDetails>
                                 </Accordion>

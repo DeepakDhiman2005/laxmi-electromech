@@ -2,7 +2,15 @@ import { Box, Button, Typography } from '@mui/material';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const ProductDetailsCard = () => {
+const ProductDetailsCard = ({
+    image,
+    title,
+    description,
+    id,
+    category,
+    subcategory,
+    // referenceId,
+}) => {
     return <>
         <Box
             sx={{
@@ -29,7 +37,7 @@ const ProductDetailsCard = () => {
                 }}
             >
                 <img
-                    src='https://download.schneider-electric.com/files?p_Doc_Ref=XA2E_CP20054_1&p_File_Type=rendition_369_jpg&default_image=DefaultProductImage.png'
+                    src={image}
                     alt='image'
                     style={{
                         width: '150px',
@@ -37,10 +45,10 @@ const ProductDetailsCard = () => {
                     }}
                 />
             </Box>
-            <Typography variant='body2' sx={{ color: '#505050' }}>XA2EVM4LC</Typography>
-            <Typography variant='body2' sx={{ color: '#000' }}>round pilot light Ø 22 - red - integral LED - 220 V AC - screw clamp terminals</Typography>
+            <Typography variant='body2' sx={{ color: '#505050' }}>{id}</Typography>
+            <Typography variant='body2' sx={{ color: '#000' }}>{description}</Typography>
             <Link
-                to={'/product-details/XA2EVM4LC'}
+                to={`/product-details/${id}`}
                 style={{
                     width: '100%'
                 }}

@@ -1,6 +1,16 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
+import { useMemo } from "react";
+import { useLocation } from "react-router-dom";
+import categoryProducts from "../../../data/categoryProducts";
 
 const ProductDetails = () => {
+    const { pathname  } = useLocation();
+    const id = useMemo(() => {
+        return pathname.split('/')[2];
+    }, []);
+
+    const productData = useMemo(() => categoryProducts.filter((item) => item.id === id)[0], [id]);
+    
     return <>
         <Box
             sx={{
@@ -25,7 +35,7 @@ const ProductDetails = () => {
                 }}
             >
                 <img
-                    src="https://download.schneider-electric.com/files?p_Doc_Ref=XA2E_CP20054_1&p_File_Type=rendition_369_jpg&default_image=DefaultProductImage.png"
+                    src={productData?.image || ''}
                     alt="image"
                     style={{
                         width: '80%'
@@ -42,9 +52,9 @@ const ProductDetails = () => {
                     gap: 1,
                 }}
             >
-                <Typography variant="h5">round pilot light Ø 22 - red - integral LED - 110 V AC - screw clamp terminals</Typography>
-                <Typography variant="body1" sx={{ color: '#505050' }}>XA2EVF4LC</Typography>
-                <Typography variant="body1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit tempore aspernatur dicta eligendi reiciendis vel provident labore, mollitia repellendus, blanditiis dolor libero aliquam sequi, architecto commodi optio. Possimus repellat, asperiores, numquam blanditiis et reiciendis facere, ipsam rem magni laudantium sunt officiis. Dicta delectus enim architecto quia neque deleniti labore quidem.</Typography>
+                <Typography variant="h5">{productData?.title || ''}</Typography>
+                <Typography variant="body1" sx={{ color: '#505050' }}>{productData?.id || ''}</Typography>
+                <Typography variant="body1">{productData?.description || ''}</Typography>
                 {/* <Button
                     sx={{
                         border: '1px solid #707070',

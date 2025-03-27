@@ -11,6 +11,9 @@ import ClientTestimonials from '../../components/home-components/ClientTestimoni
 import Clientele from '../../components/home-components/Clientele'
 import FAQs from '../../components/home-components/FAQs'
 import { Title } from 'react-head'
+import WelcomeMessageSection from '../../components/home-components/WelcomeMessageSection'
+import QualityProcess from '../../components/home-components/QualityProcess'
+import PlantAndMachinery from '../../components/home-components/PlantAndMachinery'
 
 const Home = () => {
     return (
@@ -18,10 +21,13 @@ const Home = () => {
             <Title>LAXMI ELECTROMECH PVT. LTD.</Title>
             <Banner />
             <AboutSection />
+            <PlantAndMachinery />
             <OurMissionPage />
             <ProductCategoriesSection />
+            <WelcomeMessageSection />
             <OurServices />
             <WhyChooseUs />
+            <QualityProcess />
             <Certifications />
             <ClientTestimonials />
             <Clientele />

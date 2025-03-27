@@ -1,10 +1,22 @@
 import { Box, Grid, Typography } from '@mui/material';
-import React from 'react';
+import React, { useMemo } from 'react';
 import ProductFilter from './ProductFilter';
 import ProductSubCategoryCard from './ProductSubCategoryCard';
 import ProductDetailsCard from './ProductDetailsCard';
+import { useLocation } from 'react-router-dom';
+import categoryProducts from '../../../data/categoryProducts';
 
 const ProductCategory = () => {
+    const { pathname } = useLocation();
+
+    const referenceId = useMemo(() => {
+        return pathname.split('/')[2] || null;
+    }, [pathname]);
+
+    const productData = useMemo(() => {
+        return categoryProducts.filter((item) => item.referenceId === referenceId);
+    }, [referenceId]);
+
     return <>
         <Box
             sx={{
@@ -34,7 +46,7 @@ const ProductCategory = () => {
             >
                 <Box
                     sx={{
-                        width: '30%',
+                        width: '20%',
                     }}
                 >
                     <Typography>Filter by:</Typography>
@@ -42,7 +54,7 @@ const ProductCategory = () => {
                 </Box>
                 <Box
                     sx={{
-                        width: '70%',
+                        width: '80%',
                     }}
                 >
                     <Typography
@@ -56,27 +68,7 @@ const ProductCategory = () => {
                     >
                         Schneider Electric attempts to meet all your workplace, industrial, and domestic electrical demands with efficiency. In order to achieve this goal, we ensure that we provide our customers with innovative and effective solutions that bring them ease, comfort, and peace of mind. Our skilled team of expert professionals has carefully designed a beautiful range of push buttons, switches, and pilot lights called Easy Harmony XA2E.
                     </Typography>
-                    {/* <Box
-                        width={"100%"}
-                        sx={{
-                            my: 2,
-                        }}
-                    >
-                        <Typography
-                            variant='h6'
-                        >Browse by Ranges (3)</Typography>
-                        <Grid container spacing={2}>
-                            <Grid item xs={12} md={4}>
-                                <ProductSubCategoryCard />
-                            </Grid>
-                            <Grid item xs={12} md={4}>
-                                <ProductSubCategoryCard />
-                            </Grid>
-                            <Grid item xs={12} md={4}>
-                                <ProductSubCategoryCard />
-                            </Grid>
-                        </Grid>
-                    </Box> */}
+
                     <Box
                         width={"100%"}
                         sx={{
@@ -87,21 +79,13 @@ const ProductCategory = () => {
                             variant='h6'
                         >Browse by products (297)</Typography>
                         <Grid container spacing={2} sx={{ my: 1 }}>
-                            <Grid item xs={12} md={4}>
-                                <ProductDetailsCard />
-                            </Grid>
-                            <Grid item xs={12} md={4}>
-                                <ProductDetailsCard />
-                            </Grid>
-                            <Grid item xs={12} md={4}>
-                                <ProductDetailsCard />
-                            </Grid>
-                            <Grid item xs={12} md={4}>
-                                <ProductDetailsCard />
-                            </Grid>
-                            <Grid item xs={12} md={4}>
-                                <ProductDetailsCard />
-                            </Grid>
+                            {
+                                productData.map((item, index) => (
+                                    <Grid key={index} item xs={12} md={4}>
+                                        <ProductDetailsCard {...item} />
+                                    </Grid>
+                                ))
+                            }
                         </Grid>
                     </Box>
                 </Box>
