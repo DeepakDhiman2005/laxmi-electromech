@@ -28,7 +28,7 @@ const AboutSection = () => {
         >
             <Grid container spacing={4} alignItems="center">
                 <Grid item xs={12} md={6} data-aos="fade-right">
-                    <Heading startText="About" endText="Us" justify="start" />
+                    <Heading startText="About" endText="Us" justify="start" pb={0.5} />
                     <Typography variant="h6" sx={{ lineHeight: 1.8, fontSize: 16 }}>
                         LEPL is a new generation professionally managed engineering organization with dedicated
                         team having in depth knowledge of designing, manufacturing and execution of Switchboards

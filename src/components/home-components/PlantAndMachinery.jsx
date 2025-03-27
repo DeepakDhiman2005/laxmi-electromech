@@ -1,10 +1,9 @@
 // src/components/HomeGallery.jsx
 import { useMemo, useState } from "react";
 import Heading from "../heading/Heading";
-import { Dialog, DialogContent } from "@mui/material"; // Material-UI components
+import { Dialog, DialogContent } from "@mui/material";
 
 const PlantAndMachinery = () => {
-    // State for modal
     const [open, setOpen] = useState(false);
     const [selectedImage, setSelectedImage] = useState(null);
 
@@ -39,13 +38,13 @@ const PlantAndMachinery = () => {
     // Image Card Component
     const ImageCard = ({ src, alt, caption }) => (
         <div
-            className="relative overflow-hidden rounded-lg shadow-md group cursor-pointer"
+            className="relative overflow-hidden rounded-lg shadow-md group cursor-pointer border border-blue-600"
             onClick={() => handleImageClick(src)}
         >
             <img
                 src={src}
                 alt={alt}
-                className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+                className="w-full h-64 object-contain transition-transform duration-300 group-hover:scale-105 bg-white"
                 loading="lazy"
             />
             <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-end">
@@ -58,9 +57,7 @@ const PlantAndMachinery = () => {
 
     return (
         <section className="w-full py-3 bg-gray-50">
-            {/* PLANT AND MACHENERY */}
-            {/* <Heading startText="Our" endText="Gallery" justify="center" pb={4} /> */}
-            <Heading startText="PLANT" endText="AND MACHENERY" justify="center" pb={1} />
+            <Heading startText="PLANT" endText="AND MACHINERY" justify="center" pb={1} />
             <div className="w-full px-4 md:px-8">
                 {/* Fabrication Plant Section */}
                 <div className="mb-12">

@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "@mui/material";
-import { MessageCircleMore } from "lucide-react"; // Importing the MessageCircleMore icon from Lucide
+import { MessageCircleMore } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const QuoteButton = () => {
@@ -13,22 +13,25 @@ const QuoteButton = () => {
           fontSize: "14px",
           fontWeight: "bold",
           textTransform: "inherit",
-          position: "relative", // For pseudo-elements
-          borderRadius: "4px", // Slight rounding
-          overflow: "hidden", // Prevent pseudo-element overflow
-          display: "flex",
+          position: "relative",
+          borderRadius: "4px",
+          overflow: "hidden",
+          display: {
+            xs: "none", // Hidden at 0px and up
+            sm: "flex", // Visible at 600px and up
+          },
           alignItems: "center",
           borderEndStartRadius: "12px",
           borderTopRightRadius: "12px",
-          gap: "6px", // Space between icon and text
-          background: "linear-gradient(45deg, #1976d2, #42a5f5)", // Linear gradient from dark blue to light blue
-          color: "white", // Text/icon color
+          gap: "6px",
+          background: "linear-gradient(45deg, #1976d2, #42a5f5)",
+          color: "white",
           "&:hover": {
-            background: "linear-gradient(45deg, #1565c0, #2196f3)", // Slightly darker gradient on hover
+            background: "linear-gradient(45deg, #1565c0, #2196f3)",
           },
         }}
       >
-        <MessageCircleMore size={16} /> {/* Lucide MessageCircleMore icon */}
+        <MessageCircleMore size={16} />
         Get a Quote
       </Button>
     </Link>

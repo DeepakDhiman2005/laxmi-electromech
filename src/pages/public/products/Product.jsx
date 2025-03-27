@@ -4,18 +4,20 @@ import { useLocation } from 'react-router-dom';
 import { Title } from 'react-head';
 import allProducts from '../../../data/allProducts';
 import ProductSubCategoryCard from './ProductSubCategoryCard';
+import ProductSidebar from '../../../components/sidebar/ProductSidebar';
+import electricalAutomation from '../../../data/electricalAutomation';
 
 const Product = () => {
     const { pathname } = useLocation();
 
     // Memoize category and subcategory from URL
-    const category = useMemo(() => 
+    const category = useMemo(() =>
         pathname.split('/')[2]?.split('-').join(' ') || ''
-    , [pathname]);
+        , [pathname]);
 
-    const subCategory = useMemo(() => 
+    const subCategory = useMemo(() =>
         pathname.split('/')[3]?.split('-').join(' ') || ''
-    , [pathname]);
+        , [pathname]);
 
     // Filter category data
     const filteredData = useMemo(() => {
@@ -26,7 +28,6 @@ const Product = () => {
     // Filter products by subcategory
     const filteredProducts = useMemo(() => {
         const subCategorySlug = pathname.split('/')[3]; // Get raw subcategory slug
-        console.log(subCategorySlug)
         if (filteredData && filteredData.products.length > 0) {
             return filteredData.products.filter(
                 (item) => item.subcategory === subCategorySlug
@@ -34,6 +35,17 @@ const Product = () => {
         }
         return [];
     }, [filteredData, pathname]);
+    
+    const productData = useMemo(() => {
+        let category = pathname.split('/')[2];
+        let subcategory = pathname.split('/')[3];
+
+        if (category === "electrical-automation") {
+            const foundProduct = electricalAutomation.filter((item) => item.category === subcategory)[0];
+            return foundProduct?.description || null;
+        }
+        return null;
+    }, [pathname]);
 
     // State for title
     const [pageTitle, setPageTitle] = useState('');
@@ -55,34 +67,19 @@ const Product = () => {
                         className='w-full'
                     />
                 </div>
-                <Box sx={{ px: 4, py: 3, width: '100%' }}>
-                    <div className='flex justify-start items-center text-[22px] gap-x-2'>
-                        <h2 className='font-semibold text-blue-700 capitalize'>{category}</h2>
-                        {">"}
-                        <h2 className='font-semibold text-blue-700 capitalize'>{subCategory}</h2>
-                    </div>
-                    <Typography variant='body1'>
-                        {filteredData?.description || 'No description available.'}
-                    </Typography>
 
-                    <Box sx={{ gap: 6, py: 2, width: '100%' }}>
-                        <Box width={"100%"} sx={{ my: 1 }}>
-                            <Typography variant="h6">
-                                Browse by Ranges ({filteredProducts.length})
-                            </Typography>
-                            <Grid container spacing={3} sx={{ my: 0.5 }}>
-                                {filteredProducts.map((item, index) => (
-                                    <Grid key={index} item xs={12} sm={6} md={3}>
-                                        <ProductSubCategoryCard {...item} />
-                                    </Grid>
-                                ))}
-                                {filteredProducts.length === 0 && (
-                                    <Typography>No products found for this subcategory.</Typography>
-                                )}
-                            </Grid>
-                        </Box>
-                    </Box>
-                </Box>
+                <div className='w-full px-4 lg:px-12 py-3 flex justify-start items-start gap-x-4'>
+                    <div className='md:w-[20%] hidden md:block sticky top-32 left-0'>
+                        <ProductSidebar />
+                    </div>
+                    <div className='w-full md:w-[80%]'>
+                        <div dangerouslySetInnerHTML={{
+                            __html: productData,
+                        }} className='w-full border border-solid border-blue-700 py-3 px-2'>
+                            {/* <h2 className='text-[20px] text-blue-700'>PLC Control Panel</h2> */}
+                        </div>
+                    </div>
+                </div>
             </main>
         </>
     );

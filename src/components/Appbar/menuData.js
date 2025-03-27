@@ -3,6 +3,8 @@ export const menuData = [
     { name: "About Us", route: "/about-us" },
     {
         name: "Electrical Automation",
+        id: 'electrical-automation',
+        product: true,
         subMenu: [
             { name: "PLC Control Panel", route: "/category/electrical-automation/plc-control-panel" },
             { name: "HMI Touch Panel", route: "/category/electrical-automation/hmi-touch-panel" },
@@ -17,6 +19,8 @@ export const menuData = [
     },
     {
         name: "Panel Manufacturing",
+        id: 'panel-manufacturing',
+        product: true,
         subMenu: [
             { name: "Electrical Distribution Board", route: "/category/panel-manufacturing/electrical-distribution-board" },
             { name: "Motor Control Panel", route: "/category/panel-manufacturing/motor-control-panel" },
@@ -32,6 +36,8 @@ export const menuData = [
     },
     {
         name: "EPC Contracts",
+        product: true,
+        id: 'epc-contracts',
         subMenu: [
             { name: "Turnkey Project Solutions", route: "/category/epc-contracts/turnkey-project-solutions" },
             { name: "Electrical Infrastructure Development", route: "/category/epc-contracts/electrical-infrastructure-development" },
