@@ -43,14 +43,12 @@ const Footer = () => {
             <Box
                 sx={{
                     background: 'linear-gradient(120deg, #1C85C6 0%, #0F5B99 100%)',
-                    // px: 6,
                     px: { xs: 2, sm: 2, md: 2, lg: 6, xl: 6 },
                     py: 3,
                 }}
             >
                 <Grid
                     container
-                    // spacing={{ xs: 2, sm: 3, md: 4 }}
                     justifyContent="center"
                     alignItems="center"
                 >
@@ -104,7 +102,6 @@ const Footer = () => {
                             title="Our Location"
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1751.9590260468199!2d77.32409253866982!3d28.572223393924386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce44e94a2663f%3A0x96317734f1be41f7!2sNoida%20Sector%2018%2C%20Noida%2C%20Uttar%20Pradesh%20201301!5e0!3m2!1sen!2sin!4v1725966414674!5m2!1sen!2sin"
                             width="100%"
-                            // height={{ xs: "120", sm: "100", md: "90" }}
                             height={110}
                             style={{ border: 0, borderRadius: "8px" }}
                             allowFullScreen=""
@@ -118,7 +115,6 @@ const Footer = () => {
                 color: theme.palette.info.main,
                 overflow: "hidden",
                 background: `url(${FooterImg}) no-repeat center/cover`,
-                // background: theme.palette.primary.main
             }}>
                 <Box sx={{
                     background: 'rgba(0,0,0,0.9)', height: '100%', width: '100%', py: 3,
@@ -133,7 +129,6 @@ const Footer = () => {
                             </Typography>
                             <Stack spacing={2}>
                                 <Typography variant='body2'>
-                                    {/* Laxmi Electromech Pvt. Ltd. is a leading provider of comprehensive electrical solutions, specializing in electrical automation, panel manufacturing, and EPC contracts. With a strong commitment to innovation, quality, and customer satisfaction, we deliver tailored solutions that meet the unique needs of our clients. */}
                                     Laxmi Electromech Pvt. Ltd. specializes in electrical automation, panel manufacturing, and EPC contracts, delivering innovative, high-quality, and reliable solutions tailored to diverse client needs with excellence.
                                 </Typography>
                             </Stack>
@@ -147,7 +142,7 @@ const Footer = () => {
                             </Typography>
                             <Stack>
                                 {aboutLink.map((list, index) => (
-                                    <Stack key={index} direction={'row'} alignItems={'center'} sx={{ py: 0, my: 0, }}>
+                                    <Stack key={index} direction={'row'} alignItems={'center'} sx={{ py: 0, my: 0 }}>
                                         <ChevronRight />
                                         <Button onClick={() => navigate(list.route)} sx={hoverStyle}>{list.name}</Button>
                                     </Stack>
@@ -201,7 +196,8 @@ const Footer = () => {
                     {/* Footer Bottom Section */}
                     <Box sx={{ display: { md: 'flex' }, justifyContent: 'space-between', alignItems: 'center', my: 0 }}>
                         <Typography variant="body2">
-                            © {new Date().getFullYear()} <strong>Laxmi Electromech</strong>. All Rights Reserved.
+                            © {new Date().getFullYear()} <strong>Laxmi Electromech</strong>. All Rights Reserved. |
+                            Designed & Developed by <strong>Jaikvik Technology India Pvt. Ltd.</strong>
                         </Typography>
                         <Stack direction="row" spacing={2}>
                             {socialLinks.map(({ icon: Icon, name }, index) => (
@@ -211,6 +207,7 @@ const Footer = () => {
                             ))}
                         </Stack>
                     </Box>
+
                 </Box>
             </Box>
         </Box>
