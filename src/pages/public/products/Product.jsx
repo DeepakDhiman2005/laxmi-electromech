@@ -7,6 +7,7 @@ import ProductSubCategoryCard from './ProductSubCategoryCard';
 import ProductSidebar from '../../../components/sidebar/ProductSidebar';
 import electricalAutomation from '../../../data/electricalAutomation';
 import panelManufacturing from '../../../data/panelManufacturing';
+import epcContracts from '../../../data/epcContracts';
 
 const Product = () => {
     const { pathname } = useLocation();
@@ -47,6 +48,9 @@ const Product = () => {
         } else if (category === "panel-manufacturing") {
             const foundProduct = panelManufacturing.filter((item) => item.category === subcategory)[0];
             return foundProduct?.description || null;
+        } else if (category === "epc-contracts") {
+            const foundProduct = epcContracts.filter((item) => item.category === subcategory)[0];
+            return foundProduct?.description || null;
         }
         return null;
     }, [pathname]);
@@ -76,7 +80,7 @@ const Product = () => {
                     <div className='md:w-[20%] hidden md:block sticky top-32 left-0'>
                         <ProductSidebar />
                     </div>
-                    <div className='w-full md:w-[80%]'>
+                    <div className='w-full md:w-[80%] product-description'>
                         <div dangerouslySetInnerHTML={{
                             __html: productData,
                         }} className='w-full border border-solid border-blue-700 py-3 px-2'>
