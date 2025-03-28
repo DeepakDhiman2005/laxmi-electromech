@@ -15,6 +15,7 @@ import Certifications from '../../../components/home-components/Certifications'
 import { Title } from 'react-head'
 import Infrastructure from './Infrastructure'
 import Founders from './Founders'
+import CertificateLicense from '../../../components/home-components/CertificateLicense'
 
 const AboutUs = () => {
     const theme = useTheme();
@@ -101,7 +102,8 @@ const AboutUs = () => {
                 <OurTeam />
                 <SustainabilitySection />
                 <ClientTestimonials />
-                <Certifications />
+                {/* <Certifications /> */}
+                <CertificateLicense/>
             </Box>
         </>
     )
