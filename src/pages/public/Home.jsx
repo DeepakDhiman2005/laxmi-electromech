@@ -14,6 +14,7 @@ import { Title } from 'react-head'
 import WelcomeMessageSection from '../../components/home-components/WelcomeMessageSection'
 import QualityProcess from '../../components/home-components/QualityProcess'
 import PlantAndMachinery from '../../components/home-components/PlantAndMachinery'
+import CertificateLicense from '../../components/home-components/CertificateLicense'
 
 const Home = () => {
     return (
@@ -28,7 +29,8 @@ const Home = () => {
             <OurServices />
             <WhyChooseUs />
             <QualityProcess />
-            <Certifications />
+            {/* <Certifications /> */}
+            <CertificateLicense />
             <ClientTestimonials />
             <Clientele />
             <LatestBlog />

@@ -13,6 +13,8 @@ import SustainabilitySection from './SustainabilitySection'
 import ClientTestimonials from '../../../components/home-components/ClientTestimonials'
 import Certifications from '../../../components/home-components/Certifications'
 import { Title } from 'react-head'
+import Infrastructure from './Infrastructure'
+import Founders from './Founders'
 
 const AboutUs = () => {
     const theme = useTheme();
@@ -90,7 +92,9 @@ const AboutUs = () => {
                     </Grid>
                 </Box>
                 <OurMissionPage />
+                <Infrastructure />
                 <OurJourney />
+                <Founders />
                 <WhatWeDo />
                 <WhyChooseUs />
                 <OurExpertise />

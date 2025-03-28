@@ -120,7 +120,15 @@ const Footer = () => {
                     background: 'rgba(0,0,0,0.9)', height: '100%', width: '100%', py: 3,
                     px: { xs: 2, sm: 2, md: 2, lg: 6, xl: 8 },
                 }}>
-                    <Grid container justifyContent="space-between" sx={{ width: '100%', rowGap: { xs: 3, md: 2, sm: 2, lg: 0 } }}>
+                    <Grid 
+                        container 
+                        justifyContent="space-between" 
+                        sx={{ 
+                            width: '100%', 
+                            rowGap: { xs: 1.5, sm: 1, md: 1, lg: 0 }, // Decreased vertical gap
+                            columnGap: { xs: 1, sm: 1, md: 1, lg: 2 } // Added horizontal gap control
+                        }}
+                    >
                         {/* About Section */}
                         <Grid item xs={12} sm={6} md={6} lg={3} xl={3}>
                             <Typography variant='h5' color="primary" fontWeight="bold" textTransform="uppercase" mb={1}>
@@ -156,9 +164,9 @@ const Footer = () => {
                                 Contact Info
                                 <Divider sx={{ background: '#fff' }} />
                             </Typography>
-                            <Typography variant='body2'><strong>Address:</strong> Shop no 36, B1A, First Floor, Sector 51 Noida 201301, Landmark: Near IDBI Bank</Typography>
-                            <Typography variant='body2'><strong>Email:</strong> info@laxmielectromech.in</Typography>
-                            <Typography variant='body2'><strong>Phone:</strong> +91-9870287980</Typography>
+                            <Typography variant='body2'><strong>Address:</strong> A-139, B-06, GALI NO. 1, MADHU VIHAR, I.P EXTENSION, DELHI110092</Typography>
+                            <Typography variant='body2'><strong>Email:</strong> <span className='text-blue-500'>apglaxmi2009@gmail.com</span></Typography>
+                            <Typography variant='body2'><strong>Phone:</strong> +91-9811983451, +91-9643401344</Typography>
                         </Grid>
 
                         {/* Newsletter Subscription */}
@@ -207,7 +215,6 @@ const Footer = () => {
                             ))}
                         </Stack>
                     </Box>
-
                 </Box>
             </Box>
         </Box>
