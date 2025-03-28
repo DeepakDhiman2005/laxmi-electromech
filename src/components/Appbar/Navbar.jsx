@@ -76,12 +76,12 @@ const Navbar = ({ isVisible }) => {
                         width: '100%',
                         justifyContent: 'space-between',
                         alignItems: 'center',
-                        pt: 2,
-                        px: 2,
+                        pt: { xs: 'auto', sm: 'auto', md: 1, lg: 1 },
+                        px: { xs: 'auto', sm: 'auto', md: 2, lg: 2 },
                     }}
                 >
                     {/* Logo */}
-                    <Stack direction="row" alignItems="center">
+                    <Stack direction="row" alignItems="center" sx={{ mt: 1 }}>
                         <Logo />
                     </Stack>
                     {/* search bar */}
