@@ -6,6 +6,7 @@ import allProducts from '../../../data/allProducts';
 import ProductSubCategoryCard from './ProductSubCategoryCard';
 import ProductSidebar from '../../../components/sidebar/ProductSidebar';
 import electricalAutomation from '../../../data/electricalAutomation';
+import panelManufacturing from '../../../data/panelManufacturing';
 
 const Product = () => {
     const { pathname } = useLocation();
@@ -35,13 +36,16 @@ const Product = () => {
         }
         return [];
     }, [filteredData, pathname]);
-    
+
     const productData = useMemo(() => {
         let category = pathname.split('/')[2];
         let subcategory = pathname.split('/')[3];
 
         if (category === "electrical-automation") {
             const foundProduct = electricalAutomation.filter((item) => item.category === subcategory)[0];
+            return foundProduct?.description || null;
+        } else if (category === "panel-manufacturing") {
+            const foundProduct = panelManufacturing.filter((item) => item.category === subcategory)[0];
             return foundProduct?.description || null;
         }
         return null;

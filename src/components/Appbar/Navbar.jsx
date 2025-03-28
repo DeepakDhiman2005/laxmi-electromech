@@ -19,8 +19,9 @@ import QuoteButton from '../buttons/QuoteButton';
 const Logo = () => (
     <Typography variant="h5" sx={{ fontWeight: 'bold' }}>
         <Link to="/" style={{ textDecoration: 'none' }}>
-            <Box sx={{ height: 55, width: 150 }} data-aos="fade-right" data-aos-duration="1000">
-                <img src={Rolif_img} alt="Rolif Logo" style={{ height: '100%', width: '100%' }} />
+            <Box data-aos="fade-right" data-aos-duration="1000">
+                {/* <img src={Rolif_img} alt="Rolif Logo" style={{ height: '100%', width: '200px' }} /> */}
+                <img src={'/logo-laxmi.png'} alt="Rolif Logo" className='w-[200px]' />
             </Box>
         </Link>
     </Typography>
@@ -75,6 +76,8 @@ const Navbar = ({ isVisible }) => {
                         width: '100%',
                         justifyContent: 'space-between',
                         alignItems: 'center',
+                        pt: 2,
+                        px: 2,
                     }}
                 >
                     {/* Logo */}
