@@ -1,11 +1,12 @@
+import { Title } from "react-head";
 import Heading from "../../../components/heading/Heading";
 
 const OurClients = () => {
     return <>
-    
+    <Title>Our Clients</Title>
         <main className="w-full px-4 py-6 lg:px-12">
             {/* Page Heading */}
-            <Heading startText="Our" endText="Valuable Clients" />
+            <Heading startText="Our" endText="Valuable Clients" pb={0} />
 
             {/* Top Section: Trusted Clients & Testimonials */}
             <div className="w-full flex flex-col justify-center items-center">
@@ -56,7 +57,7 @@ const OurClients = () => {
             {/* Clients Logos Grid */}
             <div className="flex flex-col w-full justify-center items-center gap-y-2">
                 <h2 className="text-2xl sm:text-3xl text-blue-600 font-bold my-4">
-                    We have served over <strong>12 customers</strong> across <strong>20 countries</strong>
+                    We have served over <strong>12 customers</strong> across <strong>8 countries</strong>
                 </h2>
                 <div className="w-full grid grid-cols-2 sm:grid-cols-4 my-6 md:grid-cols-6 lg:grid-cols-8 gap-y-6">
                     {Array.from({ length: 12 }).map((_, index) => (

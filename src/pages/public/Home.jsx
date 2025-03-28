@@ -19,7 +19,7 @@ import License from '../../components/home-components/License'
 const Home = () => {
     return (
         <>
-            <Title>LAXMI ELECTROMECH PVT. LTD.</Title>
+            <Title>Laxmi Electromech Pvt. Ltd.</Title>
             <Banner />
             <AboutSection />
             <Certifications />
