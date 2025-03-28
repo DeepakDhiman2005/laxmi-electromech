@@ -13,6 +13,10 @@ const SingleBlogPage = lazy(() => import("../pages/public/blogs/SingleBlog"));
 const ProductCategory = lazy(() => import("../pages/public/products/ProductCategory"));
 const ProductDetails = lazy(() => import('../pages/public/products/ProductDetails'));
 // Loading fallback componeimport AboutUs from './../pages/public/about/AboutUs';
+const ManufacturingFacilityMachinery = lazy(() => import("../pages/public/manufacturingFacility/ManufacturingFacilityMachinery"));
+const OurClients = lazy(() => import("../pages/public/clients/OurClients"));
+const Quality = lazy(() => import("../pages/public/quality/Quality"));
+const Projects = lazy(() => import("../pages/public/projects/Projects"));
 
 // admin
 const Dashboard = lazy(() => import('../admin/dashboard/Dashboard'));
@@ -28,6 +32,10 @@ const routes = [
     { path: "/singleblog/:id", element: <SingleBlogPage /> },
     { path: '/product-category/*', element: <ProductCategory /> },
     { path: '/product-details/*', element: <ProductDetails /> },
+    { path: '/manufacturing-facility-machinery', element: <ManufacturingFacilityMachinery /> },
+    { path: '/our-clients', element: <OurClients /> },
+    { path: '/quality', element: <Quality /> },
+    { path: '/projects', element: <Projects/> },
     {
         path: '/admin',
         element: <Outlet />,

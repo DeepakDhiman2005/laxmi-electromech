@@ -14,7 +14,7 @@ import { Title } from 'react-head'
 import WelcomeMessageSection from '../../components/home-components/WelcomeMessageSection'
 import QualityProcess from '../../components/home-components/QualityProcess'
 import PlantAndMachinery from '../../components/home-components/PlantAndMachinery'
-import CertificateLicense from '../../components/home-components/CertificateLicense'
+import License from '../../components/home-components/License'
 
 const Home = () => {
     return (
@@ -22,15 +22,15 @@ const Home = () => {
             <Title>LAXMI ELECTROMECH PVT. LTD.</Title>
             <Banner />
             <AboutSection />
-            <PlantAndMachinery />
+            <Certifications />
             <OurMissionPage />
             <ProductCategoriesSection />
             <WelcomeMessageSection />
             <OurServices />
             <WhyChooseUs />
             <QualityProcess />
-            {/* <Certifications /> */}
-            <CertificateLicense />
+            <PlantAndMachinery />
+            <License />
             <ClientTestimonials />
             <Clientele />
             <LatestBlog />

@@ -21,7 +21,7 @@ const Logo = () => (
         <Link to="/" style={{ textDecoration: 'none' }}>
             <Box data-aos="fade-right" data-aos-duration="1000">
                 {/* <img src={Rolif_img} alt="Rolif Logo" style={{ height: '100%', width: '200px' }} /> */}
-                <img src={'/logo-laxmi.png'} alt="Rolif Logo" className='w-[200px]' />
+                <img src={'/logo1_enhanced.png'} alt="Rolif Logo" className='w-[200px]' />
             </Box>
         </Link>
     </Typography>

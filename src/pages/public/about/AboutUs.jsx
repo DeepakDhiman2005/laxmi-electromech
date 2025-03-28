@@ -15,7 +15,7 @@ import Certifications from '../../../components/home-components/Certifications'
 import { Title } from 'react-head'
 import Infrastructure from './Infrastructure'
 import Founders from './Founders'
-import CertificateLicense from '../../../components/home-components/CertificateLicense'
+import CertificateLicense from '../../../components/home-components/License'
 
 const AboutUs = () => {
     const theme = useTheme();
