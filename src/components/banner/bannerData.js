@@ -28,4 +28,22 @@ export const bannerData = [
         imagePath: '/banners/power-distribution-banner.png',
         description: "MANUFACTURING OF ELECTRICAL CONTROL PANELS, MOTOR CONTROL CENTERS, AND OTHER AUTOMATION PANELS."
     },
+    {
+        id: 5,
+        title: "Panel Manufacturering",
+        imagePath: '/banners/panel-manufacturering.png',
+        description: "MANUFACTURING OF ELECTRICAL CONTROL PANELS, MOTOR CONTROL CENTERS, AND OTHER AUTOMATION PANELS."
+    },
+    {
+        id: 6,
+        title: "EPC Contracts",
+        imagePath: '/banners/EPC-Contracts.png',
+        description: "MANUFACTURING OF ELECTRICAL CONTROL PANELS, MOTOR CONTROL CENTERS, AND OTHER AUTOMATION PANELS."
+    },
+    {
+        id: 7,
+        title: "Quality Assurance & Control",
+        imagePath: '/banners/Quality-Assurance-&-Control.png',
+        description: "MANUFACTURING OF ELECTRICAL CONTROL PANELS, MOTOR CONTROL CENTERS, AND OTHER AUTOMATION PANELS."
+    },
 ];
