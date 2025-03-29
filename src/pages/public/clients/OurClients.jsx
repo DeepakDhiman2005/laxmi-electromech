@@ -1,9 +1,14 @@
 import { Title } from "react-head";
 import Heading from "../../../components/heading/Heading";
+import { useMediaQuery, useTheme } from "@mui/material";
 
 const OurClients = () => {
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
     return <>
-    <Title>Our Clients</Title>
+        <Title>Our Clients</Title>
+        <img src={isMobile ? "/banners/our-client-phone-page.png": "/banners/our-client.png"} alt="image" className="w-auto" />
         <main className="w-full px-4 py-6 lg:px-12">
             {/* Page Heading */}
             <Heading startText="Our" endText="Valuable Clients" pb={0} />

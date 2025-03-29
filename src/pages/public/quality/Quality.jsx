@@ -1,11 +1,15 @@
 import React from "react";
 import Heading from "../../../components/heading/Heading";
 import { Title } from "react-head";
+import { useMediaQuery, useTheme } from "@mui/material";
 
 const Quality = () => {
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
     return <>
-    <Title>Quality Assurance & Control</Title>
-        <img src="/banners/Quality-banner.png" alt="banner" className="w-full" />
+        <Title>Quality Assurance & Control</Title>
+        <img src={isMobile ? "/banners/Quality--phone-size.png" : "/banners/Quality-banner.png"} alt="banner" className="w-full" />
         <div className="flex flex-col w-full items-center justify-center px-4 md:px-12 py-6 bg-white">
             {/* Title Section */}
             <div className="w-full flex justify-center items-center mb-6">

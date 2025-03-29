@@ -2,7 +2,9 @@ import { useMemo } from "react"
 import { menuData } from "../Appbar/menuData"
 import { Link, useLocation } from "react-router-dom";
 
-const ProductSidebar = () => {
+const ProductSidebar = ({
+    links = [],
+}) => {
     const { pathname } = useLocation();
 
     const products = useMemo(() => menuData.filter((item) => item.product), []);
@@ -10,19 +12,6 @@ const ProductSidebar = () => {
     //     let category = pathname.split('/')[2];
     //     return products.filter((item) => item.id === category)?.[0]?.subMenu || null;
     // }, [pathname]);
-    const links = useMemo(() => {
-        return [
-            { name: "PLC Control Panel", route: "/category/electrical-automation/plc-control-panel" },
-            { name: "HMI Touch Panel", route: "/category/electrical-automation/hmi-touch-panel" },
-            { name: "SCADA System", route: "/category/electrical-automation/scada-system" },
-            { name: "Motor Control Centre", route: "/category/electrical-automation/motor-control-centre" },
-            { name: "VFD Drive", route: "/category/electrical-automation/vfd-drive" },
-            { name: "Soft Starter", route: "/category/electrical-automation/soft-starter" },
-            { name: "Electrical Control Panel", route: "/category/electrical-automation/electrical-control-panel" },
-            { name: "Automation Control Panel", route: "/category/electrical-automation/automation-control-panel" },
-            { name: "Remote I/O Module", route: "/category/electrical-automation/remote-io-module" },
-        ];
-    }, [pathname]);
 
     const SideLink = ({
         name = "",
