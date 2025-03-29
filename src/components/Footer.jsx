@@ -8,6 +8,7 @@ const aboutLink = [
     { name: "About Us", route: '/about-us' },
     { name: "Blogs", route: '/blogs' },
     { name: "Contact Us", route: '/contact-us' },
+    { name: "Career", route: '/career' },
 ];
 const socialLinks = [
     { icon: Facebook, link: '#', name: 'Facebook' },

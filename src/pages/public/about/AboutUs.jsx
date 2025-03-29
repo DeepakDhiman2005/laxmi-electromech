@@ -99,11 +99,11 @@ const AboutUs = () => {
                 <WhatWeDo />
                 <WhyChooseUs />
                 <OurExpertise />
-                <OurTeam />
+                {/* <OurTeam /> */}
                 <SustainabilitySection />
                 <ClientTestimonials />
-                {/* <Certifications /> */}
-                <CertificateLicense/>
+                <Certifications />
+                {/* <CertificateLicense/> */}
             </Box>
         </>
     )

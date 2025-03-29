@@ -17,6 +17,7 @@ const ManufacturingFacilityMachinery = lazy(() => import("../pages/public/manufa
 const OurClients = lazy(() => import("../pages/public/clients/OurClients"));
 const Quality = lazy(() => import("../pages/public/quality/Quality"));
 const Projects = lazy(() => import("../pages/public/projects/Projects"));
+const Careers = lazy(() => import("../pages/public/careers/Careers"));
 
 // admin
 const Dashboard = lazy(() => import('../admin/dashboard/Dashboard'));
@@ -36,6 +37,7 @@ const routes = [
     { path: '/our-clients', element: <OurClients /> },
     { path: '/quality', element: <Quality /> },
     { path: '/projects', element: <Projects/> },
+    { path: '/career', element: <Careers /> },
     {
         path: '/admin',
         element: <Outlet />,

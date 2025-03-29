@@ -38,7 +38,7 @@ const PlantAndMachinery = () => {
     // Image Card Component
     const ImageCard = ({ src, alt, caption }) => (
         <div
-            className="relative overflow-hidden rounded-lg shadow-md group cursor-pointer border border-blue-600"
+            className="relative overflow-hidden rounded-lg shadow-md group cursor-pointer border border-gray-300"
             onClick={() => handleImageClick(src)}
         >
             <img

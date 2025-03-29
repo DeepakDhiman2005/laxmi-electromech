@@ -111,7 +111,8 @@ const LatestBlog = () => {
                                 textAlign: "center",
                             }}
                         >
-                            <Typography variant="h5" fontWeight="bold" sx={{ mb: 1, color: "primary.main" }}>
+                            {/* <Typography variant="h5" fontWeight="bold" sx={{ mb: 1, color: "primary.main" }}> */}
+                            <Typography variant="h5" fontWeight="bold" sx={{ mb: 1, }} className="text-orange-500">
                                 Latest Blog
                             </Typography>
                             <BlogCard blog={blogData[0]} handleClick={handleClick} />

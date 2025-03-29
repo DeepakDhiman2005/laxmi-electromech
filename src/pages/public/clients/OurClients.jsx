@@ -19,7 +19,7 @@ const OurClients = () => {
                 <section className="flex w-full justify-center gap-6 flex-col sm:flex-row">
                     {/* Trusted Clients Card */}
                     <div className="bg-gradient-to-br from-blue-50 to-white shadow-sm border border-gray-200 p-8 rounded-xl w-full sm:w-1/2 text-center transform hover:-translate-y-2 transition-all duration-300">
-                        <h2 className="text-2xl sm:text-3xl text-blue-600 font-bold mb-4">
+                        <h2 className="text-2xl sm:text-3xl text-orange-500 font-bold mb-4">
                             Trusted by Industry Leaders
                         </h2>
                         <p className="text-gray-700 mb-4">
@@ -39,7 +39,7 @@ const OurClients = () => {
 
                     {/* Testimonials Card */}
                     <div className="bg-gradient-to-br from-blue-50 to-white shadow-sm border border-gray-200 p-8 rounded-xl w-full sm:w-1/2 text-center transform hover:-translate-y-2 transition-all duration-300">
-                        <h3 className="text-2xl sm:text-3xl text-blue-500 font-bold mb-4">
+                        <h3 className="text-2xl sm:text-3xl text-orange-500 font-bold mb-4">
                             What Our Clients Say
                         </h3>
                         <p className="text-gray-600 mb-4">
@@ -61,7 +61,7 @@ const OurClients = () => {
 
             {/* Clients Logos Grid */}
             <div className="flex flex-col w-full justify-center items-center gap-y-2">
-                <h2 className="text-2xl sm:text-3xl text-blue-600 font-bold my-4">
+                <h2 className="text-2xl sm:text-3xl text-gray-900 font-bold my-4">
                     We have served over <strong>12 customers</strong> across <strong>8 countries</strong>
                 </h2>
                 <div className="w-full grid grid-cols-2 sm:grid-cols-4 my-6 md:grid-cols-6 lg:grid-cols-8 gap-y-6">

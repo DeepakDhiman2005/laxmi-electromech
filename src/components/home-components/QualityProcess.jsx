@@ -3,6 +3,11 @@ import React from 'react';
 import Heading from '../heading/Heading';
 
 const QualityProcess = () => {
+  const Arrow = () => {
+    return <>
+      <span className="text-orange-500 mr-2">➤</span>
+    </>
+  }
   return (
     <div className="flex flex-col md:flex-row items-center justify-center px-4 md:px-8 py-1 bg-white">
       {/* Left Section: Text Content */}
@@ -19,19 +24,19 @@ const QualityProcess = () => {
           <h2 className="text-xl font-semibold text-blue-700 mb-2">QUALITY ASSURANCE (QA):</h2>
           <ul className="space-y-1">
             <li className="flex items-start">
-              <span className="text-blue-700 mr-2">➤</span>
+              <Arrow />
               <span>
                 <strong>ISO Certification:</strong> Adherence to ISO 9001 standards ensures consistent quality and continuous improvement in all processes.
               </span>
             </li>
             <li className="flex items-start">
-              <span className="text-blue-700 mr-2">➤</span>
+              <Arrow />
               <span>
                 <strong>Rigorous Inspections:</strong> Stringent quality checks from raw material procurement to final assembly of electrical panels and automation systems.
               </span>
             </li>
             <li className="flex items-start">
-              <span className="text-blue-700 mr-2">➤</span>
+              <Arrow />
               <span>
                 <strong>Automated Testing:</strong> Advanced automated systems minimize errors and enhance precision in panel manufacturing and EPC projects.
               </span>
@@ -44,19 +49,19 @@ const QualityProcess = () => {
           <h2 className="text-xl font-semibold text-blue-700 mb-2">QUALITY CONTROL (QC):</h2>
           <ul className="space-y-1">
             <li className="flex items-start">
-              <span className="text-blue-700 mr-2">➤</span>
+              <Arrow />
               <span>
                 <strong>Batch Testing:</strong> Random sampling and testing of production batches to maintain high standards across all products.
               </span>
             </li>
             <li className="flex items-start">
-              <span className="text-blue-700 mr-2">➤</span>
+              <Arrow />
               <span>
                 <strong>Failure Analysis:</strong> Detailed investigation of defects to identify root causes and implement corrective actions.
               </span>
             </li>
             <li className="flex items-start">
-              <span className="text-blue-700 mr-2">➤</span>
+              <Arrow />
               <span>
                 <strong>Customer Feedback:</strong> Integration of client feedback to continually enhance our electrical solutions and services.
               </span>

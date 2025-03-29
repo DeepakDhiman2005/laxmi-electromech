@@ -12,36 +12,50 @@ export const bannerData = [
     },
     {
         id: 2,
+        title: "Fabrication Plant",
+        imagePath: '/banners/Fabrication-Plant.png',
+        mobilePath: '/banners/Fabrication-Plant.png',
+        description: "CUSTOM DESIGN AND ENGINEERING OF ELECTRICAL AUTOMATION SYSTEMS.",
+    },
+    {
+        id: 3,
+        title: "Powder Coating Plant",
+        imagePath: '/banners/Powder-Coating-Plant.png',
+        mobilePath: '/banners/Powder-Coating-Plant.png',
+        description: "CUSTOM DESIGN AND ENGINEERING OF ELECTRICAL AUTOMATION SYSTEMS.",
+    },
+    {
+        id: 4,
         title: "PLC Control Panel",
         imagePath: '/banners/plc-control-panel.png',
         description: "MANUFACTURING OF ELECTRICAL CONTROL PANELS, MOTOR CONTROL CENTERS, AND OTHER AUTOMATION PANELS."
     },
     {
-        id: 3,
+        id: 5,
         title: "Automation Control Panel",
         imagePath: '/banners/automation-control-banner.png',
         description: "MANUFACTURING OF ELECTRICAL CONTROL PANELS, MOTOR CONTROL CENTERS, AND OTHER AUTOMATION PANELS."
     },
     {
-        id: 4,
+        id: 6,
         title: "Automation Control Panel",
         imagePath: '/banners/power-distribution-banner.png',
         description: "MANUFACTURING OF ELECTRICAL CONTROL PANELS, MOTOR CONTROL CENTERS, AND OTHER AUTOMATION PANELS."
     },
     {
-        id: 5,
+        id: 7,
         title: "Panel Manufacturering",
         imagePath: '/banners/panel-manufacturering.png',
         description: "MANUFACTURING OF ELECTRICAL CONTROL PANELS, MOTOR CONTROL CENTERS, AND OTHER AUTOMATION PANELS."
     },
     {
-        id: 6,
+        id: 8,
         title: "EPC Contracts",
         imagePath: '/banners/EPC-Contracts.png',
         description: "MANUFACTURING OF ELECTRICAL CONTROL PANELS, MOTOR CONTROL CENTERS, AND OTHER AUTOMATION PANELS."
     },
     {
-        id: 7,
+        id: 9,
         title: "Quality Assurance & Control",
         imagePath: '/banners/Quality-Assurance-&-Control.png',
         description: "MANUFACTURING OF ELECTRICAL CONTROL PANELS, MOTOR CONTROL CENTERS, AND OTHER AUTOMATION PANELS."

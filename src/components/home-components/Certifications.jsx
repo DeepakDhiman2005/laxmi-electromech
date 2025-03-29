@@ -6,22 +6,13 @@ const CertificateLicense = () => {
     const [selectedImage, setSelectedImage] = useState('');
 
     const certificates = [
-        {
-            src: '/certificates/INCORPORATION CERTIFICATE_page-0001.jpg',
-            alt: 'Incorporation Certificate',
-        },
-        {
-            src: '/certificates/ISO IEC 61439 -1-2020 - LAXMI ELECTROMECH PRIVATE LIMITED_page-0001.jpg',
-            alt: 'ISO IEC Certificate',
-        },
-        {
-            src: '/certificates/LAXMI ELECTROMECH EMS_page-0001.jpg',
-            alt: 'EMS Certification',
-        },
-        {
-            src: '/certificates/MSME CERTIFICATE_page-0001.jpg',
-            alt: 'MESE Certification',
-        },
+        { src: '/certificates/INCORPORATION CERTIFICATE_page-0001.jpg', alt: 'Incorporation Certificate' },
+        { src: '/certificates/ISO IEC 61439 -1-2020 - LAXMI ELECTROMECH PRIVATE LIMITED_page-0001.jpg', alt: 'ISO IEC Certificate' },
+        { src: '/certificates/LAXMI ELECTROMECH EMS_page-0001.jpg', alt: 'EMS Certification' },
+        { src: '/certificates/MSME CERTIFICATE_page-0001.jpg', alt: 'MSME Certification' },
+        { src: '/crpi/IP_CPRI_page-0001.jpg', alt: 'IP CPRI' },
+        { src: '/crpi/SHT_CKT_CPRI_page-0001.jpg', alt: 'SHT CKT CPRI' },
+        { src: '/crpi/TR_CPRI_page-0001.jpg', alt: 'TR CPRI' },
     ];
 
     const openOverlay = (imgSrc) => {
@@ -35,48 +26,44 @@ const CertificateLicense = () => {
 
     return (
         <>
-            <div className="bg-gray-100 py-2 w-full">
+            <div className="bg-gray-100 py-8 w-full">
                 <Heading startText="Our" endText="Certificates" />
-
-                {/* Certificate Grid */}
-                <div className="grid justify-center grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-full px-4 lg:px-12 gap-4">
+                <div className="grid justify-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-7  w-full px-4 lg:px-12 gap-6">
                     {certificates.map((cert, index) => (
-                        <div key={index} className='flex justify-center items-center'>
+                        <div key={index} className="flex justify-center items-center">
                             <div
-                                key={index}
-                                className="border-4 border-blue-500 bg-white p-2.5 shadow-md hover:shadow-lg transform hover:scale-105 transition-transform duration-300 ease-in-out w-[250px] cursor-pointer rounded-lg overflow-hidden"
+                                className="relative border-2 border-gray-300 bg-white rounded-lg shadow-lg hover:shadow-xl transition-transform duration-300 ease-in-out w-[260px] cursor-pointer overflow-hidden group"
                                 onClick={() => openOverlay(cert.src)}
                             >
                                 <img
                                     src={cert.src}
                                     alt={cert.alt}
-                                    className="w-full h-auto rounded-md transition-transform duration-300 ease-in-out hover:scale-110"
+                                    className="w-full h-auto rounded-md transition-transform duration-300 ease-in-out group-hover:scale-105"
                                 />
+                                <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+                                    <span className="text-white text-lg font-semibold">View Certificate</span>
+                                </div>
                             </div>
                         </div>
                     ))}
                 </div>
             </div>
 
-            {/* Lightbox Overlay */}
             {lightboxOpen && (
                 <div
                     className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-[10000] transition-opacity duration-300 ease-in-out"
                     onClick={closeOverlay}
                 >
-                    {/* Close Button */}
                     <span
-                        className="absolute top-5 right-7 text-white text-3xl cursor-pointer hover:scale-125 transition-transform duration-300 ease-in-out"
+                        className="absolute top-5 right-7 text-white text-4xl cursor-pointer hover:scale-125 transition-transform duration-300 ease-in-out"
                         onClick={closeOverlay}
                     >
                         ×
                     </span>
-
-                    {/* Enlarged Image */}
                     <img
                         src={selectedImage}
-                        alt="Enlarged Image"
-                        className="max-w-[80%] max-h-[80%] border-4 border-white shadow-[0_0_15px_white] rounded-lg transition-transform duration-300 ease-in-out scale-100"
+                        alt="Enlarged Certificate"
+                        className="max-w-[90%] max-h-[85%] border-4 border-white shadow-xl rounded-lg transition-transform duration-300 ease-in-out"
                     />
                 </div>
             )}

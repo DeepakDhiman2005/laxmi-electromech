@@ -123,11 +123,11 @@ const ContactUs = () => {
                 </Grid>
 
                 {/* Contact Form & Sidebar */}
-                <Grid container spacing={2} sx={{ py: 2 }}>
+                <Grid container spacing={2} sx={{ py: 2, alignItems: 'stretch' }}>
                     {/* Contact Form */}
-                    <Grid item lg={7} xl={8} xs={12}>
-                        <Card elevation={0} sx={{ p: { lg: 4, xs: 2 }, background: '#FFFFFF' }}>
-                            <CardContent component="form" onSubmit={formik.handleSubmit}>
+                    <Grid item lg={7} xl={8} xs={12} sx={{ display: 'flex' }}>
+                        <Card elevation={0} sx={{ p: { lg: 4, xs: 2 }, background: '#FFFFFF', display: 'flex', flexDirection: 'column', height: '100%' }}>
+                            <CardContent component="form" onSubmit={formik.handleSubmit} sx={{ flex: 1 }}>
                                 <Grid container spacing={2}>
                                     {['name', 'email', 'contact', 'message_title'].map((field) => (
                                         <Grid item xs={12} md={6} key={field}>
@@ -167,14 +167,19 @@ const ContactUs = () => {
                     </Grid>
 
                     {/* Sidebar */}
-                    <Grid item lg={5} xl={4} xs={12}>
-                        <Box sx={{ background: theme.palette.info.light }}>
-                            <Card elevation={0} sx={{ p: { lg: 4, xs: 2 }, background: '#FDFDFD' }}>
-                                <CardContent>
-                                    <Typography variant="h3" fontWeight="bold">How Can We Help You?</Typography>
-                                    <Typography variant="body1">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
+                    <Grid item lg={5} xl={4} xs={12} sx={{ display: 'flex' }}>
+                        <Box sx={{ background: theme.palette.info.light, flex: 1 }}>
+                            <Card elevation={0} sx={{ p: { lg: 4, xs: 2 }, background: '#FDFDFD', display: 'flex', flexDirection: 'column', height: '100%' }}>
+                                <CardContent sx={{ flex: 1 }}>
+                                    <Typography variant="h3" fontWeight="bold">Get in Touch</Typography>
+                                    <Typography variant="body1" sx={{ pl: 0.8 }}>
+                                        Have any questions or need assistance? Contact us today, and our team will be happy to help.
+                                        Whether you’re looking for more information, need technical support, or just want to share feedback,
+                                        our dedicated team is here to assist you every step of the way.
+                                        Reach out via email, phone, or follow us on social media to stay updated on the latest news, updates, and special offers.
+                                        We value your input and look forward to hearing from you!
                                     </Typography>
+
                                     <Stack direction="row">
                                         {[Facebook, Instagram, Twitter, LinkedIn].map((Icon, i) => (
                                             <IconButton key={i} sx={hoverStyle}>

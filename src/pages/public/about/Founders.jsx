@@ -23,13 +23,13 @@ const Founders = () => {
                 data-aos-delay="100"
             >
                 {/* Founder Image */}
-                <div className="w-32 h-32 rounded-full overflow-hidden mb-4">
+                {/* <div className="w-32 h-32 rounded-full overflow-hidden mb-4">
                     <img
                         src={image || "https://via.placeholder.com/150"}
                         alt={name}
                         className="w-full h-full object-cover"
                     />
-                </div>
+                </div> */}
 
                 {/* Founder Info */}
                 <h3 className="text-xl font-semibold text-gray-800 mb-1">{name}</h3>
@@ -39,24 +39,23 @@ const Founders = () => {
         );
     };
 
-    // Sample founder data
     const foundersData = [
         {
-            name: "John Doe",
-            title: "CEO & Founder",
-            description: "Visionary leader with 20+ years in electrical automation.",
-            image: "https://ambit.in/ambitImages/team/Anand_Singhal.png"
-        },
-        {
-            name: "Jane Smith",
-            title: "CTO",
-            description: "Tech innovator specializing in panel manufacturing.",
+            name: "Akhilesh Prasad Gupta",
+            title: "Director & CEO",
+            description: "Mr. A.P. Gupta, the first director of the company, has over 9 years of experience as a Maintenance Engineer at M/s Hindustan Developers Corporation Ltd. He later served as Head of Department at M/s Nice Diesel Engine (P) Ltd. With 13+ years at LEPL, he has been instrumental in driving innovation and excellence in electrical engineering and company operations.",
             image: "https://ambit.in/ambitImages/team/Rakesh_Jain.png"
         },
         {
-            name: "Mike Johnson",
-            title: "COO",
-            description: "Operations expert with a focus on EPC contracts.",
+            name: "Vandana Gupta",
+            title: "Director",
+            description: "Mrs. Vandana Gupta, the second director of the company, plays a key role in managing operations, human resources, and financial planning. With her strong leadership and expertise, she ensures seamless coordination across departments, contributing to the overall growth and success of the organization.",
+            image: "https://ambit.in/ambitImages/team/Anand_Singhal.png"
+        },
+        {
+            name: "Mr. Y C GAUR",
+            title: "Technical & Project Consultant",
+            description: "Mr. Y.C. Gaur is a highly experienced technical and project consultant with deep expertise in engineering solutions and project management. His strategic insights and technical knowledge help in optimizing processes, enhancing efficiency, and ensuring the successful execution of various projects.",
             image: "https://ambit.in/ambitImages/team/Akansha_Jain.png"
         }
     ];

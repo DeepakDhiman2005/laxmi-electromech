@@ -30,7 +30,7 @@ const Home = () => {
             <WhyChooseUs />
             <QualityProcess />
             <PlantAndMachinery />
-            <License />
+            {/* <License /> */}
             <ClientTestimonials />
             <Clientele />
             <LatestBlog />

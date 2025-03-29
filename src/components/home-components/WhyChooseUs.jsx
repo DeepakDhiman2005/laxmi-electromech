@@ -78,7 +78,8 @@ const WhyChooseUs = () => {
                                         width: 40, // Adjusted for better fit
                                         height: 40, // Adjusted for better fit
                                         borderRadius: "50%",
-                                        bgcolor: "primary.main",
+                                        // bgcolor: "primary.main",
+                                        background: '#f97316',
                                         display: "inline-flex",
                                         alignItems: "center",
                                         justifyContent: "center",

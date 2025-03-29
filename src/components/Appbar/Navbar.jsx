@@ -94,27 +94,48 @@ const Navbar = ({ isVisible }) => {
                             placeholder="Search here.."
                             sx={{ border: 'none', flex: 1 }}
                         />
-                        <Button
+                        {/* <Button
                             sx={{
                                 width: '50px',
                                 height: '40px',
                                 minWidth: '40px',
                                 minHeight: '40px',
-                                background: theme.palette.primary.main,
+                                // background: theme.palette.primary.main,
+                                background: '#c8c8c8',
+                                color: 'black !important',
                                 display: 'flex',
                                 alignItems: 'center',
                                 justifyContent: 'center',
-                                '&:hover': { background: theme.palette.primary.dark }, // Hover effect
+                                '&:hover': { 
+                                    // background: theme.palette.primary.dark,
+                                    background: theme.palette.primary.main,
+                                    color: 'white !important',
+                                }, // Hover effect
                             }}
+                        > */}
+                        <Button
+                            sx={(theme) => ({
+                                width: "50px",
+                                height: "40px",
+                                minWidth: "40px",
+                                minHeight: "40px",
+                                background: "#c8c8c8",
+                                color: "black !important",
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                                transition: "background 0.3s ease-in-out, color 0.3s ease-in-out",
+                            })}
+                            className='hover:!bg-blue-600 hover:!text-white transition-all'
                         >
-                            <Search fontSize="small" sx={{ color: '#fff' }} />
+                            <Search fontSize="small" />
                         </Button>
                     </Box>
 
 
                     {/* Icons */}
                     <Stack direction="row" alignItems={'center'} gap={1}>
-                      <QuoteButton />
+                        <QuoteButton />
 
                         <IconButton
                             sx={{

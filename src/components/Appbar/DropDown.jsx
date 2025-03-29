@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { useState, useEffect } from "react";
 import { Button, Typography } from "@mui/material";
-import { styled } from "@mui/system";
+import { borderColor, styled } from "@mui/system";
 import { useLocation, useNavigate } from "react-router-dom";
 import { KeyboardArrowDown, KeyboardArrowRight, KeyboardArrowUpOutlined } from "@mui/icons-material";
 import AOS from "aos";
@@ -47,10 +47,16 @@ const MainStyledButton = styled(Button)(({ active }) => ({
     width: "100%",
     height: "30px", // Ensuring uniform height
     textTransform: "none",
-    // borderBottom: active ? "3px solid #1C85C6" : "none",
-    color: active ? "#1C85C6" : "#000",
+    color: active ? "#1C85C6 !important" : "#000",
+    background: active ? 'white !important': '#1C85C6',
+    border: '1px solid #1C85C6',
+    transition: 'all 0.3s ease-in-out !important',
     borderRadius: "2px",
-    "&:hover": { color: "#1C85C6" },
+    "&:hover": {
+        color: "#1C85C6 !important", // text-orange-500
+        background: "white",
+        // borderColor: "#FB923C", // border-orange-500
+    },
 }));
 
 const DropdownMenu = ({ items }) => {

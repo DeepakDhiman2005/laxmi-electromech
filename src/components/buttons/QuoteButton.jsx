@@ -25,6 +25,7 @@ const QuoteButton = () => {
           borderTopRightRadius: "12px",
           gap: "6px",
           background: "linear-gradient(45deg, #1976d2, #42a5f5)",
+          // background: "linear-gradient(45deg, #f97316, #fb923c)",
           color: "white",
           "&:hover": {
             background: "linear-gradient(45deg, #1565c0, #2196f3)",
