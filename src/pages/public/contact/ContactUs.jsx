@@ -72,7 +72,7 @@ const ContactUs = () => {
 
     // Contact Cards Data
     const contactCards = [
-        { icon: <Map />, title: 'Our Location', details: [' A-139, B-06, GALI NO. 1,', ' MADHU VIHAR, I.P EXTENSION, DELHI110092'] },
+        { icon: <Map />, title: 'Location', details: [' A-139, B-06, GALI NO. 1,', ' MADHU VIHAR, I.P EXTENSION, DELHI110092'] },
         { icon: <Drafts />, title: 'Send an Email', details: ['info@laxmielectromech.com', 'apglaxmi2009@gmail.com'] },
         { icon: <Headset />, title: 'Contact Us', details: [' +91-9811983451', '+91-9643401344'] },
     ];
