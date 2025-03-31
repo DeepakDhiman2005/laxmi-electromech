@@ -103,7 +103,7 @@ const Founders = () => {
                         <div className="w-full space-y-1">
                             <h2 className="font-semibold text-[24px] sm:text-[25px] leading-tight">Akhilesh Prasad Gupta</h2>
                             <h3 className="font-semibold text-[15px] sm:text-[16px] text-orange-500">Director & CEO</h3>
-                            <p className="text-[14px] sm:text-[15px]">With over 35+ years of expertise in electrical project management and panel manufacturing, specializing in power distribution, control systems, and automation solutions. Proven track record in delivering high-quality, industry-compliant solutions with a focus on efficiency, reliability, and innovation.</p>
+                            <p className="text-[14px] sm:text-[15px]">With over 35+ years of experience in electrical project management and panel manufacturing, specializing in power distribution, control systems, and automation solutions. Proven track record in delivering high-quality, industry-compliant solutions with a focus on efficiency, reliability, and innovation.</p>
                         </div>
                     </div>
                 </div>

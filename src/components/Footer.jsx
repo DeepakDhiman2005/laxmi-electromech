@@ -5,13 +5,19 @@ import { ChevronRight, Facebook, Instagram, LinkedIn, Send, Twitter } from '@mui
 import FooterImg from '../assets/images/footer.jpg';
 
 const aboutLink = [
+    { name: 'Home', route: '/' },
     { name: "About Us", route: '/about-us' },
-    { name: "Blogs", route: '/blogs' },
+    // { name: 'Our Products', route: '/category/electrical-automation/plc-control-panel' },
+    // { name: 'Manufacturing Facility Machinery', route: '/manufacturing-facility-machinery' },
+    { name: 'Our Clients', route: '/our-clients' },
+    { name: 'Quality', route: '/quality' },
+    // { name: "Blogs", route: '/blogs' },
     { name: "Contact Us", route: '/contact-us' },
+    { name: 'Projects', route: '/projects' },
     { name: "Career", route: '/career' },
 ];
 const socialLinks = [
-    { icon: Facebook, link: '#', name: 'Facebook' },
+    { icon: Facebook, link: 'https://www.facebook.com/share/1D3ha3whwF/', name: 'Facebook' },
     { icon: Instagram, link: '#', name: 'Instagram' },
     { icon: Twitter, link: '#', name: 'Twitter' },
     { icon: LinkedIn, link: '#', name: 'LinkedIn' }
@@ -50,7 +56,7 @@ const Footer = () => {
             >
                 <Grid
                     container
-                    justifyContent="center"
+                    justifyContent="space-around"
                     alignItems="center"
                 >
                     {/* Follow Ups Section */}
@@ -69,7 +75,7 @@ const Footer = () => {
                     </Grid>
 
                     {/* Newsletter Sign-up */}
-                    <Grid item xs={12} sm={6} md={4}>
+                    {/* <Grid item xs={12} sm={6} md={4}>
                         <Typography variant="h5" sx={{ color: "#fff" }}>Sign Up To Newsletter</Typography>
                         <Typography variant="body2" sx={{ color: "#e0e0e0" }}>
                             We post regularly interesting application photos and articles regarding drilling & bevelling.
@@ -92,7 +98,7 @@ const Footer = () => {
                                 }
                             />
                         </Stack>
-                    </Grid>
+                    </Grid> */}
 
                     {/* Location */}
                     <Grid item xs={12} sm={12} md={4}>
@@ -165,8 +171,9 @@ const Footer = () => {
                                 Contact Info
                                 <Divider sx={{ background: '#fff' }} />
                             </Typography>
-                            <Typography variant='body2'><strong>Address:</strong> A-139, B-06, GALI NO. 1, MADHU VIHAR, I.P EXTENSION, DELHI110092</Typography>
-                            <Typography variant='body2'><strong>Email:</strong> <span className='text-blue-500'>apglaxmi2009@gmail.com</span></Typography>
+                            <Typography variant='body2'><strong>Registered Address:</strong> A-139, B-06, GALI NO. 1, MADHU VIHAR, I.P EXTENSION, DELHI110092</Typography>
+                            <Typography variant='body2'><strong>Office Address:</strong> A-09, SECTOR-59, NOIDA, U.P - 201301</Typography>
+                            <Typography variant='body2'><strong>Email:</strong> <span className='text-blue-500'>info@laxmielectromech.com</span><br/><span className='text-blue-500'>apglaxmi2009@gmail.com</span></Typography>
                             <Typography variant='body2'><strong>Phone:</strong> +91-9811983451, +91-9643401344</Typography>
                         </Grid>
 
