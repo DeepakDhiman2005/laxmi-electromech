@@ -54,7 +54,7 @@ const MainStyledButton = styled(Button)(({ active }) => ({
     borderRadius: "2px",
     "&:hover": {
         // color: "#1C85C6 !important", // text-orange-500
-        background: "#FB923C !important", // text-orange-500
+        background: active ? "white": "#FB923C !important", // text-orange-500
         // background: "white",
         borderColor: "#FB923C", // border-orange-500
     },

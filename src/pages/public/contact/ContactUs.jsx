@@ -72,9 +72,9 @@ const ContactUs = () => {
 
     // Contact Cards Data
     const contactCards = [
-        { icon: <Map />, title: 'Location', details: [' A-139, B-06, GALI NO. 1,', ' MADHU VIHAR, I.P EXTENSION, DELHI110092'] },
+        { icon: <Map />, title: 'Location', details: [' A-139, B-06, GALI NO. 1,', ' MADHU VIHAR, I.P EXTENSION, DELHI110092', 'A-09, SECTOR-59, NOIDA, U.P - 201301'] },
         { icon: <Drafts />, title: 'Send an Email', details: ['info@laxmielectromech.com', 'apglaxmi2009@gmail.com'] },
-        { icon: <Headset />, title: 'Contact Us', details: [' +91-9811983451', '+91-9643401344'] },
+        { icon: <Headset />, title: 'Contact Us', details: ['+91-96434-01345', ' 0120-4298137'] },
     ];
 
     return (
@@ -99,10 +99,10 @@ const ContactUs = () => {
             {/* Contact Information */}
             {/* <Box sx={{ py: 2, px: { lg: 12, md: 2, sm: 2, xs: 2 }, background: theme.palette.info.main }}> */}
             <Box sx={{ py: 2, px: { lg: 6, md: 2, sm: 2, xs: 2 }, background: theme.palette.info.main }}>
-                <Grid container spacing={2} justifyContent="space-between">
+                <Grid container spacing={2} justifyContent="space-between" sx={{ display: 'flex', flexWrap: 'wrap' }}>
                     {contactCards.map((card, index) => (
-                        <Grid item xs={12} md={4} key={index}>
-                            <Card elevation={0} sx={{ background: '#FFFFFF' }}>
+                        <Grid item xs={12} md={4} key={index} sx={{ display: 'flex' }}>
+                            <Card elevation={0} sx={{ background: '#FFFFFF', flexGrow: 1  }}>
                                 <CardContent>
                                     <Stack direction="column" spacing={1} alignItems="center" justifyContent="center">
                                         <Box sx={{ ...hoverStyle1, background: theme.palette.error.main, color: '#fff', p: 1 }}>
@@ -116,7 +116,7 @@ const ContactUs = () => {
                                         </Box>
                                     </Stack>
                                 </CardContent>
-                                {index < contactCards.length - 1 && <Divider />}
+                                {/* {index < contactCards.length - 1 && <Divider />} */}
                             </Card>
                         </Grid>
                     ))}
