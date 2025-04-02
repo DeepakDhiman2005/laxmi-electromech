@@ -3,6 +3,7 @@ import { Box, Button, Divider, Grid, IconButton, OutlinedInput, Stack, Typograph
 import { useNavigate } from 'react-router-dom';
 import { ChevronRight, Facebook, Instagram, LinkedIn, Send, Twitter } from '@mui/icons-material';
 import FooterImg from '../assets/images/footer.jpg';
+import { useMemo } from 'react';
 
 const aboutLink = [
     { name: 'Home', route: '/' },
@@ -25,6 +26,19 @@ const socialLinks = [
 const Footer = () => {
     const navigate = useNavigate();
     const theme = useTheme();
+
+    const links = useMemo(() => [
+            { name: "PLC Control Panel", route: "/category/electrical-automation/plc-control-panel" },
+            { name: "HMI Touch Panel", route: "/category/electrical-automation/hmi-touch-panel" },
+            { name: "SCADA System", route: "/category/electrical-automation/scada-system" },
+            // { name: "Motor Control Centre", route: "/category/electrical-automation/motor-control-centre" },
+            { name: "VFD Drive", route: "/category/electrical-automation/vfd-drive" },
+            { name: "Soft Starter", route: "/category/electrical-automation/soft-starter" },
+            // { name: "Electrical Control Panel", route: "/category/electrical-automation/electrical-control-panel" },
+            // { name: "Automation Control Panel", route: "/category/electrical-automation/automation-control-panel" },
+            { name: "Remote I/O Module", route: "/category/electrical-automation/remote-io-module" },
+            { name: 'More...', route: "/category/electrical-automation/plc-control-panel" },
+        ], []);
 
     const hoverStyle = {
         display: "flex",
@@ -127,11 +141,11 @@ const Footer = () => {
                     background: 'rgba(0,0,0,0.9)', height: '100%', width: '100%', py: 3,
                     px: { xs: 2, sm: 2, md: 2, lg: 6, xl: 8 },
                 }}>
-                    <Grid 
-                        container 
-                        justifyContent="space-between" 
-                        sx={{ 
-                            width: '100%', 
+                    <Grid
+                        container
+                        justifyContent="space-between"
+                        sx={{
+                            width: '100%',
                             rowGap: { xs: 1.5, sm: 1, md: 1, lg: 0 }, // Decreased vertical gap
                             columnGap: { xs: 1, sm: 1, md: 1, lg: 2 } // Added horizontal gap control
                         }}
@@ -144,7 +158,7 @@ const Footer = () => {
                             </Typography>
                             <Stack spacing={2}>
                                 <Typography variant='body2'>
-                                    Laxmi Electromech Pvt. Ltd. specializes in electrical automation, panel manufacturing, and EPC contracts, delivering innovative, high-quality, and reliable solutions tailored to diverse client needs with excellence.
+                                    Laxmi Electromech Pvt. Ltd. is a leading expert in electrical automation, panel manufacturing, and EPC (Engineering, Procurement, and Construction) contracts. With a strong commitment to innovation, quality, and reliability, we design and deliver cutting-edge solutions that cater to a wide range of industries. Our expertise lies in developing customized, high-performance electrical systems that enhance efficiency, safety, and productivity.
                                 </Typography>
                             </Stack>
                         </Grid>
@@ -165,6 +179,21 @@ const Footer = () => {
                             </Stack>
                         </Grid>
 
+                        <Grid item xs={12} sm={6} md={3} lg={2} xl={3}>
+                            <Typography variant='h5' color="primary" fontWeight="bold" textTransform="uppercase" mb={1}>
+                                Products
+                                <Divider sx={{ background: '#fff' }} />
+                            </Typography>
+                            <Stack>
+                                {links.map((list, index) => (
+                                    <Stack key={index} direction={'row'} alignItems={'center'} sx={{ py: 0, my: 0 }}>
+                                        <ChevronRight />
+                                        <Button onClick={() => navigate(list.route)} sx={hoverStyle}>{list.name}</Button>
+                                    </Stack>
+                                ))}
+                            </Stack>
+                        </Grid>
+
                         {/* Contact Info */}
                         <Grid item xs={12} sm={6} md={6} lg={2.4} xl={3}>
                             <Typography variant='h5' color="primary" fontWeight="bold" textTransform="uppercase" mb={1}>
@@ -173,12 +202,12 @@ const Footer = () => {
                             </Typography>
                             <Typography variant='body2'><strong>Registered Address:</strong> A-139, B-06, GALI NO. 1, MADHU VIHAR, I.P EXTENSION, DELHI110092</Typography>
                             <Typography variant='body2'><strong>Office Address:</strong> A-09, SECTOR-59, NOIDA, U.P - 201301</Typography>
-                            <Typography variant='body2'><strong>Email:</strong> <span className='text-blue-500'>info@laxmielectromech.com</span><br/><span className='text-blue-500'>apglaxmi2009@gmail.com</span></Typography>
+                            <Typography variant='body2'><strong>Email:</strong> <span className='text-blue-500'>info@laxmielectromech.com</span><br /><span className='text-blue-500'>apglaxmi2009@gmail.com</span></Typography>
                             <Typography variant='body2'><strong>Phone:</strong> +91-9811983451, +91-9643401344</Typography>
                         </Grid>
 
                         {/* Newsletter Subscription */}
-                        <Grid item xs={12} sm={6} md={6} lg={2.4} xl={3}>
+                        {/* <Grid item xs={12} sm={6} md={6} lg={2.4} xl={3}>
                             <Typography variant='h5' color="primary" fontWeight="bold" textTransform="uppercase" mb={1}>
                                 Stay Updated
                                 <Divider sx={{ background: '#fff' }} />
@@ -204,7 +233,7 @@ const Footer = () => {
                                     }
                                 />
                             </Stack>
-                        </Grid>
+                        </Grid> */}
                     </Grid>
 
                     <Divider sx={{ background: '#fff', my: 2.5 }} />
