@@ -30,7 +30,7 @@ const WhyChooseUs = () => {
         <Box
             sx={{
                 py: 5,
-                px: { md: 2, lg: 6, xl: 6, xs: 2 },
+                px: { md: 2, lg: 4, xl: 4, xs: 2 },
                 backgroundImage: `url('/images/banners/banner1.jpg')`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
@@ -62,16 +62,18 @@ const WhyChooseUs = () => {
                                 sx={{
                                     textAlign: "center",
                                     p: 2,
-                                    borderRadius: 3,
+                                    borderRadius: '10px !important',
                                     boxShadow: 4,
                                     transition: "0.4s",
+                                    overflow: 'hidden',
                                     bgcolor: "white",
                                     display: "flex",
                                     flexDirection: "column",
                                     height: "150px", // Set height to 180px
                                     flexGrow: 1,
-                                    "&:hover": { boxShadow: 8, transform: "translateY(-5px)" },
+                                    "&:hover": { boxShadow: 8, transform: "translateY(-7px)" },
                                 }}
+                                className="border-l-[5px] overflow-hidden border-solid border-l-[#f97316] hover:!bg-gray-200"
                             >
                                 <Box
                                     sx={{

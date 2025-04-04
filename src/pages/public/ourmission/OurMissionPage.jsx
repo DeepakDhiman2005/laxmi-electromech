@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Box, Card, CardContent, Divider, Grid, Stack, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Box, Card, CardContent, Grid, Stack, Typography, useMediaQuery, useTheme } from "@mui/material";
 import PointerBox from "../../../utils/PointerBox";
 import Img1 from '../../../assets/icons/goal.png';
 import Img2 from '../../../assets/icons/binocular.png';
@@ -23,40 +23,27 @@ const OurMissionPage = () => {
         {
             image: Img2,
             title: "Our Vision",
-            bgColor: "green",
-            bgColor1: '#ffffff',
-            items: [
-                "Deliver high-quality electrical panels, automation systems, and EPC solutions with innovation, safety, and sustainability.",
-                "Provide tailored electrical and automation solutions with exceptional service and expertise.",
-                "Empower customers with reliable, efficient, and sustainable solutions while driving continuous improvement."
-            ],
+            // bgColor: "green",
+            // bgColor1: "#ffffff",
+            bgColor: "#4b5563",
+            bgColor1: "rgba(0,0,0,0.1)",
+            content: "We aim to deliver innovative electrical and automation solutions that ensure safety, efficiency, and sustainability. Our goal is to provide expert services that integrate advanced technology for a smarter future.",
         },
         {
             image: Img1,
             title: "Our Mission",
             bgColor: "blue",
             bgColor1: "#e3f2fd",
-            items: [
-                "Lead in comprehensive electrical solutions, empowering industries to automate and thrive.",
-                "Innovate industry and infrastructure with advanced electrical, automation, and EPC solutions.",
-                "Be the trusted partner in electrical and automation, driving efficiency and sustainability."
-            ],
+            content: "Our mission is to lead industries with cutting-edge automation and control solutions. We strive to advance electrical engineering for a long-term global impact while empowering businesses with customized energy-efficient solutions.",
         },
         {
             image: Img3,
             title: "Our Values",
-            bgColor: "purple",
-            bgColor1: "#f3e5f5",
-            items: [
-                "Customer Focus",
-                "Innovation & Excellence",
-                "Safety & Reliability",
-                "Sustainability",
-                "Collaboration",
-                // "Integrity & Transparency",
-                "Quality & Precision",
-                // "Adaptability"
-            ],
+            // bgColor: "purple",
+            // bgColor1: "#f3e5f5",
+            bgColor: "#4b5563",
+            bgColor1: "rgba(0,0,0,0.1)",
+            content: "We uphold integrity, transparency, and ethical responsibility in all our business dealings. Our commitment to quality, reliability, and service excellence drives us forward, while innovation and sustainability remain at the core of our continuous improvement efforts.",
         },
     ];
 
@@ -64,14 +51,15 @@ const OurMissionPage = () => {
         <Box sx={{
             py: 2,
             pt: 4,
-            // px: { xs: 2, sm: 2, md: 2, lg: 12, xl: 12 },
-            px: { md: 2, lg: 6, xl: 6, xs: 2 },
+            px: { md: 2, lg: 4, xl: 4, xs: 2 },
             background: '#f1f2f9',
         }}>
-            <Grid container spacing={3}>
+            <Grid container spacing={3} 
+            className="text-gray-500"
+            >
                 {sections.map((section, index) => (
-                    <Grid item xs={12} lg={4} key={index}>
-                        <Box sx={{ py: 1, position: "relative" }} data-aos="fade-up">
+                    <Grid item xs={12} lg={4} key={index} sx={{ pb: 0 }}>
+                        <Box sx={{ pt: 1, position: "relative" }} data-aos="fade-up">
                             <PointerBox
                                 bgColor={section.bgColor}
                                 image={section.image}
@@ -85,17 +73,13 @@ const OurMissionPage = () => {
                                     zIndex: 9999,
                                 }}
                             />
-                            <Card sx={{ background: section.bgColor1, px: 3, py: 1, height: isMobile ? 'auto': '265px' }} elevation={0}>
+                            <Card sx={{ background: section.bgColor1, px: 3, pt: 1, height: isMobile ? 'auto' : '195px', color: section.color ? section.color: 'black' }} elevation={0}>
                                 <CardContent>
-                                    <Stack spacing={1}>
-                                        <Typography variant="h4" textAlign={'center'}>{section.title}</Typography>
-                                        {section.items.map((item, idx) => (
-                                            <Stack direction={'row'} key={idx}>
-                                                <Typography variant="body2">
-                                                    • {item}
-                                                </Typography>
-                                            </Stack>
-                                        ))}
+                                    <Stack spacing={0.5}>
+                                        <Typography variant="h4" textAlign="center" sx={{ fontSize: '30px' }}>{section.title}</Typography>
+                                        <Typography variant="body2" textAlign="center">
+                                            {section.content}
+                                        </Typography>
                                     </Stack>
                                 </CardContent>
                             </Card>

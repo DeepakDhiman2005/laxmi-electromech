@@ -11,6 +11,11 @@
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
 
+  --colorOne: #2457AA !important;
+  --colorTwo: #FFD200 !important;
+  --colorThree: #F6F9FF !important;
+  --chalk: #f5f5f5;
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -22,6 +27,7 @@ a {
   color: #646cff;
   text-decoration: inherit;
 }
+
 a:hover {
   color: #535bf2;
 }
@@ -50,13 +56,19 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
 }
+
 /* button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 } */
+
+.testimonial_bg-section {
+  background: linear-gradient(5deg, var(--colorOne) 30%, rgb(255, 253, 253) 30%);
+}
 
 b {
   font-weight: 600 !important;
@@ -67,9 +79,11 @@ b {
     color: #213547;
     background-color: #ffffff;
   }
+
   a:hover {
     color: #747bff;
   }
+
   button {
     background-color: #f9f9f9;
   }

@@ -2,7 +2,7 @@ const electricalAutomation = [
     {
         category: 'plc-control-panel',
         description: `
-            <h2 style="font-size: 24px; font-weight: bold; color: #2563eb; margin: 2px 0;">PLC Control Panel</h2>
+            <h2 style="font-size: 24px; font-weight: bold; color: #2457AA; margin: 2px 0;">PLC Control Panel</h2>
             <p style="font-size: 18px; margin: 2px 0;">
                 A <b>PLC (Programmable Logic Controller) Control Panel</b> is an essential component in industrial automation, 
                 designed to control various machines, processes, and production lines efficiently. These control panels integrate 
@@ -12,18 +12,18 @@ const electricalAutomation = [
             <div style="display: flex; justify-content: start; margin: 10px 0;">
                 <img src="/images/laxmi-services/plc-control-panel.jpg" style="width: 50%; border-radius: 8px;" alt="PLC Control Panel" />
             </div>
-            <h3 style="font-size: 22px; font-weight: bold; color: #2563eb; margin: 2px 0;">Features of PLC Control Panel:</h3>
+            <h3 style="font-size: 22px; font-weight: bold; color: #2457AA; margin: 2px 0;">Features of PLC Control Panel:</h3>
             <p style="font-size: 18px; margin: 2px 0;">
                 PLC Control Panels are equipped with state-of-the-art programmable automation technology, allowing industries to automate complex processes with precision. These panels offer high reliability and are designed for continuous operation with minimal downtime. They also support remote monitoring and control, enabling seamless integration with HMI and SCADA systems. Their energy-efficient design optimizes power consumption, making them a cost-effective solution. Built with robust materials, they ensure durability and long-lasting performance, and they support multiple I/O options, allowing for versatile connectivity.
             </p>
             <div style="display: flex; justify-content: start; margin: 10px 0;">
                 <img src="/images/laxmi-services/plc-control-panel-2.jpg" style="width: 50%; border-radius: 8px;" alt="PLC Control Panel" />
             </div>
-            <h3 style="font-size: 22px; font-weight: bold; color: #2563eb; margin: 2px 0;">Applications of PLC Control Panel:</h3>
+            <h3 style="font-size: 22px; font-weight: bold; color: #2457AA; margin: 2px 0;">Applications of PLC Control Panel:</h3>
             <p style="font-size: 18px; margin: 2px 0;">
                 PLC Control Panels play a crucial role in various industries, enhancing automation and process control. They are extensively used in manufacturing plants for automating production lines and machinery, ensuring precision and consistency. The food and beverage industry benefits from their ability to maintain hygiene and efficiency in processing operations. Water and wastewater treatment facilities rely on these panels for monitoring and controlling filtration, pumping, and chemical dosing processes. Additionally, PLC panels are integral to power generation and distribution, pharmaceutical and chemical industries, and material handling and conveyor systems, optimizing workflows and reducing manual intervention.
             </p>
-            <h3 style="font-size: 22px; font-weight: bold; color: #2563eb; margin: 2px 0;">Why Choose Our PLC Control Panels?</h3>
+            <h3 style="font-size: 22px; font-weight: bold; color: #2457AA; margin: 2px 0;">Why Choose Our PLC Control Panels?</h3>
             <p style="font-size: 18px; margin: 2px 0;">
                 Our PLC Control Panels are designed to meet the specific needs of industrial automation. We ensure rigorous quality checks to guarantee optimal performance, reliability, and safety. Whether you require a basic automation system or a highly advanced control solution, we provide customizable panels that enhance efficiency and minimize operational costs. Our team of experts works closely with clients to develop tailored solutions, ensuring smooth integration with existing systems. By investing in our PLC Control Panels, industries benefit from reduced downtime, improved accuracy, and better overall productivity.
             </p>
@@ -35,7 +35,7 @@ const electricalAutomation = [
     {
         category: 'hmi-touch-panel',
         description: `
-            <h2 style="font-size: 28px; font-weight: bold; color: #2563eb; margin: 2px 0;">HMI Touch Panel</h2>
+            <h2 style="font-size: 28px; font-weight: bold; color: #2457AA; margin: 2px 0;">HMI Touch Panel</h2>
             <p style="font-size: 18px; margin: 2px 0;">
                 An <b>HMI (Human-Machine Interface) Touch Panel</b> is an advanced interface device that allows operators to interact with industrial automation systems. 
                 Designed for intuitive control, these panels provide real-time monitoring, data visualization, and seamless control of machinery and processes. 
@@ -53,7 +53,7 @@ const electricalAutomation = [
                 Whether used in manufacturing plants, energy management, or automation control, HMI Touch Panels provide an efficient and reliable solution for modern industrial processes. 
                 Their advanced connectivity options allow integration with IoT and remote monitoring systems, enabling smart automation and enhanced decision-making.
             </p>
-            <h3 style="font-size: 24px; font-weight: bold; color: #2563eb; margin: 2px 0;">Why Choose Our HMI Touch Panels?</h3>
+            <h3 style="font-size: 24px; font-weight: bold; color: #2457AA; margin: 2px 0;">Why Choose Our HMI Touch Panels?</h3>
             <p style="font-size: 18px; margin: 2px 0;">
                 We offer high-quality HMI Touch Panels designed for superior performance, easy usability, and long-term reliability. 
                 Our solutions are tailored to meet specific industrial needs, ensuring optimal efficiency, safety, and productivity in automation systems.
@@ -66,7 +66,7 @@ const electricalAutomation = [
     {
         category: 'scada-system',
         description: `
-            <h2 style="font-size: 22px; font-weight: bold; color: #2563eb; margin: 2px 0;">SCADA System</h2>
+            <h2 style="font-size: 22px; font-weight: bold; color: #2457AA; margin: 2px 0;">SCADA System</h2>
             <p style="font-size: 18px; margin: 2px 0;">
                 A <b>SCADA (Supervisory Control and Data Acquisition) System</b> is a centralized control system used to monitor, analyze, and manage industrial processes in real time. 
                 SCADA systems collect data from remote sensors, PLCs, and other automation devices to provide operators with an intuitive interface for overseeing operations. 
@@ -84,7 +84,7 @@ const electricalAutomation = [
                 SCADA systems are widely used in various industries, including energy, water treatment, manufacturing, and transportation. 
                 They provide remote monitoring capabilities, reduce operational costs, and improve overall efficiency through predictive maintenance and automated control.
             </p>
-            <h3 style="font-size: 22px; font-weight: bold; color: #2563eb; margin: 2px 0;">Why Choose Our SCADA Systems?</h3>
+            <h3 style="font-size: 22px; font-weight: bold; color: #2457AA; margin: 2px 0;">Why Choose Our SCADA Systems?</h3>
             <p style="font-size: 18px; margin: 2px 0;">
                 Our SCADA solutions are designed for reliability, scalability, and security. 
                 We provide customizable configurations tailored to industry-specific needs, ensuring optimal performance in mission-critical applications. 
@@ -95,7 +95,7 @@ const electricalAutomation = [
     {
         category: 'motor-control-centre',
         description: `
-            <h2 style="font-size: 24px; font-weight: bold; color: #2563eb; margin: 2px 0;">Motor Control Centre (MCC)</h2>
+            <h2 style="font-size: 24px; font-weight: bold; color: #2457AA; margin: 2px 0;">Motor Control Centre (MCC)</h2>
             <p style="font-size: 18px; margin: 2px 0;">
                 A <b>Motor Control Centre (MCC)</b> is an essential component in industrial and commercial power distribution systems, designed to control and manage multiple electric motors from a centralized location. 
                 MCCs are widely used in manufacturing plants, power generation, and automation industries to enhance operational efficiency, safety, and reliability.
@@ -112,7 +112,7 @@ const electricalAutomation = [
                 MCCs are commonly used in industries such as power plants, water treatment, HVAC systems, and conveyor operations, where precise motor control is critical. 
                 The integration of PLCs and SCADA systems with MCC panels further enhances automation capabilities, ensuring smooth process control and improved operational safety.
             </p>
-            <h3 style="font-size: 24px; font-weight: bold; color: #2563eb; margin: 2px 0;">Why Choose Our MCC Panels?</h3>
+            <h3 style="font-size: 24px; font-weight: bold; color: #2457AA; margin: 2px 0;">Why Choose Our MCC Panels?</h3>
             <p style="font-size: 18px; margin: 2px 0;">
                 Our MCC panels are designed for durability, efficiency, and ease of maintenance. 
                 With a modular and space-saving design, our solutions provide enhanced electrical safety and compliance with industry standards. 
@@ -123,7 +123,7 @@ const electricalAutomation = [
     {
         category: 'vfd-drive',
         description: `
-            <h2 style="font-size: 24px; font-weight: bold; color: #2563eb; margin: 2px 0;">VFD Drive</h2>
+            <h2 style="font-size: 24px; font-weight: bold; color: #2457AA; margin: 2px 0;">VFD Drive</h2>
             <p style="font-size: 18px; margin: 2px 0;">
                 A <b>Variable Frequency Drive (VFD)</b> is an advanced motor control device that regulates the speed and torque of electric motors 
                 by varying the input voltage and frequency. It plays a crucial role in enhancing energy efficiency, reducing mechanical stress, 
@@ -143,7 +143,7 @@ const electricalAutomation = [
                 control is essential. By integrating VFDs with automation systems like PLCs and SCADA, industries can achieve enhanced process efficiency, 
                 improved safety, and reduced operational costs.
             </p>
-            <h3 style="font-size: 24px; font-weight: bold; color: #2563eb; margin: 2px 0;">Why Choose Our VFD Drives?</h3>
+            <h3 style="font-size: 24px; font-weight: bold; color: #2457AA; margin: 2px 0;">Why Choose Our VFD Drives?</h3>
             <p style="font-size: 18px; margin: 2px 0;">
                 Our VFD drives are engineered for superior performance, energy efficiency, and ease of use. Whether for simple speed control applications 
                 or complex automation processes, our solutions are designed to meet industrial standards. We offer a range of VFDs suitable for different 
@@ -154,7 +154,7 @@ const electricalAutomation = [
     {
         category: 'soft-starter',
         description: `
-            <h2 style="font-size: 24px; font-weight: bold; color: #2563eb; margin: 2px 0;">Soft Starter</h2>
+            <h2 style="font-size: 24px; font-weight: bold; color: #2457AA; margin: 2px 0;">Soft Starter</h2>
             <p style="font-size: 18px; margin: 2px 0;">
                 A <b>Soft Starter</b> is an advanced motor control device that gradually increases the voltage supplied to an electric motor, 
                 ensuring smooth acceleration and minimizing mechanical stress. It helps in reducing inrush current, preventing voltage dips, 
@@ -173,7 +173,7 @@ const electricalAutomation = [
                 and mechanical stress is crucial. By integrating Soft Starters into industrial automation, businesses can enhance energy efficiency, reduce 
                 maintenance costs, and improve overall operational reliability.
             </p>
-            <h3 style="font-size: 24px; font-weight: bold; color: #2563eb; margin: 2px 0;">Why Choose Our Soft Starters?</h3>
+            <h3 style="font-size: 24px; font-weight: bold; color: #2457AA; margin: 2px 0;">Why Choose Our Soft Starters?</h3>
             <p style="font-size: 18px; margin: 2px 0;">
                 Our Soft Starters are engineered for superior performance and flexibility, offering adjustable start and stop times, overload protection, 
                 and advanced motor diagnostics. Whether for small or large-scale industrial applications, our Soft Starters provide the perfect balance 
@@ -184,7 +184,7 @@ const electricalAutomation = [
     {
         category: 'electrical-control-panel',
         description: `
-            <h2 style="font-size: 24px; font-weight: bold; color: #2563eb; margin: 2px 0;">Electrical Control Panel</h2>
+            <h2 style="font-size: 24px; font-weight: bold; color: #2457AA; margin: 2px 0;">Electrical Control Panel</h2>
             <p style="font-size: 18px; margin: 2px 0;">
                 An <b>Electrical Control Panel</b> is a vital component in industrial and commercial electrical systems, designed to regulate 
                 and manage electrical power distribution, automation, and control processes. These panels serve as centralized units that house 
@@ -204,7 +204,7 @@ const electricalAutomation = [
                 They comply with industry standards and can be customized to meet specific operational requirements. Whether for power 
                 distribution, automation, or process control, our panels provide reliable and cost-effective solutions.
             </p>
-            <h3 style="font-size: 24px; font-weight: bold; color: #2563eb; margin: 2px 0;">Why Choose Our Electrical Control Panels?</h3>
+            <h3 style="font-size: 24px; font-weight: bold; color: #2457AA; margin: 2px 0;">Why Choose Our Electrical Control Panels?</h3>
             <p style="font-size: 18px; margin: 2px 0;">
                 Our Electrical Control Panels are built for high performance and reliability, featuring robust enclosures, easy installation, 
                 and user-friendly interfaces. With advanced safety features and customizable designs, we provide solutions that enhance 
@@ -215,7 +215,7 @@ const electricalAutomation = [
     {
         category: 'automation-control-panel',
         description: `
-            <h2 style="font-size: 24px; font-weight: bold; color: #2563eb; margin: 2px 0;">Automation Control Panel</h2>
+            <h2 style="font-size: 24px; font-weight: bold; color: #2457AA; margin: 2px 0;">Automation Control Panel</h2>
             <p style="font-size: 18px; margin: 2px 0;">
                 An <b>Automation Control Panel</b> is an essential component in industrial and commercial automation systems, designed to manage 
                 and regulate machinery, processes, and electrical equipment efficiently. These panels integrate cutting-edge technology, such as 
@@ -235,7 +235,7 @@ const electricalAutomation = [
                 deliver precision and reliability. With user-friendly interfaces and intelligent automation features, they help in optimizing 
                 processes and ensuring maximum productivity in various industries.
             </p>
-            <h3 style="font-size: 24px; font-weight: bold; color: #2563eb; margin: 2px 0;">Why Choose Our Automation Control Panels?</h3>
+            <h3 style="font-size: 24px; font-weight: bold; color: #2457AA; margin: 2px 0;">Why Choose Our Automation Control Panels?</h3>
             <p style="font-size: 18px; margin: 2px 0;">
                 Our panels are designed for <b>customization</b>, <b>energy efficiency</b>, and <b>seamless integration</b> with existing 
                 industrial automation systems. Whether you require a panel for process automation, material handling, or machine control, 
@@ -246,7 +246,7 @@ const electricalAutomation = [
     {
         category: 'remote-io-module',
         description: `
-            <h2 style="font-size: 24px; font-weight: bold; color: #2563eb; margin: 2px 0;">Remote I/O Module</h2>
+            <h2 style="font-size: 24px; font-weight: bold; color: #2457AA; margin: 2px 0;">Remote I/O Module</h2>
             <p style="font-size: 18px; margin: 2px 0;">
                 A <b>Remote I/O Module</b> is an essential component in industrial automation and process control systems, designed 
                 to extend input and output signals over long distances. It enables seamless communication between sensors, actuators, 
@@ -270,7 +270,7 @@ const electricalAutomation = [
                 <b>power distribution</b>, <b>oil & gas industries</b>, and <b>water treatment facilities</b>. They ensure real-time data 
                 acquisition and transmission, enhancing operational reliability and system scalability.
             </p>
-            <h3 style="font-size: 24px; font-weight: bold; color: #2563eb; margin: 2px 0;">Why Choose Our Remote I/O Modules?</h3>
+            <h3 style="font-size: 24px; font-weight: bold; color: #2457AA; margin: 2px 0;">Why Choose Our Remote I/O Modules?</h3>
             <p style="font-size: 18px; margin: 2px 0;">
                 Our Remote I/O Modules are built with robust technology, offering <b>high-speed data communication</b>, <b>fault detection</b>, 
                 and <b>easy integration</b> into existing industrial control systems. Whether you need a wired or wireless solution, we provide 

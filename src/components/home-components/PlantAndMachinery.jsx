@@ -2,6 +2,9 @@
 import { useMemo, useState } from "react";
 import Heading from "../heading/Heading";
 import { Dialog, DialogContent } from "@mui/material";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+import "swiper/swiper-bundle.css";
 
 const PlantAndMachinery = () => {
     const [open, setOpen] = useState(false);
@@ -59,22 +62,37 @@ const PlantAndMachinery = () => {
         <section className="w-full py-3 bg-gray-50">
             <Heading startText="PLANT" endText="AND MACHINERY" justify="center" pb={1} />
             <div className="w-full px-4 md:px-8">
-                {/* Fabrication Plant Section */}
+                {/* Fabrication Plant Section - Swiper Slider */}
                 <div className="mb-12">
                     <h2 className="text-2xl font-bold text-center mb-6">Fabrication Plant</h2>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <Swiper
+                        modules={[Navigation, Pagination]}
+                        spaceBetween={20}
+                        slidesPerView={1}
+                        loop={true}
+                        speed={700}
+                        navigation
+                        pagination={{ clickable: true }}
+                        autoplay={{ delay: 1200, disableOnInteraction: false }} // Corrected autoplay
+                        breakpoints={{
+                            640: { slidesPerView: 2 },
+                            1024: { slidesPerView: 4 },
+                        }}
+                        className="w-full"
+                    >
                         {fabricationImages.map((imageSrc, index) => (
-                            <ImageCard
-                                key={index}
-                                src={imageSrc}
-                                alt={`Fabrication Plant Image ${index + 1}`}
-                                caption="Fabrication Plant"
-                            />
+                            <SwiperSlide key={index}>
+                                <ImageCard
+                                    src={imageSrc}
+                                    alt={`Fabrication Plant Image ${index + 1}`}
+                                    caption="Fabrication Plant"
+                                />
+                            </SwiperSlide>
                         ))}
-                    </div>
+                    </Swiper>
                 </div>
 
-                {/* Power Plant Section */}
+                {/* Power Plant Section (Grid Layout) */}
                 <div>
                     <h2 className="text-2xl font-bold text-center mb-6">Powder Coating Plant</h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">

@@ -3,7 +3,7 @@ const WelcomeMessageSection = () => {
         <section
             className="relative min-h-[300px] bg-cover bg-fixed bg-center text-white flex items-center justify-center"
             style={{
-                backgroundImage: "url('/images/banners/banner2.jpg')", // Replace with your image path
+                backgroundImage: "url('/images/banners/section-banner.png')", // Replace with your image path
             }}
         >
             {/* Overlay for better text readability */}

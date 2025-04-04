@@ -19,7 +19,7 @@ const ProductSidebar = ({
     }) => {
         return <>
             <Link to={`${route}`} className="w-full">
-                <div className={`w-full px-2 py-2 transition-all ${pathname === route ? "bg-blue-500 text-white" : "text-black hover:bg-blue-500 hover:text-white"} duration-300`}>
+                <div className={`w-full px-2 py-2 transition-all ${pathname === route ? "bg-[#2457AA] text-white" : "text-black hover:bg-blue-500 hover:text-white"} duration-300`}>
                     <h2>{name}</h2>
                 </div>
             </Link>
@@ -28,8 +28,8 @@ const ProductSidebar = ({
 
     return <>
         <aside className="w-full border border-solid border-gray-400">
-            <div className="w-full flex justify-center bg-gray-200 text-gray-900 items-center py-2">
-                <h2 className="font-semibold text-[18px]">Products</h2>
+            <div className="w-full flex justify-center bg-gray-200 text-gray-900 items-center py-2 border-b border-solid border-b-gray-400">
+                <h2 className="font-semibold text-[18px]">All Products</h2>
             </div>
             <div className="w-full">
                 {

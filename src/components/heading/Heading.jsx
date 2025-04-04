@@ -6,14 +6,15 @@ const Heading = ({
     justify = 'center',
     variant = 'h4',
     pb = 2,
+    color = null,
 }) => {
     const theme = useTheme();
 
     return <>
         <Box sx={{ pb: pb, display: 'flex', alignItems: 'center', justifyContent: justify }}>
-            <Typography variant={variant} fontWeight="bold" textTransform={'uppercase'}>
-                {startText} <Typography component="span" sx={{ color: "primary.main", fontWeight: "bold" }} variant={variant}>{endText}</Typography>
-                <Divider sx={{ background: theme.palette.primary.deep, height: "3px", width: "50px" }} />
+            <Typography variant={variant} fontWeight="bold" textTransform={'uppercase'} sx={{ fontSize: '30px', ...(color ? { color } : {}) }}>
+                {startText} <Typography component="span" sx={{ color: "#2457AA", fontWeight: "bold", fontSize: '30px' }} variant={variant}>{endText}</Typography>
+                <Divider sx={{ background: '#2457AA', height: "3px", width: "50px" }} />
             </Typography>
         </Box>
     </>

@@ -28,7 +28,7 @@ const CertificateLicense = () => {
         <>
             <div className="bg-gray-100 py-8 w-full">
                 <Heading startText="Our" endText="Certificates" />
-                <div className="grid justify-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-7  w-full px-4 lg:px-12 gap-6">
+                <div className="grid justify-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-7  w-full px-4 lg:px-8 gap-6">
                     {certificates.map((cert, index) => (
                         <div key={index} className="flex justify-center items-center">
                             <div

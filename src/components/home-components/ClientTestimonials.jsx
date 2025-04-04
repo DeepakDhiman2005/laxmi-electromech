@@ -1,11 +1,15 @@
 import { Box, Typography, Avatar, Card, CardContent, Divider, useTheme } from "@mui/material";
-import React from "react";
+import React, { useRef } from "react";
 import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/swiper-bundle.css";
 import Heading from "../heading/Heading";
 import GradeIcon from '@mui/icons-material/Grade';
+
+// arrows
+import PrevArrow from "../arrows/PrevArrow";
+import NextArrow from "../arrows/NextArrow";
 
 const testimonials = [
     {
@@ -65,7 +69,7 @@ const TestimonialCard = ({ testimonial }) => {
                 display: "flex",
                 flexDirection: "column",
                 height: "100%",
-                p: 3,
+                px: 3,
                 pb: 0,
                 my: 1,
                 mb: 4.5,
@@ -80,22 +84,23 @@ const TestimonialCard = ({ testimonial }) => {
             <Box
                 sx={{
                     position: "absolute",
-                    top: -8,
+                    top: -22,
                     left: -8,
                     width: 100,
                     height: 100,
                     // bgcolor: "#1C85C6",
-                    bgcolor: '#f97316 !important',
+                    // bgcolor: '#2457AA !important',
+                    // bgcolor: '#000000 !important',
                     borderBottomRightRadius: "120%",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                 }}
             >
-                <FormatQuoteIcon sx={{ fontSize: 35, transform: "rotate(180deg)", color: "white" }} />
+                <FormatQuoteIcon sx={{ fontSize: 35, transform: "rotate(180deg)", color: "#2457AA" }} />
             </Box>
 
-            <CardContent sx={{ flexGrow: 1, mt: 1 }}>
+            <CardContent sx={{ flexGrow: 1 }}>
                 <Typography variant="h6" fontWeight="bold" color="#1C85C6">
                     {testimonial.title}
                 </Typography>
@@ -114,15 +119,15 @@ const TestimonialCard = ({ testimonial }) => {
                         }}
                     /> */}
                     <Box
-                    sx={{
-                        display:'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        gap: 1,
-                    }}
+                        sx={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            gap: 1,
+                        }}
                     >
                         {
-                            Array(5).fill(0).map((_,index) => (
+                            Array(5).fill(0).map((_, index) => (
                                 <GradeIcon key={index} sx={{ color: "#facc15" }} fontSize="22px" />
                             ))
                         }
@@ -141,46 +146,54 @@ const TestimonialCard = ({ testimonial }) => {
 
 const ClientTestimonials = () => {
     const theme = useTheme();
+    const swiperRef = useRef(null);
     return (
-        <Box sx={{ bgcolor: "grey.100", py: 2, textAlign: "center" }}>
-            {/* <Box sx={{ pb: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div className="testimonial_bg-section">
+            <Box sx={{ bgcolor: "transparent", py: 2, textAlign: "center" }}>
+                {/* <Box sx={{ pb: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <Typography variant="h4" fontWeight="bold">
                     Client <Typography component="span" sx={{ color: "primary.main", fontWeight: "bold" }} variant="h4">Testimonials</Typography>
                     <Divider sx={{ background: theme.palette.primary.deep, height: "3px", width: "50px" }} />
                 </Typography>
             </Box> */}
-            <Heading
-                startText="Client"
-                endText="Testimonials"
-                pb={0}
-            />
-            <Typography variant="h6" fontWeight="bold" color="text.primary" sx={{ pb: 0, mb: 0 }}>
-                What our customers say
-            </Typography>
+                <Heading
+                    startText="Client"
+                    endText="Testimonials"
+                    pb={0}
+                />
+                <Typography variant="h6" fontWeight="bold" color="text.primary" sx={{ pb: 0, mb: 0 }}>
+                    What our customers say
+                </Typography>
 
-            {/* Swiper Slider for Testimonials */}
-            <Box sx={{ px: 2, mb: 0, pb: 0 }}>
-                <Swiper
-                    modules={[Navigation, Pagination, Autoplay]}
-                    spaceBetween={20}
-                    slidesPerView={1}
-                    autoplay={true}
-                    navigation
-                    pagination={{ clickable: true }}
-                    breakpoints={{
-                        600: { slidesPerView: 1 },
-                        900: { slidesPerView: 2 },
-                        1200: { slidesPerView: 3 },
-                    }}
-                >
-                    {testimonials.map((testimonial, index) => (
-                        <SwiperSlide key={index}>
-                            <TestimonialCard testimonial={testimonial} />
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
+                {/* Swiper Slider for Testimonials */}
+                {/* Custom Arrows */}
+                <Box sx={{ px: 2, mb: 0, pb: 0, width: '100%', position: 'relative' }}>
+                    <PrevArrow onClick={() => swiperRef.current.swiper.slidePrev()} />
+                    <Swiper
+                        ref={swiperRef}
+                        modules={[Pagination, Autoplay]}
+                        spaceBetween={20}
+                        slidesPerView={1}
+                        autoplay={{ delay: 1200, disableOnInteraction: false }}
+                        speed={1500}
+                        loop={true}
+                        pagination={{ clickable: true }}
+                        breakpoints={{
+                            600: { slidesPerView: 1 },
+                            900: { slidesPerView: 2 },
+                            1200: { slidesPerView: 3 },
+                        }}
+                    >
+                        {testimonials.map((testimonial, index) => (
+                            <SwiperSlide key={index}>
+                                <TestimonialCard testimonial={testimonial} />
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                    <NextArrow onClick={() => swiperRef.current.swiper.slideNext()} />
+                </Box>
             </Box>
-        </Box>
+        </div>
     );
 };
 

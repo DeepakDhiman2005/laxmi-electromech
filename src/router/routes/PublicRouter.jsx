@@ -1,11 +1,12 @@
 import { Outlet, ScrollRestoration, useLocation } from "react-router-dom";
-import Navbar from "../../components/Appbar/Navbar";
+// import Navbar from "../../components/Appbar/Navbar";
 import Footer from './../../components/Footer';
 import { Box } from "@mui/material";
 import AdminSidebar from "../../components/sidebar/AdminSidebar";
 import DashboardLayout from "../../pages/layouts/DashboardLayout";
 import "react-toastify/dist/ReactToastify.css"; // Import the CSS
 import { ToastContainer } from "react-toastify";
+import AppNavbar from "../../components/Appbar/AppNavbar";
 
 const PublicRouter = () => {
     const { pathname } = useLocation();
@@ -42,7 +43,7 @@ const PublicRouter = () => {
                 </> : pathname.startsWith('/login') ? <>
                     <Outlet />
                 </> : <>
-                    <Navbar />
+                    <AppNavbar />
                     <Outlet />
                     <Footer />
                 </>

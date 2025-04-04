@@ -1,7 +1,7 @@
 import React from "react";
-import { Card, CardMedia, CardContent, Typography, Stack } from "@mui/material";
+import { Card, CardMedia, CardContent, Typography } from "@mui/material";
 
-const ServiceCard = ({ title, imagePath, details, layout, imageWidth, imageHeight }) => {
+const ServiceCard = ({ title, imagePath, details, layout, imageWidth, imageHeight, clipPath = null }) => {
     return (
         <Card
             elevation={0}
@@ -25,6 +25,13 @@ const ServiceCard = ({ title, imagePath, details, layout, imageWidth, imageHeigh
                     height: imageHeight || { xs: "200px", md: "auto" }, // Use prop or fallback
                     objectFit: "cover", // Ensure image scales properly without distortion
                     borderRadius: 1, // Optional: slight rounding for aesthetics
+                    ...(
+                        clipPath === 'left' ? {
+                            clipPath: 'polygon(28% 0, 100% 1%, 100% 100%, 0 100%, 15% 50%)'
+                        }: clipPath === 'right' ? {
+                            clipPath: 'polygon(0 0, 98% 0, 87% 44%, 73% 100%, 0% 100%)'
+                        }: {}
+                    )
                 }}
             />
             <CardContent
@@ -33,23 +40,12 @@ const ServiceCard = ({ title, imagePath, details, layout, imageWidth, imageHeigh
                     p: 2, // Consistent padding
                 }}
             >
-                <Typography variant="h5" color="primary" gutterBottom>
+                <Typography variant="h5" color="var(--colorOne)" gutterBottom>
                     {title}
                 </Typography>
-                <Stack spacing={1}>
-                    {details.map((item, i) => (
-                        <Typography key={i} variant="body2">
-                            <Typography
-                                variant="body1"
-                                component="span"
-                                fontWeight="bold"
-                            >
-                                {item.title}:{" "}
-                            </Typography>
-                            {item.desc}
-                        </Typography>
-                    ))}
-                </Stack>
+                <Typography variant="body1">
+                    {details}
+                </Typography>
             </CardContent>
         </Card>
     );

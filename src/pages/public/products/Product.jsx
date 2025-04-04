@@ -83,8 +83,8 @@ const Product = () => {
                     </IconButton>
                 </div>
 
-                <div className='w-full px-4 lg:px-12 py-3 flex justify-start items-start gap-x-4'>
-                    <div className='md:w-[20%] hidden md:block sticky top-32 left-0'>
+                <div className='w-full px-4 lg:px-8 py-3 flex justify-start items-start gap-x-4'>
+                    <div className='md:w-[20%] hidden md:block sticky top-24 left-0'>
                         <ProductSidebar links={links} />
                     </div>
                     <div className='w-full md:w-[80%] product-description'>
