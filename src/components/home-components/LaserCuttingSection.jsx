@@ -25,7 +25,7 @@ const LaserCuttingSection = () => {
             <section
                 className="w-full bg-[linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.5)),url('/images/banners/banner3.png')] text-white gap-y-6 md:gap-y-8 flex flex-col justify-center items-center bg-fixed bg-cover bg-no-repeat py-3 md:py-10 px-4 md:px-8"
             >
-                <h2 className="font-semibold text-[28px] sm:text-[35px] text-center">
+                <h2 className="font-semibold text-[28px] sm:text-[35px] uppercase text-center">
                     Precision Laser Cutting for Industrial Excellence
                 </h2>
 
@@ -41,9 +41,10 @@ const LaserCuttingSection = () => {
 
                     {/* Center Text */}
                     <div className="text-center md:text-left">
-                        <p className="mb-2 text-center">
-                            Our laser cutting technology delivers unmatched precision, enabling the fabrication of intricate components with clean edges and minimal material waste. Designed for modern industrial needs, it ensures consistency, speed, and accuracy across a wide range of materials and thicknesses.
+                        <p className="mb-2 text-center main-size">
+                            Our advanced laser cutting technology delivers unmatched precision, enabling the fabrication of intricate components with clean edges and minimal material waste. Designed for modern industrial needs, it ensures outstanding consistency, exceptional speed, and high accuracy across a wide range of materials and thicknesses.
                         </p>
+
                     </div>
 
                     {/* Right Image */}

@@ -39,7 +39,7 @@ const FAQs = () => {
                 <div className="flex flex-col justify-start items-start">
                     <Heading startText="FAQs -" endText="Frequently Asked Questions" pb={2} />
                     <Box display="flex" flexDirection="column" gap={2} className="w-full">
-                        {faqsData.slice(0, 5).map((faq, index) => (
+                        {faqsData.map((faq, index) => (
                             <Accordion
                                 key={index}
                                 disableGutters
@@ -81,7 +81,7 @@ const FAQs = () => {
                                         },
                                     }}
                                 >
-                                    <Typography variant="body1">
+                                    <Typography variant="body1" className="main-size">
                                         {index + 1}. {faq.question}
                                     </Typography>
                                 </AccordionSummary>
@@ -96,8 +96,10 @@ const FAQs = () => {
                 </div>
 
                 {/* Form Section */}
-                <div className="rounded-lg overflow-hidden shadow-[0px_0px_2px_2px_#e0e0e0]">
-                    <FAQsForm />
+                <div className="flex justify-start w-full h-full items-start">
+                    <div className="w-full rounded-lg overflow-hidden shadow-[0px_0px_2px_2px_#e0e0e0]">
+                        <FAQsForm />
+                    </div>
                 </div>
             </div>
         </Container>

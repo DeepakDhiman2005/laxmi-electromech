@@ -12,7 +12,7 @@ const HTMLLoad = ({
     }, [htmlData]);
 
     return <>
-        <div ref={htmlRef}></div>
+        <div ref={htmlRef} className="main-size"></div>
     </>
 }
 

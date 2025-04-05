@@ -14,8 +14,8 @@ const GallerySection = () => {
                                 <div className="product-gallery-text w-full min-w-0">
                                     <div className="h2-wrapper">
                                         <h2>
-                                            <span className="font-semibold text-[25px] leading-tight">
-                                                Laxmi Electromech Pvt. Ltd.
+                                            <span className="font-semibold uppercase text-[25px] md:text-[28px] leading-tight">
+                                                Laxmi Electromech Private Limited
                                             </span>
                                         </h2>
                                     </div>

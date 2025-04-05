@@ -15,7 +15,7 @@ const GalleryCard = ({
                 <div className="transition-all opacity-0 group-hover:opacity-100 duration-1000 w-full h-full absolute top-0 left-0 overflow-hidden bg-[var(--colorOne)] z-20 p-2 hidden sm:block">
                     <div className="border-2 border-solid border-white px-6 h-full w-full flex text-white flex-col text-center justify-center items-center">
                         <h2 className="capitalize text-[18px] lg:text-[25px] font-semibold leading-tight">{title}</h2>
-                        <p className="text-[12px] lg:text-[15px]">{description}</p>
+                        <p className="text-[12px] lg:text-[15px] main-size">{description}</p>
                     </div>
                 </div>
             </div>

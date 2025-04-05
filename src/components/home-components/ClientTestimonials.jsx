@@ -159,10 +159,10 @@ const ClientTestimonials = () => {
                 <Heading
                     startText="Client"
                     endText="Testimonials"
-                    pb={0}
+                    pb={0.4}
                 />
-                <Typography variant="h6" fontWeight="bold" color="text.primary" sx={{ pb: 0, mb: 0 }}>
-                    What our customers say
+                <Typography variant="h6" fontWeight="bold" color="text.primary" sx={{ pb: 0, mb: 0 }} className="main-size">
+                    What Our Satisfied Customers Say About Their Experience With Us
                 </Typography>
 
                 {/* Swiper Slider for Testimonials */}

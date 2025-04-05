@@ -88,7 +88,7 @@ const Product = () => {
                         <ProductSidebar links={links} />
                     </div>
                     <div className='w-full md:w-[80%] product-description'>
-                        <div dangerouslySetInnerHTML={{ __html: productData }} className='w-full border border-solid border-blue-700 py-3 px-2'></div>
+                        <div dangerouslySetInnerHTML={{ __html: productData }} className='w-full border border-solid border-blue-700 py-3 px-2 main-size'></div>
                     </div>
                 </div>
             </main>

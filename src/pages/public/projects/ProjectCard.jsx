@@ -13,7 +13,7 @@ const ProjectCard = React.memo(({ blog, handleClick }) => {
             sx={{
                 background: theme.palette.info.light,
                 // height: "100%",
-                height: isMobile ? 'auto' : '450px',
+                height: isMobile ? 'auto' : '430px',
                 overflow: "hidden",
                 position: "relative",
                 transition: "all 0.3s ease-in-out",
@@ -63,6 +63,7 @@ const ProjectCard = React.memo(({ blog, handleClick }) => {
                     fontWeight="bold"
                     onClick={handleCardClick}
                     sx={{ cursor: "pointer", "&:hover": { color: theme.palette.primary.main } }}
+                    className="main-size"
                 >
                     {blog.content}
                 </Typography>

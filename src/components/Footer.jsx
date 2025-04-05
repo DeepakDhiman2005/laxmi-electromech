@@ -157,7 +157,7 @@ const Footer = () => {
                                 <Divider sx={{ background: '#fff' }} />
                             </Typography>
                             <Stack spacing={2}>
-                                <Typography variant='body2'>
+                                <Typography variant='body2' className='main-size'>
                                     Laxmi Electromech Pvt. Ltd. is a leading expert in electrical automation, panel manufacturing, and EPC (Engineering, Procurement, and Construction) contracts. With a strong commitment to innovation, quality, and reliability, we design and deliver cutting-edge solutions that cater to a wide range of industries. Our expertise lies in developing customized, high-performance electrical systems that enhance efficiency, safety, and productivity.
                                 </Typography>
                             </Stack>
@@ -173,7 +173,7 @@ const Footer = () => {
                                 {aboutLink.map((list, index) => (
                                     <Stack key={index} direction={'row'} alignItems={'center'} sx={{ py: 0, my: 0 }}>
                                         <ChevronRight />
-                                        <Button onClick={() => navigate(list.route)} sx={hoverStyle}>{list.name}</Button>
+                                        <Button onClick={() => navigate(list.route)} sx={hoverStyle} className='main-size'>{list.name}</Button>
                                     </Stack>
                                 ))}
                             </Stack>
@@ -188,14 +188,14 @@ const Footer = () => {
                                 {links.map((list, index) => (
                                     <Stack key={index} direction={'row'} alignItems={'center'} sx={{ py: 0, my: 0 }}>
                                         <ChevronRight />
-                                        <Button onClick={() => navigate(list.route)} sx={hoverStyle}>{list.name}</Button>
+                                        <Button onClick={() => navigate(list.route)} sx={hoverStyle} className='main-size'>{list.name}</Button>
                                     </Stack>
                                 ))}
                             </Stack>
                         </Grid>
 
                         {/* Contact Info */}
-                        <Grid item xs={12} sm={6} md={6} lg={2.4} xl={3}>
+                        <Grid item xs={12} sm={6} md={6} lg={2.4} xl={3} className='main-size'>
                             <Typography variant='h5' color="primary" fontWeight="bold" textTransform="uppercase" mb={1}>
                                 Contact Info
                                 <Divider sx={{ background: '#fff' }} />
@@ -241,16 +241,16 @@ const Footer = () => {
                     {/* Footer Bottom Section */}
                     <Box sx={{ display: { md: 'flex' }, justifyContent: 'space-between', alignItems: 'center', my: 0 }}>
                         <Typography variant="body2">
-                            © {new Date().getFullYear()} <strong>Laxmi Electromech</strong>. All Rights Reserved. |
-                            Designed & Developed by <strong>Jaikvik Technology India Pvt. Ltd.</strong>
+                            © {new Date().getFullYear()} <strong>Laxmi Electromech</strong>. All Rights Reserved.
                         </Typography>
-                        <Stack direction="row" spacing={2}>
+                        <Stack direction="row" spacing={0.5}>
                             {socialLinks.map(({ icon: Icon, name }, index) => (
                                 <IconButton key={index} sx={{ color: '#ffffff', '&:hover': { color: theme.palette.info.dark } }} aria-label={name}>
-                                    <Icon sx={{ fontSize: '30px' }} />
+                                    <Icon sx={{ fontSize: '25px' }} />
                                 </IconButton>
                             ))}
                         </Stack>
+                        <Typography variant='body2'>Designed & Developed by <strong>Jaikvik Technology India Pvt. Ltd.</strong></Typography>
                     </Box>
                 </Box>
             </Box>

@@ -12,7 +12,7 @@ const HomeCards = () => {
                 />
                 <div className="flex flex-col">
                     <h2 className="font-semibold text-lg text-black">Creative Solutions</h2>
-                    <p className="text-sm">Driving innovation with smart, efficient, and forward-thinking solutions.</p>
+                    <p className="text-sm main-size">Driving innovation with smart, efficient, and forward-thinking solutions.</p>
                 </div>
             </div>
 
@@ -23,7 +23,7 @@ const HomeCards = () => {
                 />
                 <div className="flex flex-col justify-start items-start">
                     <h2 className="font-semibold text-[20px] text-black">Tagline Ideas</h2>
-                    <p className="text-[15px]">Empowering technology to transform industries and enhance everyday life.</p>
+                    <p className="text-[15px] main-size">Empowering technology to transform industries and enhance everyday life.</p>
                 </div>
             </div>
 
@@ -34,7 +34,7 @@ const HomeCards = () => {
                 />
                 <div className="flex flex-col justify-start items-start">
                     <h2 className="font-semibold text-[18px] text-white">About Us</h2>
-                    <p className="text-[14px] text-white">Laxmi Electromech Pvt. Ltd. provides reliable electrical solutions with expertise in industrial and commercial sectors.</p>
+                    <p className="text-[14px] text-white main-size">Laxmi Electromech Pvt. Ltd. provides reliable electrical solutions with expertise in industrial and commercial sectors.</p>
                 </div>
 
             </div>

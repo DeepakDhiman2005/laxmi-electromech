@@ -55,9 +55,9 @@ const AboutSection = () => {
                 <div className="flex flex-col justify-start items-start">
                     {/* <Heading startText="About" endText="Us" justify="start" pb={0.5} /> */}
                     <h2 className="text-[30px]">About Us</h2>
-                    <h2 className="font-semibold text-[25px] uppercase">Laxmi EMPowering Technology Enhancing Life</h2>
+                    <h2 className="font-semibold text-[22px] uppercase">Laxmi EMPowering Technology Enhancing Life</h2>
                 </div>
-                <div className="flex justify-start items-start">
+                <div className="flex justify-start items-start main-size">
                     <p>  LEPL is a new generation professionally managed engineering organization with dedicated
                         team having in depth knowledge of designing, manufacturing and execution of Switchboards
                         & Bus ducts upto 415 V.

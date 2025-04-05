@@ -18,6 +18,10 @@ const faqsData = [
     {
         question: "Do you have the capability to execute large-scale industrial and commercial projects?",
         answer: "Absolutely! We have extensive experience managing large industrial, commercial, and infrastructure projects with complete EPC solutions. Our expert team ensures timely execution, compliance with industry standards, and cost-effective solutions."
+    },
+    {
+        question: "Do you provide after-sales support and maintenance services?",
+        answer: "Yes, we offer robust after-sales support including maintenance, technical assistance, and prompt service to ensure the long-term reliability and efficiency of our systems. Customer satisfaction and operational continuity are our top priorities."
     }
 ];
 

@@ -17,8 +17,8 @@ import C3 from '../../../assets/images/panel-manufacturing.png';
 
 const CheckPoint = ({ children }) => (
     <div className="flex justify-start items-center gap-x-2">
-        <FaCheckCircle size={18} className="text-[var(--colorOne)]" />
-        <span className="font-medium">{children}</span>
+        <FaCheckCircle size={16} className="text-[var(--colorOne)]" />
+        <span className="font-medium main-size">{children}</span>
     </div>
 );
 

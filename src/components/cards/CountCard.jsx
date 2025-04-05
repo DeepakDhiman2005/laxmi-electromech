@@ -10,7 +10,7 @@ const CountCard = ({ number = 0, content = "" }) => {
       }}
       className="w-full h-full rounded-lg p-2 text-white flex flex-col justify-start items-center gap-y-1"
     >
-      <h2 className="font-semibold text-[35px]">
+      <h2 className="font-semibold text-[32px]">
         <CountUp
           end={number}
           duration={2}

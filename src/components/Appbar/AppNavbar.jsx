@@ -54,7 +54,7 @@ const AppNavbar = () => {
                                         <li
                                             key={index}
                                         // ><Link to={item.route as string}  className="active">{item.name}</Link></li>
-                                        ><Link to={item.route} className={pathname === item.route ? 'active' : 'hover:!text-blue-600'}>{item.name}</Link></li>
+                                        ><Link to={item.route} className={`main-size ${pathname === item.route ? 'active' : 'hover:!text-blue-600'}`}>{item.name}</Link></li>
                                     ))
                                 }
                             </div>
@@ -104,7 +104,7 @@ const AppNavbar = () => {
                                         <li
                                             key={index}
                                         >
-                                            <Link to={item.route}>{item.name}</Link>
+                                            <Link to={item.route} className="main-size">{item.name}</Link>
                                         </li>
                                     ))
                                 }

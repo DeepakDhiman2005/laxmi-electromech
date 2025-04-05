@@ -11,7 +11,8 @@ const ServiceCard = ({ title, imagePath, details, layout, imageWidth, imageHeigh
                     xs: "column", // Stack vertically on small screens
                     md: layout, // Use layout prop (row or row-reverse) on medium screens+
                 },
-                alignItems: { xs: "center", md: "flex-start" }, // Center on small screens
+                // alignItems: { xs: "center", md: "flex-start" }, // Center on small screens
+                alignItems: 'center', // Center on small screens
                 maxWidth: "100%", // Prevent overflow
             }}
         >
@@ -43,7 +44,7 @@ const ServiceCard = ({ title, imagePath, details, layout, imageWidth, imageHeigh
                 <Typography variant="h5" color="var(--colorOne)" gutterBottom>
                     {title}
                 </Typography>
-                <Typography variant="body1">
+                <Typography variant="body1" className="main-size">
                     {details}
                 </Typography>
             </CardContent>
