@@ -10,6 +10,7 @@ import { useEffect, useMemo, useState } from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Sidebar from "./Sidebar";
+import SearchMenu from "./SearchMenu";
 
 const AppNavbar = () => {
     const { pathname } = useLocation();
@@ -110,7 +111,7 @@ const AppNavbar = () => {
                             </ul>
                         </button>
                     </div>
-                    <div className="searchSection" id="searchMenu">
+                    <div className="searchSection relative" id="searchMenu">
                         <form>
                             <input type="search" placeholder="Search Here..." id="search" />
                             <button type="button" className="!rounded-none">
@@ -118,6 +119,7 @@ const AppNavbar = () => {
                             </button>
                         </form>
                         <div id="searchContent" style={{ display: 'none' }}></div>
+                        {/* <SearchMenu /> */}
                     </div>
 
                     <Link to={"/contact-us"}>

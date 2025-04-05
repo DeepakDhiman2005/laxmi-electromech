@@ -1,45 +1,15 @@
-import { useMemo, useCallback } from 'react';
 import { Box, Button, Card, CardContent, Divider, Grid, Stack, TextField, Typography, IconButton, useMediaQuery } from '@mui/material';
 import { useTheme } from '@emotion/react';
-import { useFormik } from 'formik';
-import * as yup from 'yup';
 import { Map, Headset, Drafts, Facebook, Instagram, Twitter, LinkedIn } from '@mui/icons-material';
 
 import GoogleMap from './GoogleMap';
-import C1 from '../../../assets/images/contact.webp';
-import Banner from '../../../utils/Banner';
+
 import { Title } from 'react-head';
+import ContactForm from './ContactForm';
 
 const ContactUs = () => {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down("md"));
-
-    // Validation Schema
-    const validationSchema = useMemo(
-        () =>
-            yup.object({
-                name: yup.string().required('Name is required'),
-                email: yup.string().email('Enter a valid email').required('Email is required'),
-                contact: yup.string().min(10, 'Contact number should be at least 10 characters').required('Contact number is required'),
-            }),
-        []
-    );
-
-    // Formik for Form Handling
-    const formik = useFormik({
-        initialValues: {
-            name: '',
-            email: '',
-            contact: '',
-            address: '',
-            message_title: '',
-            message: '',
-        },
-        validationSchema,
-        onSubmit: useCallback((values) => {
-            console.log(values); // Handle form submission
-        }, []),
-    });
 
     // Hover Styles
     const hoverStyle = {
@@ -126,44 +96,7 @@ const ContactUs = () => {
                 <Grid container spacing={2} sx={{ py: 2, alignItems: 'stretch' }}>
                     {/* Contact Form */}
                     <Grid item lg={7} xl={8} xs={12} sx={{ display: 'flex' }}>
-                        <Card elevation={0} sx={{ p: { lg: 4, xs: 2 }, background: '#FFFFFF', display: 'flex', flexDirection: 'column', height: '100%' }}>
-                            <CardContent component="form" onSubmit={formik.handleSubmit} sx={{ flex: 1 }}>
-                                <Grid container spacing={2}>
-                                    {['name', 'email', 'contact', 'message_title'].map((field) => (
-                                        <Grid item xs={12} md={6} key={field}>
-                                            <TextField
-                                                fullWidth
-                                                size="small"
-                                                placeholder={field.replace(/_/g, ' ')}
-                                                type={field === 'contact' ? 'tel' : 'text'}
-                                                {...formik.getFieldProps(field)}
-                                                error={formik.touched[field] && Boolean(formik.errors[field])}
-                                                helperText={formik.touched[field] && formik.errors[field]}
-                                                sx={{ border: '1px solid #9e9e9e' }}
-                                            />
-                                        </Grid>
-                                    ))}
-                                    <Grid item xs={12}>
-                                        <TextField
-                                            fullWidth
-                                            size="small"
-                                            placeholder="Enter Your Message..."
-                                            multiline
-                                            rows={2}
-                                            {...formik.getFieldProps('message')}
-                                            error={formik.touched.message && Boolean(formik.errors.message)}
-                                            helperText={formik.touched.message && formik.errors.message}
-                                            sx={{ border: '1px solid #9e9e9e' }}
-                                        />
-                                    </Grid>
-                                    <Grid item xs={12} md={3}>
-                                        <Button fullWidth size="large" variant="contained" type="submit">
-                                            Send
-                                        </Button>
-                                    </Grid>
-                                </Grid>
-                            </CardContent>
-                        </Card>
+                     <ContactForm />
                     </Grid>
 
                     {/* Sidebar */}

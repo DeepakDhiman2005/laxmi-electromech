@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import Heading from '../heading/Heading';
+import { useMediaQuery, useTheme } from '@mui/material';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 const CertificateLicense = () => {
+    const theme = useTheme();
     const [lightboxOpen, setLightboxOpen] = useState(false);
     const [selectedImage, setSelectedImage] = useState('');
+    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
     const certificates = [
         { src: '/certificates/INCORPORATION CERTIFICATE_page-0001.jpg', alt: 'Incorporation Certificate' },
@@ -28,25 +32,71 @@ const CertificateLicense = () => {
         <>
             <div className="bg-gray-100 py-8 w-full">
                 <Heading startText="Our" endText="Certificates" />
-                <div className="grid justify-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-7  w-full px-4 lg:px-8 gap-6">
-                    {certificates.map((cert, index) => (
-                        <div key={index} className="flex justify-center items-center">
-                            <div
-                                className="relative border-2 border-gray-300 bg-white rounded-lg shadow-lg hover:shadow-xl transition-transform duration-300 ease-in-out w-[260px] cursor-pointer overflow-hidden group"
-                                onClick={() => openOverlay(cert.src)}
-                            >
-                                <img
-                                    src={cert.src}
-                                    alt={cert.alt}
-                                    className="w-full h-auto rounded-md transition-transform duration-300 ease-in-out group-hover:scale-105"
-                                />
-                                <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
-                                    <span className="text-white text-lg font-semibold">View Certificate</span>
+                {
+                    isMobile ? <>
+                        <Swiper
+                            className="w-full"
+                            spaceBetween={2}
+                            slidesPerView={1}
+                            autoplay={true}
+                            speed={1200}
+                            breakpoints={{
+                                640: {
+                                    slidesPerView: 1,
+                                },
+                                768: {
+                                    slidesPerView: 2,
+                                },
+                                1024: {
+                                    slidesPerView: 3,
+                                },
+                                1280: {
+                                    slidesPerView: 4,
+                                },
+                            }}
+                        >
+                            {certificates.map((cert, index) => (
+                                <SwiperSlide key={index} className='flex justify-center items-center w-full'>
+                                    <div className='flex justify-center items-center w-full'>
+                                        <div
+                                            className="relative border-2 border-gray-300 bg-white rounded-lg shadow-lg hover:shadow-xl transition-transform duration-300 ease-in-out w-[260px] cursor-pointer overflow-hidden group"
+                                            onClick={() => openOverlay(cert.src)}
+                                        >
+                                            <img
+                                                src={cert.src}
+                                                alt={cert.alt}
+                                                className="w-full h-auto rounded-md transition-transform duration-300 ease-in-out group-hover:scale-105"
+                                            />
+                                            <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+                                                <span className="text-white text-lg font-semibold">View Certificate</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
+                    </> : <>
+                        <div className="grid justify-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-7  w-full px-4 lg:px-8 gap-6">
+                            {certificates.map((cert, index) => (
+                                <div key={index} className="flex justify-center items-center">
+                                    <div
+                                        className="relative border-2 border-gray-300 bg-white rounded-lg shadow-lg hover:shadow-xl transition-transform duration-300 ease-in-out w-[260px] cursor-pointer overflow-hidden group"
+                                        onClick={() => openOverlay(cert.src)}
+                                    >
+                                        <img
+                                            src={cert.src}
+                                            alt={cert.alt}
+                                            className="w-full h-auto rounded-md transition-transform duration-300 ease-in-out group-hover:scale-105"
+                                        />
+                                        <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+                                            <span className="text-white text-lg font-semibold">View Certificate</span>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
+                            ))}
                         </div>
-                    ))}
-                </div>
+                    </>
+                }
             </div>
 
             {lightboxOpen && (

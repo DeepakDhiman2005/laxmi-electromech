@@ -15,7 +15,7 @@ const Introduction = () => {
     ];
 
     return (
-        <section className="w-full grid grid-cols-1 lg:grid-cols-[2fr_1.07fr] justify-center items-center px-8 py-2 gap-4">
+        <section className="w-full grid grid-cols-1 lg:grid-cols-[2fr_1.07fr] justify-center items-center px-4 sm:px-8 py-2 gap-4">
             <div className="w-full relative overflow-hidden">
                 {/* Swiper slider with fade effect */}
                 <PrevArrow onClick={() => swiperRef.current.swiper.slidePrev()} />

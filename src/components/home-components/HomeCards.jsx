@@ -4,7 +4,7 @@ import { FaCalendarCheck } from "react-icons/fa6";
 
 const HomeCards = () => {
     return (
-        <section className="py-3 px-8 grid grid-cols-1 md:grid-cols-3">
+        <section className="py-3 px-4 sm:px-8 grid grid-cols-1 md:grid-cols-3">
             <div className="flex items-center gap-x-5 group px-6 py-5 bg-gray-200 text-black transition-transform duration-500">
                 <FaLightbulb
                     size={25}
