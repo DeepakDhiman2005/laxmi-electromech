@@ -3,6 +3,7 @@ import { useFormik } from "formik";
 import { useCallback, useMemo, useState, useEffect } from "react";
 import * as yup from "yup";
 import emailjs from "@emailjs/browser";
+import axios from "axios";
 
 const ContactForm = () => {
   // State for status feedback
@@ -24,6 +25,11 @@ const ContactForm = () => {
     []
   );
 
+  const sendData = async (data) => {
+    const response = await axios.post('http://localhost:3000/server.php', data);
+    console.log(response.data);
+  }
+
   // Formik for Form Handling
   const formik = useFormik({
     initialValues: {
@@ -36,25 +42,25 @@ const ContactForm = () => {
     validationSchema,
     onSubmit: useCallback((values, { resetForm }) => {
       setStatus("Sending...");
-
-      emailjs
-        .send(
-          "service_5lur7ru", // Your EmailJS Service ID
-          "template_bappulm", // Your EmailJS Template ID
-          values, // Use Formik values instead of formData
-          "uMWum8ECeWLklefRl" // Your EmailJS Public Key
-        )
-        .then(
-          (result) => {
-            console.log(result.text);
-            setStatus("Email sent successfully!");
-            resetForm(); // Reset form after success
-          },
-          (error) => {
-            console.error(error.text);
-            setStatus("Error sending email");
-          }
-        );
+      sendData(values);
+      // emailjs
+      //   .send(
+      //     "service_5lur7ru", // Your EmailJS Service ID
+      //     "template_bappulm", // Your EmailJS Template ID
+      //     values, // Use Formik values instead of formData
+      //     "uMWum8ECeWLklefRl" // Your EmailJS Public Key
+      //   )
+      //   .then(
+      //     (result) => {
+      //       console.log(result.text);
+      //       setStatus("Email sent successfully!");
+      //       resetForm(); // Reset form after success
+      //     },
+      //     (error) => {
+      //       console.error(error.text);
+      //       setStatus("Error sending email");
+      //     }
+      //   );
     }, []),
   });
 

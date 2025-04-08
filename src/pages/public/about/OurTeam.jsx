@@ -5,44 +5,39 @@ import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/swiper-bundle.css";
 import Heading from "../../../components/heading/Heading";
+import PersonIcon from '@mui/icons-material/Person';
 
 // Team Members Data
 const teamMembers = [
     {
-        name: "John Doe",
-        role: "CEO & Founder",
-        image: "https://randomuser.me/api/portraits/men/10.jpg",
-        description: "Leading with vision and excellence, John has 15+ years of experience in electrical automation & EPC solutions.",
+        name: "Arjun Mehra",
+        role: "Systems Integration",
+        description: "Arjun excels at integrating diverse systems, ensuring smooth functionality across hardware and software platforms.",
     },
     {
-        name: "Sarah Thompson",
-        role: "CTO",
-        image: "https://randomuser.me/api/portraits/women/12.jpg",
-        description: "A tech innovator, Sarah specializes in advanced automation solutions and technical strategy.",
+        name: "Priya Nair",
+        role: "Project Management",
+        description: "Priya leads projects with expertise, coordinating teams and resources to deliver exceptional results on schedule.",
     },
     {
-        name: "David Wilson",
-        role: "Head of Engineering",
-        image: "https://randomuser.me/api/portraits/men/18.jpg",
-        description: "Expert in cutting-edge engineering solutions, David ensures top-quality execution in all projects.",
+        name: "Rohan Kapoor",
+        role: "Design",
+        description: "Rohan creates innovative designs, transforming ideas into practical solutions for cutting-edge automation.",
     },
     {
-        name: "Emily Carter",
-        role: "Project Manager",
-        image: "https://randomuser.me/api/portraits/women/22.jpg",
-        description: "Emily excels in project coordination, ensuring seamless execution and client satisfaction.",
+        name: "Neha Gupta",
+        role: "Programming",
+        description: "Neha develops efficient code, building the backbone of automation systems with precision and skill.",
     },
     {
-        name: "Michael Reed",
-        role: "Lead Automation Engineer",
-        image: "https://randomuser.me/api/portraits/men/25.jpg",
-        description: "Michael leads automation projects with a focus on innovation and efficiency.",
+        name: "Vikram Singh",
+        role: "Commissioning",
+        description: "Vikram oversees system commissioning, ensuring every component is tested and optimized for deployment.",
     },
     {
-        name: "Sophia Adams",
-        role: "HR & Culture Lead",
-        image: "https://randomuser.me/api/portraits/women/28.jpg",
-        description: "Passionate about people, Sophia drives a strong company culture and values.",
+        name: "Ananya Desai",
+        role: "Training",
+        description: "Ananya designs training initiatives, equipping teams and clients with the knowledge to succeed.",
     },
 ];
 
@@ -53,11 +48,12 @@ const TeamCard = ({ testimonial }) => {
             sx={{
                 display: "flex",
                 flexDirection: "column",
-                height: "100%",
+                // height: "100%",
+                height: "170px",
                 p: 3,
                 pb: 0,
                 my: 2,
-                mb: 3,
+                mb: 6,
                 textAlign: "center",
                 position: "relative",
                 boxShadow: 3,
@@ -66,11 +62,11 @@ const TeamCard = ({ testimonial }) => {
             }}
         >
             {/* Quote Design */}
-            <Box
+            {/* <Box
                 sx={{
                     position: "absolute",
-                    top: 0,
-                    left: 0,
+                    top: -20,
+                    left: -20,
                     width: 100,
                     height: 100,
                     bgcolor: "#1C85C6",
@@ -81,31 +77,35 @@ const TeamCard = ({ testimonial }) => {
                 }}
             >
                 <FormatQuoteIcon sx={{ fontSize: 35, transform: "rotate(180deg)", color: "white" }} />
+            </Box> */}
+
+            <Box sx={{
+                width: '100%',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+            }}>
+                <Box
+                    sx={{
+                        background: 'var(--colorOne)',
+                        borderRadius: '60%',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        p: 1,
+                    }}
+                >
+                    <PersonIcon sx={{ fontSize: 35, color: '#fff' }} />
+                </Box>
             </Box>
 
-            <CardContent sx={{ flexGrow: 1, mt: 4 }}>
-                <Typography variant="h6" fontWeight="bold" color="#1C85C6">
-                    {testimonial.title}
-                </Typography>
-                <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
-                    {testimonial.feedback}
-                </Typography>
-
-                <Box sx={{ mt: 1, display: "flex", flexDirection: "column", alignItems: "center" }}>
-                    <Avatar
-                        src={testimonial.image}
-                        alt={testimonial.name}
-                        sx={{
-                            width: 60,
-                            height: 60,
-                            border: "2px solid #1C85C6",
-                        }}
-                    />
-                    <Typography fontWeight="bold" color="primary.dark" sx={{ mt: 1 }}>
-                        {testimonial.name}
-                    </Typography>
+            <CardContent sx={{ flexGrow: 1, }}>
+                <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
                     <Typography variant="body2" color="text.secondary">
                         {testimonial.description}
+                    </Typography>
+                    <Typography fontWeight="bold" color="var(--colorOne)" className="flex justify-center items-center gap-x-2">
+                       <div className="w-[10px] bg-[var(--colorOne)] h-[1px]"></div> {testimonial.name}
                     </Typography>
                 </Box>
             </CardContent>
@@ -117,44 +117,47 @@ const TeamCard = ({ testimonial }) => {
 const OurTeam = () => {
     const theme = useTheme();
     return (
-        <Box sx={{ bgcolor: "grey.100", py: 3, textAlign: "center" }}>
-            {/* <Box sx={{ pb: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div className="testimonial_bg-section">
+            <Box sx={{ bgcolor: "grey.100", py: 3, textAlign: "center" }}>
+                {/* <Box sx={{ pb: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <Typography variant="h4" fontWeight="bold">
                     Our <Typography component="span" sx={{ color: "primary.main", fontWeight: "bold" }} variant="h4">Team</Typography>
                     <Divider sx={{ background: theme.palette.primary.deep, height: "3px", width: "50px" }} />
                 </Typography>
             </Box> */}
-            <Heading
-                startText="Our"
-                endText="Team"
-            />
-            <Typography variant="h6" fontWeight="bold" color="text.primary">
-                Leadership & Key Team Members
-            </Typography>
+                <Heading
+                    startText="Our"
+                    endText="Team"
+                />
+                <Typography variant="h6" fontWeight="bold" color="text.primary">
+                    Leadership & Key Team Members
+                </Typography>
 
-            {/* Swiper Slider for Team Members */}
-            <Box sx={{ px: 2 }}>
-                <Swiper
-                    modules={[Navigation, Pagination, Autoplay]}
-                    spaceBetween={20}
-                    slidesPerView={1}
-                    autoplay={true}
-                    navigation
-                    pagination={{ clickable: true }}
-                    breakpoints={{
-                        600: { slidesPerView: 1 },
-                        900: { slidesPerView: 2 },
-                        1200: { slidesPerView: 3 },
-                    }}
-                >
-                    {teamMembers.map((member, index) => (
-                        <SwiperSlide key={index}>
-                            <TeamCard testimonial={member} />
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
+                {/* Swiper Slider for Team Members */}
+                <Box sx={{ px: 2 }}>
+                    <Swiper
+                        modules={[Navigation, Pagination, Autoplay]}
+                        spaceBetween={20}
+                        loop
+                        slidesPerView={1}
+                        autoplay={true}
+                        navigation
+                        pagination={{ clickable: true }}
+                        breakpoints={{
+                            600: { slidesPerView: 1 },
+                            900: { slidesPerView: 2 },
+                            1200: { slidesPerView: 3 },
+                        }}
+                    >
+                        {teamMembers.map((member, index) => (
+                            <SwiperSlide key={index}>
+                                <TeamCard testimonial={member} />
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                </Box>
             </Box>
-        </Box>
+        </div>
     );
 };
 

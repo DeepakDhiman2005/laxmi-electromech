@@ -10,14 +10,14 @@ const electricalAutomation = [
                 productivity.
             </p>
             <div style="display: flex; justify-content: start; margin: 10px 0;">
-                <img src="/images/laxmi-services/plc-control-panel.jpg" style="width: 50%; border-radius: 8px;" alt="PLC Control Panel" />
+                <img src="/product-images/2.jpg" style="width: 100%; border-radius: 8px;" alt="PLC Control Panel" />
             </div>
             <h3 style="font-size: 22px; font-weight: bold; color: #2457AA; margin: 2px 0;">Features of PLC Control Panel:</h3>
             <p style="font-size: 16px; margin: 2px 0;">
                 PLC Control Panels are equipped with state-of-the-art programmable automation technology, allowing industries to automate complex processes with precision. These panels offer high reliability and are designed for continuous operation with minimal downtime. They also support remote monitoring and control, enabling seamless integration with HMI and SCADA systems. Their energy-efficient design optimizes power consumption, making them a cost-effective solution. Built with robust materials, they ensure durability and long-lasting performance, and they support multiple I/O options, allowing for versatile connectivity.
             </p>
             <div style="display: flex; justify-content: start; margin: 10px 0;">
-                <img src="/images/laxmi-services/plc-control-panel-2.jpg" style="width: 50%; border-radius: 8px;" alt="PLC Control Panel" />
+                <img src="/product-images/4.jpg" style="width: 100%; border-radius: 8px;" alt="PLC Control Panel" />
             </div>
             <h3 style="font-size: 22px; font-weight: bold; color: #2457AA; margin: 2px 0;">Applications of PLC Control Panel:</h3>
             <p style="font-size: 16px; margin: 2px 0;">
@@ -96,18 +96,24 @@ const electricalAutomation = [
         category: 'motor-control-centre',
         description: `
             <h2 style="font-size: 24px; font-weight: bold; color: #2457AA; margin: 2px 0;">Motor Control Centre (MCC)</h2>
+             <div style="display: flex; justify-content: center; margin: 10px 0;">
+                <img src="/product-images/19.jpg" style="width: 100%; border-radius: 8px;" alt="PLC Control Panel" />
+            </div>
             <p style="font-size: 16px; margin: 2px 0;">
                 A <b>Motor Control Centre (MCC)</b> is an essential component in industrial and commercial power distribution systems, designed to control and manage multiple electric motors from a centralized location. 
                 MCCs are widely used in manufacturing plants, power generation, and automation industries to enhance operational efficiency, safety, and reliability.
             </p>
             <div style="display: flex; justify-content: center; margin: 10px 0;">
-                <img src="/images/laxmi-services/motor-control-panel.jpg" style="width: 40%; border-radius: 8px;" alt="Motor Control Centre" />
+                <img src="/product-images/17.jpg" style="width: 100%; border-radius: 8px;" alt="PLC Control Panel" />
             </div>
             <p style="font-size: 16px; margin: 2px 0;">
                 Our MCC panels are engineered to provide seamless motor control, incorporating advanced protection mechanisms such as circuit breakers, overload relays, and contactors. 
                 These panels are available in fixed and draw-out configurations, offering flexibility for various industrial applications. 
                 With intelligent motor control features, our MCC systems enable efficient energy management, reduced maintenance, and real-time monitoring of motor operations.
             </p>
+             <div style="display: flex; justify-content: center; margin: 10px 0;">
+                <img src="/product-images/18.jpg" style="width: 100%; border-radius: 8px;" alt="PLC Control Panel" />
+            </div>
             <p style="font-size: 16px; margin: 2px 0;">
                 MCCs are commonly used in industries such as power plants, water treatment, HVAC systems, and conveyor operations, where precise motor control is critical. 
                 The integration of PLCs and SCADA systems with MCC panels further enhances automation capabilities, ensuring smooth process control and improved operational safety.
@@ -160,8 +166,8 @@ const electricalAutomation = [
                 ensuring smooth acceleration and minimizing mechanical stress. It helps in reducing inrush current, preventing voltage dips, 
                 and extending the lifespan of motors and connected equipment.
             </p>
-            <div style="display: flex; justify-content: center; margin: 2px 0;">
-                <img src="/images/laxmi-services/soft-started-panel.jpg" style="width: 40%; border-radius: 8px;" alt="Soft Starter" />
+            <div style="display: flex; justify-content: center; margin: 10px 0;">
+                <img src="/product-images/5.jpg" style="width: 100%; border-radius: 8px;" alt="PLC Control Panel" />
             </div>
             <p style="font-size: 16px; margin: 2px 0;">
                 Our Soft Starters are designed to enhance motor performance in industrial applications by providing controlled acceleration and deceleration. 
@@ -174,6 +180,9 @@ const electricalAutomation = [
                 maintenance costs, and improve overall operational reliability.
             </p>
             <h3 style="font-size: 24px; font-weight: bold; color: #2457AA; margin: 2px 0;">Why Choose Our Soft Starters?</h3>
+              <div style="display: flex; justify-content: center; margin: 10px 0;">
+                <img src="/product-images/6.jpg" style="width: 100%; border-radius: 8px;" alt="PLC Control Panel" />
+            </div>
             <p style="font-size: 16px; margin: 2px 0;">
                 Our Soft Starters are engineered for superior performance and flexibility, offering adjustable start and stop times, overload protection, 
                 and advanced motor diagnostics. Whether for small or large-scale industrial applications, our Soft Starters provide the perfect balance 

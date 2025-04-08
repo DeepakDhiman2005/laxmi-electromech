@@ -56,8 +56,12 @@ const routes = [
             }
         ]
     },
+    // {
+    //     path: '/category/*',
+    //     element: <Product />,   
+    // }
     {
-        path: '/category/*',
+        path: '/manufacturing-ranges/*',
         element: <Product />,   
     }
 ];

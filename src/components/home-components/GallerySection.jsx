@@ -26,49 +26,49 @@ const GallerySection = () => {
                             <div class="grid-box wide">
                                 <GalleryCard
                                     image="/images/plc-control-image.png"
-                                    href="/category/electrical-automation/plc-control-panel"
-                                    title="PLC Control Panel"
+                                    href="/manufacturing-ranges/plc-panel-scada-panel"
+                                    title="PLC / SCADA Panel"
                                     className="w-full h-auto"
-                                    description="A PLC Control Panel is a key part of industrial automation, combining PLC hardware with electrical components to efficiently control machines and processes, minimizing manual work and boosting productivity."
+                                    description="We specialize in manufacturing advanced technology-based Programmable Logic Controller (PLC) and Supervisory Control & Data Acquisition (SCADA) systems for industrial automation."
                                 />
                             </div>
 
                             <div class="grid-box">
                                 <GalleryCard
                                     image="/images/laxmi-services/electrical-control-panel-2.jpg"
-                                    href="/category/electrical-automation/electrical-control-panel"
-                                    title="Electrical Control Panel"
+                                    href="/manufacturing-ranges/intelligent-mcc-panels"
+                                    title="Intelligent MCC Panels"
                                     className="w-full h-auto"
-                                    description="An Electrical Control Panel regulates and manages power distribution, automation, and control in industrial and commercial systems."
+                                    description="We offer a wide range of intelligent MCC (Motor Control Centre) panels in various designs and sizes. "
                                 />
                             </div>
                             <div class="grid-box tall">
 
                                 <GalleryCard
                                     image="/images/laxmi-services/motor-control-panel.jpg"
-                                    href="/category/electrical-automation/motor-control-centre"
+                                    href="/manufacturing-ranges/mcc-panels"
                                     title="Motor Control Centre (MCC)"
                                     className="w-full h-auto"
-                                    description="A Motor Control Centre (MCC) centrally controls multiple motors, enhancing efficiency and safety in industrial systems."
+                                    description="We manufacture MCC (Motor Control Center) panels tailored to specific applications, either based on our design or customer requirements."
                                 />
                             </div>
                             <div class="grid-box wide">
                                 <GalleryCard
                                     image="/images/laxmi-services/hmi-touch-panel-image.jpg"
-                                    href="/category/electrical-automation/hmi-touch-panel"
-                                    title="HMI Touch Panel"
+                                    href="/manufacturing-ranges/lv-mv-soft-starter-panels"
+                                    title="Soft Starter Panels"
                                     className="w-full h-auto"
-                                    description="An HMI Touch Panel enables operators to interact with industrial automation systems through a user-friendly interface."
+                                    description="We supply high-quality LV/MV soft starter panels designed to eliminate high inrush current and start-up torque on every start."
                                 />
                             </div>
 
                             <div class="grid-box tall">
                                 <GalleryCard
                                     image="/images/laxmi-services/automation-control-panel-2.jpg"
-                                    href="/category/electrical-automation/automation-control-panel"
-                                    title="Automation Control Panel"
+                                    href="/manufacturing-ranges/distribution-boards"
+                                    title="Distribution Boards"
                                     className="w-full h-auto"
-                                    description="An Automation Control Panel efficiently manages machinery, processes, and equipment in industrial and commercial automation systems."
+                                    description="Distribution boards are electrical wiring arrangements that distribute current from a single source of supply to various circuits."
                                 />
                             </div>
 

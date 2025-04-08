@@ -29,7 +29,7 @@ const ProductSidebar = ({
     return <>
         <aside className="w-full border border-solid border-gray-400">
             <div className="w-full flex justify-center bg-gray-200 text-gray-900 items-center py-2 border-b border-solid border-b-gray-400">
-                <h2 className="font-semibold text-[18px]">All Products</h2>
+                <h2 className="font-semibold text-[18px]">Our Manufacturing Ranges</h2>
             </div>
             <div className="w-full">
                 {

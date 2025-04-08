@@ -27,18 +27,32 @@ const Footer = () => {
     const navigate = useNavigate();
     const theme = useTheme();
 
+    // const links = useMemo(() => [
+    //     { name: "PLC Control Panel", route: "/category/electrical-automation/plc-control-panel" },
+    //     { name: "HMI Touch Panel", route: "/category/electrical-automation/hmi-touch-panel" },
+    //     { name: "SCADA System", route: "/category/electrical-automation/scada-system" },
+    //     // { name: "Motor Control Centre", route: "/category/electrical-automation/motor-control-centre" },
+    //     { name: "VFD Drive", route: "/category/electrical-automation/vfd-drive" },
+    //     { name: "Soft Starter", route: "/category/electrical-automation/soft-starter" },
+    //     // { name: "Electrical Control Panel", route: "/category/electrical-automation/electrical-control-panel" },
+    //     // { name: "Automation Control Panel", route: "/category/electrical-automation/automation-control-panel" },
+    //     { name: "Remote I/O Module", route: "/category/electrical-automation/remote-io-module" },
+    //     { name: 'More...', route: "/category/electrical-automation/plc-control-panel" },
+    // ], []);
+
     const links = useMemo(() => [
-            { name: "PLC Control Panel", route: "/category/electrical-automation/plc-control-panel" },
-            { name: "HMI Touch Panel", route: "/category/electrical-automation/hmi-touch-panel" },
-            { name: "SCADA System", route: "/category/electrical-automation/scada-system" },
-            // { name: "Motor Control Centre", route: "/category/electrical-automation/motor-control-centre" },
-            { name: "VFD Drive", route: "/category/electrical-automation/vfd-drive" },
-            { name: "Soft Starter", route: "/category/electrical-automation/soft-starter" },
-            // { name: "Electrical Control Panel", route: "/category/electrical-automation/electrical-control-panel" },
-            // { name: "Automation Control Panel", route: "/category/electrical-automation/automation-control-panel" },
-            { name: "Remote I/O Module", route: "/category/electrical-automation/remote-io-module" },
-            { name: 'More...', route: "/category/electrical-automation/plc-control-panel" },
-        ], []);
+        // { name: "Power Control Centre", route: "/manufacturing-ranges/power-control-centre" },
+        { name: "MCC Panels", route: "/manufacturing-ranges/mcc-panels" },
+        // { name: "Intelligent MCC Panels", route: "/manufacturing-ranges/intelligent-mcc-panels" },
+        // { name: "DG Synchronization Panel", route: "/manufacturing-ranges/dg-synchronization-panel" },
+        { name: "AMF Panels", route: "/manufacturing-ranges/auto-mains-failure-panels" },
+        { name: "APFC Panels", route: "/manufacturing-ranges/automatic-power-factor-control-panels" },
+        { name: "VFD Panels", route: "/manufacturing-ranges/vfd-panels" },
+        // { name: "LV/MV Soft Starter Panels", route: "/manufacturing-ranges/lv-mv-soft-starter-panels" },
+        // { name: "PLC Panel/ SCADA Panel", route: "/manufacturing-ranges/plc-panel-scada-panel" },
+        { name: "Distribution Boards", route: "/manufacturing-ranges/distribution-boards" },
+        { name: 'More...', route: "/manufacturing-ranges/power-control-centre" },
+    ], []);
 
     const hoverStyle = {
         display: "flex",
@@ -46,7 +60,8 @@ const Footer = () => {
         justifyContent: "start",
         gap: 1,
         py: 0.2,
-        color: theme.palette.info.light,
+        // color: theme.palette.info.light,
+        color: '#000',
         transition: 'transform 0.3s ease-in-out',
         '&:hover': {
             textDecoration: 'underline',
@@ -135,10 +150,12 @@ const Footer = () => {
             <Box sx={{
                 color: theme.palette.info.main,
                 overflow: "hidden",
-                background: `url(${FooterImg}) no-repeat center/cover`,
+                // background: `url(${FooterImg}) no-repeat center/cover`,
+                background: `url('/footer-bg.jpg') no-repeat center/cover`,
             }}>
                 <Box sx={{
-                    background: 'rgba(0,0,0,0.9)', height: '100%', width: '100%', py: 3,
+                    // background: 'rgba(0,0,0,0.9)', 
+                    height: '100%', width: '100%', py: 3,
                     px: { xs: 2, sm: 2, md: 2, lg: 6, xl: 8 },
                 }}>
                     <Grid
@@ -152,7 +169,7 @@ const Footer = () => {
                     >
                         {/* About Section */}
                         <Grid item xs={12} sm={6} md={6} lg={3} xl={3}>
-                            <Typography variant='h5' color="primary" fontWeight="bold" textTransform="uppercase" mb={1}>
+                            {/* <Typography variant='h5' color="primary" fontWeight="bold" textTransform="uppercase" mb={1}>
                                 About Us
                                 <Divider sx={{ background: '#fff' }} />
                             </Typography>
@@ -160,19 +177,31 @@ const Footer = () => {
                                 <Typography variant='body2' className='main-size'>
                                     Laxmi Electromech Pvt. Ltd. is a leading expert in electrical automation, panel manufacturing, and EPC (Engineering, Procurement, and Construction) contracts. With a strong commitment to innovation, quality, and reliability, we design and deliver cutting-edge solutions that cater to a wide range of industries. Our expertise lies in developing customized, high-performance electrical systems that enhance efficiency, safety, and productivity.
                                 </Typography>
-                            </Stack>
+                            </Stack> */}
+                            <div className='w-full flex flex-col justify-start items-start'>
+                                <img src="/logo-remove.png" alt="image" className='w-full md:w-3/4' />
+                                <Typography variant='body2' className='main-size' sx={{ color: '#000', mt: 2, mb: 1 }}>Laxmi Electromech Pvt. Ltd. is a leading expert in electrical automation, panel manufacturing, and EPC (Engineering, Procurement, and Construction) contracts.</Typography>
+                                <Stack direction="row" spacing={0.5}>
+                                    {socialLinks.map(({ icon: Icon, name }, index) => (
+                                        <IconButton key={index} sx={{ color: '#000', '&:hover': { color: theme.palette.info.dark } }} aria-label={name}>
+                                            <Icon sx={{ fontSize: '25px' }} />
+                                        </IconButton>
+                                    ))}
+                                </Stack>
+                            </div>
                         </Grid>
 
                         {/* About Links */}
                         <Grid item xs={12} sm={6} md={3} lg={2} xl={3}>
                             <Typography variant='h5' color="primary" fontWeight="bold" textTransform="uppercase" mb={1}>
                                 Quick Link
-                                <Divider sx={{ background: '#fff' }} />
+                                {/* <Divider sx={{ background: '#fff' }} /> */}
+                                <Divider sx={{ background: '#000' }} />
                             </Typography>
                             <Stack>
                                 {aboutLink.map((list, index) => (
                                     <Stack key={index} direction={'row'} alignItems={'center'} sx={{ py: 0, my: 0 }}>
-                                        <ChevronRight />
+                                        <ChevronRight sx={{ color: '#000' }} />
                                         <Button onClick={() => navigate(list.route)} sx={hoverStyle} className='main-size'>{list.name}</Button>
                                     </Stack>
                                 ))}
@@ -181,13 +210,14 @@ const Footer = () => {
 
                         <Grid item xs={12} sm={6} md={3} lg={2} xl={3}>
                             <Typography variant='h5' color="primary" fontWeight="bold" textTransform="uppercase" mb={1}>
-                                Products
-                                <Divider sx={{ background: '#fff' }} />
+                                {/* Products */}
+                                Manufacturing
+                                <Divider sx={{ background: '#000' }} />
                             </Typography>
                             <Stack>
                                 {links.map((list, index) => (
                                     <Stack key={index} direction={'row'} alignItems={'center'} sx={{ py: 0, my: 0 }}>
-                                        <ChevronRight />
+                                        <ChevronRight sx={{ color: '#000' }} />
                                         <Button onClick={() => navigate(list.route)} sx={hoverStyle} className='main-size'>{list.name}</Button>
                                     </Stack>
                                 ))}
@@ -195,14 +225,17 @@ const Footer = () => {
                         </Grid>
 
                         {/* Contact Info */}
-                        <Grid item xs={12} sm={6} md={6} lg={2.4} xl={3} className='main-size'>
+                        <Grid item xs={12} sm={6} md={6} lg={2.4} xl={3} className='main-size' sx={{ color: '#000' }}>
                             <Typography variant='h5' color="primary" fontWeight="bold" textTransform="uppercase" mb={1}>
                                 Contact Info
-                                <Divider sx={{ background: '#fff' }} />
+                                <Divider sx={{ background: '#000' }} />
                             </Typography>
                             <Typography variant='body2'><strong>Registered Address:</strong> A-139, B-06, GALI NO. 1, MADHU VIHAR, I.P EXTENSION, DELHI110092</Typography>
-                            <Typography variant='body2'><strong>Office Address:</strong> A-09, SECTOR-59, NOIDA, U.P - 201301</Typography>
-                            <Typography variant='body2'><strong>Email:</strong> <span className='text-blue-500'>info@laxmielectromech.com</span><br /><span className='text-blue-500'>apglaxmi2009@gmail.com</span></Typography>
+                            <Typography variant='body2'><strong>Manufacturing Address:</strong> A-09, SECTOR-59, NOIDA, U.P - 201301</Typography>
+                            <Typography variant='body2'>
+                                <strong>Email:</strong> <span className='text-blue-500'>info@laxmielectromech.com</span><br /><span className='text-blue-500'>apglaxmi2009@gmail.com</span>
+                                {/* <br /><span className='text-blue-500'>Sap@laxmielectromech.com</span> */}
+                            </Typography>
                             <Typography variant='body2'><strong>Phone:</strong> +91-9811983451, +91-9643401344</Typography>
                         </Grid>
 
@@ -236,20 +269,20 @@ const Footer = () => {
                         </Grid> */}
                     </Grid>
 
-                    <Divider sx={{ background: '#fff', my: 2.5 }} />
+                    <Divider sx={{ background: '#000', my: 2.5 }} />
 
                     {/* Footer Bottom Section */}
-                    <Box sx={{ display: { md: 'flex' }, justifyContent: 'space-between', alignItems: 'center', my: 0 }}>
+                    <Box sx={{ display: { md: 'flex' }, justifyContent: 'space-between', alignItems: 'center', my: 0, color: '#000' }}>
                         <Typography variant="body2">
                             © {new Date().getFullYear()} <strong>Laxmi Electromech</strong>. All Rights Reserved.
                         </Typography>
-                        <Stack direction="row" spacing={0.5}>
+                        {/* <Stack direction="row" spacing={0.5}>
                             {socialLinks.map(({ icon: Icon, name }, index) => (
-                                <IconButton key={index} sx={{ color: '#ffffff', '&:hover': { color: theme.palette.info.dark } }} aria-label={name}>
+                                <IconButton key={index} sx={{ color: '#000', '&:hover': { color: theme.palette.info.dark } }} aria-label={name}>
                                     <Icon sx={{ fontSize: '25px' }} />
                                 </IconButton>
                             ))}
-                        </Stack>
+                        </Stack> */}
                         <Typography variant='body2'>Designed & Developed by <strong>Jaikvik Technology India Pvt. Ltd.</strong></Typography>
                     </Box>
                 </Box>

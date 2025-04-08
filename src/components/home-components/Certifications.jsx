@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Heading from '../heading/Heading';
 import { useMediaQuery, useTheme } from '@mui/material';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper/modules';
 
 const CertificateLicense = () => {
     const theme = useTheme();
@@ -14,9 +15,9 @@ const CertificateLicense = () => {
         { src: '/certificates/ISO IEC 61439 -1-2020 - LAXMI ELECTROMECH PRIVATE LIMITED_page-0001.jpg', alt: 'ISO IEC Certificate' },
         { src: '/certificates/LAXMI ELECTROMECH EMS_page-0001.jpg', alt: 'EMS Certification' },
         { src: '/certificates/MSME CERTIFICATE_page-0001.jpg', alt: 'MSME Certification' },
-        { src: '/crpi/IP_CPRI_page-0001.jpg', alt: 'IP CPRI' },
-        { src: '/crpi/SHT_CKT_CPRI_page-0001.jpg', alt: 'SHT CKT CPRI' },
-        { src: '/crpi/TR_CPRI_page-0001.jpg', alt: 'TR CPRI' },
+        // { src: '/crpi/IP_CPRI_page-0001.jpg', alt: 'IP CPRI' },
+        // { src: '/crpi/SHT_CKT_CPRI_page-0001.jpg', alt: 'SHT CKT CPRI' },
+        // { src: '/crpi/TR_CPRI_page-0001.jpg', alt: 'TR CPRI' },
     ];
 
     const openOverlay = (imgSrc) => {
@@ -37,6 +38,9 @@ const CertificateLicense = () => {
                         <Swiper
                             className="w-full"
                             spaceBetween={2}
+                            modules={[Navigation]}
+                            navigation
+                            loop
                             slidesPerView={1}
                             autoplay={true}
                             speed={1200}
@@ -76,7 +80,7 @@ const CertificateLicense = () => {
                             ))}
                         </Swiper>
                     </> : <>
-                        <div className="grid justify-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-7  w-full px-4 lg:px-8 gap-6">
+                        <div className="grid justify-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-4  w-full px-4 lg:px-8 gap-6">
                             {certificates.map((cert, index) => (
                                 <div key={index} className="flex justify-center items-center">
                                     <div

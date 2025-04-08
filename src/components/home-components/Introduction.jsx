@@ -9,7 +9,7 @@ const Introduction = () => {
     const swiperRef = useRef(null);
     const images = [
         '/home-banners/1.png',
-        '/home-banners/2.png',
+        // '/home-banners/2.png',
         '/home-banners/3.png',
         '/home-banners/4.png',
     ];

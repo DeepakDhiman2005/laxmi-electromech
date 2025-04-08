@@ -1,7 +1,7 @@
 export const menuData = [
     { name: "Home", route: "/" },
     { name: "About Us", route: "/about-us" },
-    { name: 'Our Products', route: '/category/electrical-automation/plc-control-panel' },
+    { name: 'Our Manufacturing Range', route: '/manufacturing-ranges/power-control-centre' },
     { name: 'Manufacturing Facility Machinery', route: '/manufacturing-facility-machinery' },
     { name: 'Our Clients', route: '/our-clients' },
     { name: 'Quality', route: '/quality' },

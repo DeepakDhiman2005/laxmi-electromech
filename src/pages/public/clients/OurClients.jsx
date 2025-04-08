@@ -61,11 +61,12 @@ const OurClients = () => {
 
             {/* Clients Logos Grid */}
             <div className="flex flex-col w-full justify-center items-center gap-y-2">
-                <h2 className="text-2xl sm:text-3xl text-gray-900 font-bold my-4">
+                {/* <h2 className="text-2xl sm:text-3xl text-gray-900 font-bold my-4">
                     We have served over <strong>12 customers</strong> across <strong>8 countries</strong>
-                </h2>
+                </h2> */}
                 <div className="w-full grid grid-cols-2 sm:grid-cols-4 my-6 md:grid-cols-6 lg:grid-cols-8 gap-y-6">
-                    {Array.from({ length: 12 }).map((_, index) => (
+                    {/* {Array.from({ length: 12 }).map((_, index) => ( */}
+                    {Array.from({ length: 11 }).map((_, index) => (
                         <div key={index} className="flex w-full justify-center items-center">
                             <img
                                 src={`/images/clients/${index + 1}.png`}

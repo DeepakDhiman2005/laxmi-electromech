@@ -24,16 +24,28 @@ const AppNavbar = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    // const links = useMemo(() => [
+    //     { name: "PLC Control Panel", route: "/category/electrical-automation/plc-control-panel" },
+    //     { name: "HMI Touch Panel", route: "/category/electrical-automation/hmi-touch-panel" },
+    //     { name: "SCADA System", route: "/category/electrical-automation/scada-system" },
+    //     { name: "Motor Control Centre", route: "/category/electrical-automation/motor-control-centre" },
+    //     { name: "VFD Drive", route: "/category/electrical-automation/vfd-drive" },
+    //     { name: "Soft Starter", route: "/category/electrical-automation/soft-starter" },
+    //     { name: "Electrical Control Panel", route: "/category/electrical-automation/electrical-control-panel" },
+    //     { name: "Automation Control Panel", route: "/category/electrical-automation/automation-control-panel" },
+    //     { name: "Remote I/O Module", route: "/category/electrical-automation/remote-io-module" },
+    // ], [pathname]);
     const links = useMemo(() => [
-        { name: "PLC Control Panel", route: "/category/electrical-automation/plc-control-panel" },
-        { name: "HMI Touch Panel", route: "/category/electrical-automation/hmi-touch-panel" },
-        { name: "SCADA System", route: "/category/electrical-automation/scada-system" },
-        { name: "Motor Control Centre", route: "/category/electrical-automation/motor-control-centre" },
-        { name: "VFD Drive", route: "/category/electrical-automation/vfd-drive" },
-        { name: "Soft Starter", route: "/category/electrical-automation/soft-starter" },
-        { name: "Electrical Control Panel", route: "/category/electrical-automation/electrical-control-panel" },
-        { name: "Automation Control Panel", route: "/category/electrical-automation/automation-control-panel" },
-        { name: "Remote I/O Module", route: "/category/electrical-automation/remote-io-module" },
+        { name: "Power Control Centre", route: "/manufacturing-ranges/power-control-centre" },
+        { name: "MCC Panels", route: "/manufacturing-ranges/mcc-panels" },
+        { name: "Intelligent MCC Panels", route: "/manufacturing-ranges/intelligent-mcc-panels" },
+        { name: "DG Synchronization Panel", route: "/manufacturing-ranges/dg-synchronization-panel" },
+        { name: "AMF Panels", route: "/manufacturing-ranges/auto-mains-failure-panels" },
+        { name: "APFC Panels", route: "/manufacturing-ranges/automatic-power-factor-control-panels" },
+        { name: "VFD Panels", route: "/manufacturing-ranges/vfd-panels" },
+        { name: "LV/MV Soft Starter Panels", route: "/manufacturing-ranges/lv-mv-soft-starter-panels" },
+        { name: "PLC Panel/ SCADA Panel", route: "/manufacturing-ranges/plc-panel-scada-panel" },
+        { name: "Distribution Boards", route: "/manufacturing-ranges/distribution-boards" },
     ], [pathname]);
 
     return (
@@ -97,7 +109,8 @@ const AppNavbar = () => {
                                     <GiHamburgerMenu size={18} />
                                 </span>
                             </i>
-                            <span>All Products</span>
+                            {/* <span>All Products</span> */}
+                            <span>Our Manufacturing Range</span>
                             <ul id="catList">
                                 {
                                     links.map((item, index) => (

@@ -11,6 +11,7 @@ import electricalAutomation from '../../../data/electricalAutomation';
 import panelManufacturing from '../../../data/panelManufacturing';
 import epcContracts from '../../../data/epcContracts';
 import TuneIcon from '@mui/icons-material/Tune';
+import manufacturingRanges from '../../../data/manufacturingRanges';
 
 const Product = () => {
     const { pathname } = useLocation();
@@ -26,7 +27,7 @@ const Product = () => {
     }, [pathname]);
 
     const category = useMemo(() => pathname.split('/')[2]?.split('-').join(' ') || '', [pathname]);
-    const subCategory = useMemo(() => pathname.split('/')[3]?.split('-').join(' ') || '', [pathname]);
+    const subCategory = useMemo(() => pathname.split('/')[2]?.split('-').join(' ') || '', [pathname]);
 
     const filteredData = useMemo(() => {
         const categorySlug = pathname.split('/')[2];
@@ -35,15 +36,16 @@ const Product = () => {
 
     const productData = useMemo(() => {
         let category = pathname.split('/')[2];
-        let subcategory = pathname.split('/')[3];
+        let subcategory = pathname.split('/')[2];
+        return manufacturingRanges.find((item) => item.category === subcategory) || null;
 
-        if (category === "electrical-automation") {
-            return electricalAutomation.find((item) => item.category === subcategory)?.description || null;
-        } else if (category === "panel-manufacturing") {
-            return panelManufacturing.find((item) => item.category === subcategory)?.description || null;
-        } else if (category === "epc-contracts") {
-            return epcContracts.find((item) => item.category === subcategory)?.description || null;
-        }
+        // if (category === "electrical-automation") {
+        //     return electricalAutomation.find((item) => item.category === subcategory)?.description || null;
+        // } else if (category === "panel-manufacturing") {
+        //     return panelManufacturing.find((item) => item.category === subcategory)?.description || null;
+        // } else if (category === "epc-contracts") {
+        //     return epcContracts.find((item) => item.category === subcategory)?.description || null;
+        // }
         return null;
     }, [pathname]);
 
@@ -52,16 +54,28 @@ const Product = () => {
         setPageTitle(`${subCategory} - ${category}`.trim());
     }, [category, subCategory]);
 
+    // const links = useMemo(() => [
+    //     { name: "PLC Control Panel", route: "/category/electrical-automation/plc-control-panel" },
+    //     { name: "HMI Touch Panel", route: "/category/electrical-automation/hmi-touch-panel" },
+    //     { name: "SCADA System", route: "/category/electrical-automation/scada-system" },
+    //     { name: "Motor Control Centre", route: "/category/electrical-automation/motor-control-centre" },
+    //     { name: "VFD Drive", route: "/category/electrical-automation/vfd-drive" },
+    //     { name: "Soft Starter", route: "/category/electrical-automation/soft-starter" },
+    //     { name: "Electrical Control Panel", route: "/category/electrical-automation/electrical-control-panel" },
+    //     { name: "Automation Control Panel", route: "/category/electrical-automation/automation-control-panel" },
+    //     { name: "Remote I/O Module", route: "/category/electrical-automation/remote-io-module" },
+    // ], [pathname]);
     const links = useMemo(() => [
-        { name: "PLC Control Panel", route: "/category/electrical-automation/plc-control-panel" },
-        { name: "HMI Touch Panel", route: "/category/electrical-automation/hmi-touch-panel" },
-        { name: "SCADA System", route: "/category/electrical-automation/scada-system" },
-        { name: "Motor Control Centre", route: "/category/electrical-automation/motor-control-centre" },
-        { name: "VFD Drive", route: "/category/electrical-automation/vfd-drive" },
-        { name: "Soft Starter", route: "/category/electrical-automation/soft-starter" },
-        { name: "Electrical Control Panel", route: "/category/electrical-automation/electrical-control-panel" },
-        { name: "Automation Control Panel", route: "/category/electrical-automation/automation-control-panel" },
-        { name: "Remote I/O Module", route: "/category/electrical-automation/remote-io-module" },
+        { name: "Power Control Centre", route: "/manufacturing-ranges/power-control-centre" },
+        { name: "MCC Panels", route: "/manufacturing-ranges/mcc-panels" },
+        { name: "Intelligent MCC Panels", route: "/manufacturing-ranges/intelligent-mcc-panels" },
+        { name: "DG Synchronization Panel", route: "/manufacturing-ranges/dg-synchronization-panel" },
+        { name: "AMF Panels", route: "/manufacturing-ranges/auto-mains-failure-panels" },
+        { name: "APFC Panels", route: "/manufacturing-ranges/automatic-power-factor-control-panels" },
+        { name: "VFD Panels", route: "/manufacturing-ranges/vfd-panels" },
+        { name: "LV/MV Soft Starter Panels", route: "/manufacturing-ranges/lv-mv-soft-starter-panels" },
+        { name: "PLC Panel/ SCADA Panel", route: "/manufacturing-ranges/plc-panel-scada-panel" },
+        { name: "Distribution Boards", route: "/manufacturing-ranges/distribution-boards" },
     ], [pathname]);
 
     return (
@@ -70,7 +84,9 @@ const Product = () => {
             <main>
                 <div className='w-full'>
                     <img
-                        src={filteredData?.banner || '/banners/default.png'}
+                        // src={filteredData?.banner || '/banners/default.png'}
+                        // src={'/banners/electrical-control-panel.png'}
+                        src={productData?.banner || '/banners/defult.png'}
                         alt={category}
                         className='w-full'
                     />
@@ -88,7 +104,7 @@ const Product = () => {
                         <ProductSidebar links={links} />
                     </div>
                     <div className='w-full md:w-[80%] product-description'>
-                        <div dangerouslySetInnerHTML={{ __html: productData }} className='w-full border border-solid border-blue-700 py-3 px-2 main-size'></div>
+                        <div dangerouslySetInnerHTML={{ __html: productData?.description }} className='w-full border border-solid border-blue-700 py-3 px-2 main-size'></div>
                     </div>
                 </div>
             </main>

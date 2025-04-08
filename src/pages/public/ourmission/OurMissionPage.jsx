@@ -27,14 +27,16 @@ const OurMissionPage = () => {
             // bgColor1: "#ffffff",
             bgColor: "#4b5563",
             bgColor1: "rgba(0,0,0,0.1)",
-            content: "We aim to deliver innovative electrical and automation solutions that ensure safety, efficiency, and sustainability. Our goal is to provide expert services that integrate advanced technology for a smarter future.",
+            // content: "We aim to deliver innovative electrical and automation solutions that ensure safety, efficiency, and sustainability. Our goal is to provide expert services that integrate advanced technology for a smarter future.",
+            content: 'To be the trusted and dependable partner for comprehensive electrical and automation solutions, dedicated to delivering innovative technologies and services that drive operational efficiency, environmental sustainability, and sustainable growth.'
         },
         {
             image: Img1,
             title: "Our Mission",
             bgColor: "blue",
             bgColor1: "#e3f2fd",
-            content: "Our mission is to lead industries with cutting-edge automation and control solutions. We strive to advance electrical engineering for a long-term global impact while empowering businesses with customized energy-efficient solutions.",
+            // content: "Our mission is to lead industries with cutting-edge automation and control solutions. We strive to advance electrical engineering for a long-term global impact while empowering businesses with customized energy-efficient solutions.",
+            content: 'To empower our customers to achieve their goals by delivering reliable, efficient, and sustainable electrical and automation solutions, while promoting a culture of continuous improvement and excellence.',
         },
         {
             image: Img3,
@@ -43,7 +45,8 @@ const OurMissionPage = () => {
             // bgColor1: "#f3e5f5",
             bgColor: "#4b5563",
             bgColor1: "rgba(0,0,0,0.1)",
-            content: "We uphold integrity, transparency, and ethical responsibility in all our business dealings. Our commitment to quality, reliability, and service excellence drives us forward, while innovation and sustainability remain at the core of our continuous improvement efforts.",
+            // content: "We uphold integrity, transparency, and ethical responsibility in all our business dealings. Our commitment to quality, reliability, and service excellence drives us forward, while innovation and sustainability remain at the core of our continuous improvement efforts.",
+            content: 'We prioritize customer satisfaction through innovation, excellence, and reliable service. Committed to sustainability, we foster teamwork, integrity, and transparency. With a focus on quality, we adapt quickly to change, ensuring precision in all we do.',
         },
     ];
 

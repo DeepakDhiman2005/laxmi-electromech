@@ -16,10 +16,19 @@ import { Title } from 'react-head'
 import Infrastructure from './Infrastructure'
 import Founders from './Founders'
 import CertificateLicense from '../../../components/home-components/License'
+import { FaCheckCircle } from 'react-icons/fa'
 
 const AboutUs = () => {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
+    const CheckPoint = ({ children }) => (
+        <div className="flex justify-start items-center gap-x-2">
+            <FaCheckCircle size={16} className="text-[var(--colorOne)]" />
+            <span className="font-medium main-size">{children}</span>
+        </div>
+    );
+
     return (
         <>
             <Title>About Us</Title>
@@ -37,7 +46,7 @@ const AboutUs = () => {
             <Box
                 sx={{ width: '100%' }}
             >
-                <img src={isMobile ? "/banners/about-us-banner-mobile.png": "/banners/about-us-banner.png"} alt="image" style={{ width: '100%', height: 'auto' }} />
+                <img src={isMobile ? "/banners/about-us-banner-mobile.png" : "/banners/about-us-banner.png"} alt="image" style={{ width: '100%', height: 'auto' }} />
             </Box>
             {/* <Box sx={{ px: { xs: 2, sm: 2, md: 2, lg: 12, xl: 12 }, }}> */}
             <Box>
@@ -52,7 +61,7 @@ const AboutUs = () => {
 
                     <Grid container spacing={3} alignItems="center">
                         {/* Text Content */}
-                        <Grid item xs={12} md={7}>
+                        {/* <Grid item xs={12} md={7}>
                             <Typography variant="h5" fontWeight="bold" gutterBottom>
                                 Powering Innovation, Delivering Excellence
                             </Typography>
@@ -82,7 +91,20 @@ const AboutUs = () => {
                                     </Stack>
                                 </Grid>
                             </Grid>
+                        </Grid> */}
+                        <Grid item xs={12} md={7}>
+                            <Typography variant='body1' sx={{ mb: 1.5 }} className='main-size'>
+                                Laxmi Electromech Pvt. Ltd. (LEPL) is a CPRI-approved and trusted name in the field of electrical and automation solutions.
+                                With a strong commitment to quality and innovation, we specialize in the design, manufacturing, and implementation of
+                                high-performance electrical panels and comprehensive industrial solutions. As a leading Industrial Electrical and Automation
+                                Solution provider, we deliver reliable, customized services tailored to meet the unique needs of our clients across various industries.
+                                Our areas of expertise include:
+                            </Typography>
+                            <CheckPoint>Electrical panels – Design, manufacturing, and commissioning</CheckPoint>
+                            <CheckPoint>Industrial electrical solutions – Turnkey projects and system integration</CheckPoint>
+                            <CheckPoint>Automation solutions – PLC, SCADA, HMI, and process automation</CheckPoint>
                         </Grid>
+
 
                         {/* Image Section */}
                         <Grid item xs={12} md={5}>
@@ -99,7 +121,7 @@ const AboutUs = () => {
                 <WhatWeDo />
                 <WhyChooseUs />
                 <OurExpertise />
-                {/* <OurTeam /> */}
+                <OurTeam />
                 <SustainabilitySection />
                 <ClientTestimonials />
                 <Certifications />
