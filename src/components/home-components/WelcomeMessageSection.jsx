@@ -11,7 +11,7 @@ const WelcomeMessageSection = () => {
 
             {/* Content */}
             <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl">
-                <h3 className="text-[20px]">Welcome</h3>
+                {/* <h3 className="text-[20px]">Welcome</h3> */}
                 <h2 className="text-[32px] font-bold uppercase">
                     Laxmi Electromech Pvt. Ltd.
                 </h2>

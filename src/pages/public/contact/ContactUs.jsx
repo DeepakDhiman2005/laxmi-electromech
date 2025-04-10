@@ -42,7 +42,7 @@ const ContactUs = () => {
 
     // Contact Cards Data
     const contactCards = [
-        { icon: <Map />, title: 'Location', details: ['Registered Address: A-139, B-06, GALI NO. 1,', 'MADHU VIHAR, I.P EXTENSION, DELHI110092', 'Manufacturing Address: A-09, SECTOR-59, NOIDA, U.P - 201301'] },
+        { icon: <Map />, title: 'Location', details: ['Registered Address: A-139, B-06, Gali No. 1,', ' Madhu Vihar, I.P Extension, Delhi 110092', 'Manufacturing Address: A-09, Sector-59, Noida, U.P – 201301'] },
         // { icon: <Drafts />, title: 'Send an Email', details: ['info@laxmielectromech.com', 'Sap@laxmielectromech.com', 'apglaxmi2009@gmail.com'] },
         { icon: <Drafts />, title: 'Send an Email', details: ['info@laxmielectromech.com', 'apglaxmi2009@gmail.com'] },
         { icon: <Headset />, title: 'Contact Us', details: ['+91-96434-01345'] },

@@ -230,8 +230,8 @@ const Footer = () => {
                                 Contact Info
                                 <Divider sx={{ background: '#000' }} />
                             </Typography>
-                            <Typography variant='body2'><strong>Registered Address:</strong> A-139, B-06, GALI NO. 1, MADHU VIHAR, I.P EXTENSION, DELHI110092</Typography>
-                            <Typography variant='body2'><strong>Manufacturing Address:</strong> A-09, SECTOR-59, NOIDA, U.P - 201301</Typography>
+                            <Typography variant='body2'><strong>Registered Address:</strong> A-139, B-06, Gali No. 1, Madhu Vihar, I.P Extension, Delhi 110092</Typography>
+                            <Typography variant='body2'><strong>Manufacturing Address:</strong> A-09, Sector-59, Noida, U.P – 201301</Typography>
                             <Typography variant='body2'>
                                 <strong>Email:</strong> <span className='text-blue-500'>info@laxmielectromech.com</span><br /><span className='text-blue-500'>apglaxmi2009@gmail.com</span>
                                 {/* <br /><span className='text-blue-500'>Sap@laxmielectromech.com</span> */}
@@ -283,7 +283,7 @@ const Footer = () => {
                                 </IconButton>
                             ))}
                         </Stack> */}
-                        <Typography variant='body2'>Designed & Developed by <strong>Jaikvik Technology India Pvt. Ltd.</strong></Typography>
+                        <Typography variant='body2'>Designed & Developed by <a href='https://www.jaikviktechnology.com/' target="_blank" className='hover:underline'>Jaikvik Technology India Pvt. Ltd.</a></Typography>
                     </Box>
                 </Box>
             </Box>

@@ -1,6 +1,6 @@
 import React from 'react'
 import Banner from '../../components/banner/Banner'
-import OurServices from './services/OurServices'
+// import OurServices from './services/OurServices'
 // import LatestBlog from './blogs/LatestBlog'
 import OurMissionPage from './ourmission/OurMissionPage'
 import AboutSection from '../../components/home-components/AboutSection'
@@ -20,6 +20,7 @@ import HomeCards from '../../components/home-components/HomeCards'
 import OurProjectsSection from '../../components/home-components/OurProjectsSection'
 import GallerySection from '../../components/home-components/GallerySection'
 import LaserCuttingSection from '../../components/home-components/LaserCuttingSection'
+import OurServices from '../../components/home-components/OurServices'
 
 const Home = () => {
     return (
@@ -28,10 +29,9 @@ const Home = () => {
             <Introduction />
             {/* <Banner /> */}
             <HomeCards />
-            <AboutSection />
-            <Certifications />
+            {/* <AboutSection /> */}
             <GallerySection />
-            <OurMissionPage />
+            {/* <OurMissionPage /> */}
             <LaserCuttingSection />
             <ProductCategoriesSection />
             <WelcomeMessageSection />
@@ -39,11 +39,12 @@ const Home = () => {
             <WhyChooseUs />
             {/* <PlantAndMachinery /> */}
             {/* <License /> */}
-            <ClientTestimonials />
-            <QualityProcess />
+            {/* <ClientTestimonials /> */}
+            {/* <QualityProcess /> */}
             {/* <LatestBlog /> */}
-            <OurProjectsSection />
-            <FAQs />
+            {/* <OurProjectsSection /> */}
+            {/* <FAQs /> */}
+            <Certifications />
             <Clientele />
         </>
     )

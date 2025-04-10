@@ -18,11 +18,11 @@ const uniqueSellingPoints = [
         description: "Dedicated customer support available round the clock.",
         icon: <SupportAgent fontSize="medium" sx={{ color: "white" }} />,
     },
-    {
-        title: "Data-Driven Insights",
-        description: "Leveraging AI & analytics for smarter decision-making.",
-        icon: <Insights fontSize="medium" sx={{ color: "white" }} />,
-    },
+    // {
+    //     title: "Data-Driven Insights",
+    //     description: "Leveraging AI & analytics for smarter decision-making.",
+    //     icon: <Insights fontSize="medium" sx={{ color: "white" }} />,
+    // },
 ];
 
 const WhyChooseUs = () => {
@@ -57,7 +57,8 @@ const WhyChooseUs = () => {
 
                 <Grid container spacing={4} justifyContent="center">
                     {uniqueSellingPoints.map((point, index) => (
-                        <Grid item xs={12} sm={6} md={3} key={index} sx={{ display: "flex" }}>
+                        // <Grid item xs={12} sm={6} md={3} key={index} sx={{ display: "flex" }}>
+                        <Grid item xs={12} sm={4} md={4} key={index} sx={{ display: "flex" }}>
                             <Card
                                 sx={{
                                     textAlign: "center",

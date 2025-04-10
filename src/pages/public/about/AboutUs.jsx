@@ -116,9 +116,9 @@ const AboutUs = () => {
                 </Box>
                 <OurMissionPage />
                 <Infrastructure />
-                <OurJourney />
+                {/* <OurJourney /> */}
                 <Founders />
-                <WhatWeDo />
+                {/* <WhatWeDo /> */}
                 <WhyChooseUs />
                 <OurExpertise />
                 <OurTeam />

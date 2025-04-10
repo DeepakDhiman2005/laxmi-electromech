@@ -4,15 +4,15 @@ import FacilityImage from "./FacilityImage";
 const ManufacturingFacilityMachinery = () => {
     const images = [
         {
-            title: 'Brake Shoe Curing Oven',
+            title: 'Oven',
             src: "/images/product-images/power-plant/1.png",
         },
         {
-            title: 'Manual Powder Coating Machine',
+            title: 'Powder Paint Spray Gun (2 Sets)',
             src: "/images/product-images/power-plant/2.png",
         },
         {
-            title: 'Conveyorized Powder Coating Booth',
+            title: 'Powder Painting Booth',
             src: "/images/product-images/power-plant/3.png",
         }
     ];
@@ -26,44 +26,47 @@ const ManufacturingFacilityMachinery = () => {
 
     const images3 = [
         {
-            title: 'Laser Cutting',
+            title: 'Laser Cutting Machine 1.5 Kw',
             src: "/images/product-images/fabrication-plant/1.png",
         },
         {
-            title: 'CNC Bending Machine',
+            title: 'Cnc Hydraulic Press Brake 160 Ton',
             src: "/images/product-images/fabrication-plant/2.png",
         },
         {
-            title: 'NC Shearing Machine',
+            title: 'Shearing Machine 2500 Mm',
             src: "/images/product-images/fabrication-plant/3.png",
         },
         {
-            title: 'Deep Pneumatics DP15D Screw Air Compressor',
+            title: 'Screw Compressor 20 Hp',
             src: "/images/product-images/fabrication-plant/4.png",
         },
         {
-            title: 'Power Press Punching Machine',
+            title: 'Power Press 10 Ton & 15 Ton',
             src: "/images/product-images/fabrication-plant/5.png",
         },
         {
-            // title: 'Electra Welding Machine',
-            title: 'MIG Welding Machine',
+            title: 'Mig Welding (4 Nos)',
             src: "/images/product-images/fabrication-plant/6.png",
         },
         {
-            title: 'Inverter Welding Machine',
+            title: 'Argon Welding',
             src: "/images/product-images/fabrication-plant/7.png",
         },
     ];
 
     return (
         <>
-            <Title>Manufacturing Facility & Machinery</Title>
+            <Title>Plant & Machinery</Title>
             <img src="/banners/Our-Manufacturing-Facility-&-Machinery.png" alt="banner" className="w-full" />
             <div className="w-full py-6 px-2 lg:px-12">
                 <h1 className="text-3xl sm:text-4xl font-extrabold text-center text-gray-900 mb-5">
-                    Our Manufacturing Facility & Machinery
+                    Plant & Machinery
                 </h1>
+                <p className="text-center text-gray-700 mx-auto mb-10">
+                    Our state-of-the-art plant and machinery are equipped with advanced fabrication and power coating systems, ensuring precision, efficiency, and high-quality production to meet diverse industrial needs.
+                </p>
+
 
                 <section className="mb-8">
                     {/* <h2 className="text-2xl sm:text-3xl font-semibold text-gray-800 mb-6 text-center">
@@ -85,7 +88,7 @@ const ManufacturingFacilityMachinery = () => {
                     </ul> */}
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                         {[...images3, ...images].map((item, index) => (
-                          <FacilityImage key={index} {...item} />  
+                            <FacilityImage key={index} {...item} />
                         ))}
                     </div>
                 </section>

@@ -34,7 +34,7 @@ const HomeCards = () => {
                 />
                 <div className="flex flex-col justify-start items-start">
                     <h2 className="font-semibold text-[18px] text-white">About Us</h2>
-                    <p className="text-[14px] text-white main-size">Laxmi Electromech Pvt. Ltd. provides reliable electrical solutions with expertise in industrial and commercial sectors.</p>
+                    <p className="text-[14px] text-white main-size">Laxmi Electromech Pvt. Ltd. (LEPL) is a CPRI-approved and trusted name in the field of electrical and automation solutions.</p>
                 </div>
 
             </div>
