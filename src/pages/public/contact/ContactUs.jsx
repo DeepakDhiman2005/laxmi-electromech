@@ -62,18 +62,20 @@ const ContactUs = () => {
                 containerStyles={{ overflow: "hidden" }}
                 text="ContactUs"
             /> */}
-            <Box
-                sx={{ width: '100%' }}
+            <div
+                className='w-auto h-auto bannerCard'
             >
-                <img src={isMobile ? "/banners/contact-us-banner-mobile.png" : "/banners/contact-us-banner.png"} alt="image" style={{ width: '100%', height: 'auto' }} />
-            </Box>
+                <a className="w-auto h-auto">
+                    <img src={isMobile ? "/banners/contact-us-banner-mobile.png" : "/banners/Contact-Us.png"} alt="image" style={{ width: '100%', height: 'auto' }} />
+                </a>
+            </div>
             {/* Contact Information */}
             {/* <Box sx={{ py: 2, px: { lg: 12, md: 2, sm: 2, xs: 2 }, background: theme.palette.info.main }}> */}
             <Box sx={{ py: 2, px: { lg: 6, md: 2, sm: 2, xs: 2 }, background: theme.palette.info.main }}>
                 <Grid container spacing={2} justifyContent="space-between" sx={{ display: 'flex', flexWrap: 'wrap' }}>
                     {contactCards.map((card, index) => (
                         <Grid item xs={12} md={4} key={index} sx={{ display: 'flex' }}>
-                            <Card elevation={0} sx={{ background: '#FFFFFF', flexGrow: 1  }}>
+                            <Card elevation={0} sx={{ background: '#FFFFFF', flexGrow: 1 }}>
                                 <CardContent>
                                     <Stack direction="column" spacing={1} alignItems="center" justifyContent="center">
                                         <Box sx={{ ...hoverStyle1, background: theme.palette.error.main, color: '#fff', p: 1 }}>
@@ -97,7 +99,7 @@ const ContactUs = () => {
                 <Grid container spacing={2} sx={{ py: 2, alignItems: 'stretch' }}>
                     {/* Contact Form */}
                     <Grid item lg={7} xl={8} xs={12} sx={{ display: 'flex' }}>
-                     <ContactForm />
+                        <ContactForm />
                     </Grid>
 
                     {/* Sidebar */}
@@ -106,7 +108,7 @@ const ContactUs = () => {
                             <Card elevation={0} sx={{ p: { lg: 4, xs: 2 }, background: '#FDFDFD', display: 'flex', flexDirection: 'column', height: '100%' }}>
                                 <CardContent sx={{ flex: 1 }}>
                                     <Typography variant="h3" fontWeight="bold">Get in Touch</Typography>
-                                    <Typography variant="body1" sx={{ pl: 0.8 }}>
+                                    <Typography variant="body1" sx={{ pl: 0.8 }} className='main-size'>
                                         Have any questions or need assistance? Contact us today, and our team will be happy to help.
                                         Whether you’re looking for more information, need technical support, or just want to share feedback,
                                         our dedicated team is here to assist you every step of the way.

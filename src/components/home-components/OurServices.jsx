@@ -13,7 +13,7 @@ const OurServices = () => {
     }) => {
         return <>
             <div className="inline-block icon h-16 w-16">
-                <div className="w-full h-full flex justify-center items-center">
+                <div className="w-full h-full flex justify-center items-center text-white">
                     {children}
                 </div>
             </div>

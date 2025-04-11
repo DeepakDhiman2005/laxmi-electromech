@@ -31,7 +31,7 @@ const CertificateLicense = () => {
 
     return (
         <>
-            <div className="bg-gray-100 py-8 w-full">
+            <div className="bg-gray-100 py-4 w-full">
                 <Heading startText="Our" endText="Certificates" />
                 {
                     isMobile ? <>
@@ -80,21 +80,19 @@ const CertificateLicense = () => {
                             ))}
                         </Swiper>
                     </> : <>
-                        <div className="grid justify-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-4  w-full px-4 lg:px-8 gap-6">
+
+                        <div className="flex flex-wrap items-center justify-center w-full px-4 lg:px-8 gap-6 relative">
                             {certificates.map((cert, index) => (
-                                <div key={index} className="flex justify-center items-center">
+                                <div key={index} className="relative z-10">
                                     <div
-                                        className="relative border-2 border-gray-300 bg-white rounded-lg shadow-lg hover:shadow-xl transition-transform duration-300 ease-in-out w-[260px] cursor-pointer overflow-hidden group"
+                                        className="group relative border-2 border-gray-300 bg-white rounded-lg shadow-lg transition-transform duration-300 ease-in-out w-[160px] cursor-pointer overflow-visible"
                                         onClick={() => openOverlay(cert.src)}
                                     >
                                         <img
                                             src={cert.src}
                                             alt={cert.alt}
-                                            className="w-full h-auto rounded-md transition-transform duration-300 ease-in-out group-hover:scale-105"
+                                            className="w-full h-auto rounded-md transition-transform duration-300 ease-in-out origin-center z-50"
                                         />
-                                        <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
-                                            <span className="text-white text-lg font-semibold">View Certificate</span>
-                                        </div>
                                     </div>
                                 </div>
                             ))}
@@ -117,7 +115,7 @@ const CertificateLicense = () => {
                     <img
                         src={selectedImage}
                         alt="Enlarged Certificate"
-                        className="max-w-[90%] max-h-[85%] border-4 border-white shadow-xl rounded-lg transition-transform duration-300 ease-in-out"
+                        className="max-w-[90%] max-h-[98%] border-4 border-white shadow-xl rounded-lg transition-transform duration-300 ease-in-out"
                     />
                 </div>
             )}

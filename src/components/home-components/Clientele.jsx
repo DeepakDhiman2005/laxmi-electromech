@@ -40,7 +40,7 @@ const Clientele = React.memo(() => {
             0: { slidesPerView: 1, spaceBetween: 0 },
             600: { slidesPerView: 3, spaceBetween: 0 },
             960: { slidesPerView: 4, spaceBetween: 0 },
-            1280: { slidesPerView: 7, spaceBetween: 0 },
+            1280: { slidesPerView: 10 , spaceBetween: 0 },
           }}
         >
           {Array(12)
@@ -50,7 +50,8 @@ const Clientele = React.memo(() => {
                 <img
                   src={`/images/clients/${index + 1}.png`}
                   alt={`Client ${index + 1}`}
-                  className="w-24 h-24 object-contain rounded-lg m-0 px-8 border border-solid border-gray-300" // Added h-24 for consistent height
+                  // className="w-24 h-24 object-contain rounded-lg m-0 px-8 border border-solid border-gray-300" // Added h-24 for consistent height
+                  className="w-[72px] h-[72px] object-contain rounded-lg m-0 px-8 border border-solid shadow-[0px_0px_1px_1px_#dbdbdb] border-gray-300" // Added h-24 for consistent height
                 />
               </SwiperSlide>
             ))}

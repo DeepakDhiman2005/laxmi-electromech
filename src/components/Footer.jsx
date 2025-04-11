@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { Box, Button, Divider, Grid, IconButton, OutlinedInput, Stack, Typography, useTheme } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ChevronRight, Facebook, Instagram, LinkedIn, Send, Twitter } from '@mui/icons-material';
 import FooterImg from '../assets/images/footer.jpg';
 import { useMemo } from 'react';
@@ -10,12 +10,13 @@ const aboutLink = [
     { name: "About Us", route: '/about-us' },
     // { name: 'Our Products', route: '/category/electrical-automation/plc-control-panel' },
     // { name: 'Manufacturing Facility Machinery', route: '/manufacturing-facility-machinery' },
+    { name: 'Plant and Machinery', route: '/plant-and-machinery' },
     { name: 'Our Clients', route: '/our-clients' },
+    { name: "Career", route: '/career' },
     { name: 'Quality', route: '/quality' },
     // { name: "Blogs", route: '/blogs' },
-    { name: "Contact Us", route: '/contact-us' },
     { name: 'Projects', route: '/projects' },
-    { name: "Career", route: '/career' },
+    // { name: "Contact Us", route: '/contact-us' },
 ];
 const socialLinks = [
     { icon: Facebook, link: 'https://www.facebook.com/share/1D3ha3whwF/', name: 'Facebook' },
@@ -77,69 +78,67 @@ const Footer = () => {
             }}
         >
             <Box
-                sx={{
-                    background: 'linear-gradient(120deg, #1C85C6 0%, #0F5B99 100%)',
-                    px: { xs: 2, sm: 2, md: 2, lg: 6, xl: 6 },
-                    py: 3,
-                }}
+                sx={{ background: 'white' }}
             >
                 <Grid
                     container
-                    justifyContent="space-around"
+                    justifyContent="space-between"
                     alignItems="center"
+                    sx={{
+                        // backgroundImage: `url('/images/footer-form-bg.png')`, // or .png / .webp
+                        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)), url('/images/footer-top-bg.jpg')`, // or .png / .webp
+                        backgroundRepeat: 'no-repeat',
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                    }}
                 >
                     {/* Follow Ups Section */}
-                    <Grid item xs={12} sm={6} md={4}>
-                        <Typography variant="h5" sx={{ color: "#fff" }}>Follow Ups</Typography>
-                        <Typography variant="body2" sx={{ color: "#e0e0e0" }}>
-                            We post regularly interesting application photos and articles regarding drilling & bevelling.
+                    <Grid item xs={12} sm={6} md={6}
+                        sx={{
+                            px: { xs: 2, sm: 2, md: 2, lg: 6, xl: 6 },
+                            width: '100%',
+                        }}
+                    >
+                        <Typography variant="h5" sx={{ color: "#fff" }}>Talk To Us Now For</Typography>
+                        <Typography variant="body2" sx={{ color: "#fff" }}>
+                            Keep up-to-date with the latest in lighting.
                         </Typography>
-                        <Box sx={{ display: "flex", alignItems: "center", gap: 1, mt: 1 }}>
+                        {/* <Box sx={{ display: "flex", alignItems: "center", gap: 1, mt: 1 }}>
                             {socialLinks.map(({ icon: Icon, name }, index) => (
                                 <IconButton key={index} sx={{ color: "#fff", "&:hover": { color: "info.dark" } }} aria-label={name}>
                                     <Icon sx={{ fontSize: { xs: "24px", sm: "28px" } }} />
                                 </IconButton>
                             ))}
-                        </Box>
+                        </Box> */}
+                        <Link to={"/contact-us"}>
+                            <Button
+                                sx={{
+                                    background: '#111827',
+                                    color: 'white',
+                                    borderRadius: '4px',
+                                    fontSize: '14px',
+                                    textTransform: 'none',
+                                    px: 2,
+                                    cursor: 'pointer',
+                                    my: 0.5,
+                                }}
+                            // className='bg-gray-900'
+                            >Get a Quote</Button>
+                        </Link>
                     </Grid>
 
-                    {/* Newsletter Sign-up */}
-                    {/* <Grid item xs={12} sm={6} md={4}>
-                        <Typography variant="h5" sx={{ color: "#fff" }}>Sign Up To Newsletter</Typography>
-                        <Typography variant="body2" sx={{ color: "#e0e0e0" }}>
-                            We post regularly interesting application photos and articles regarding drilling & bevelling.
-                        </Typography>
-                        <Stack direction="row" spacing={1} sx={{ mt: 1, width: { xs: "100%", sm: "80%", md: "70%" } }}>
-                            <OutlinedInput
-                                fullWidth
-                                type="email"
-                                size="small"
-                                placeholder="Enter your email"
-                                sx={{
-                                    backgroundColor: "#fff",
-                                    borderRadius: "4px",
-                                    outline: "none"
-                                }}
-                                endAdornment={
-                                    <IconButton sx={{ color: "#000" }}>
-                                        <Send fontSize="small" />
-                                    </IconButton>
-                                }
-                            />
-                        </Stack>
-                    </Grid> */}
-
                     {/* Location */}
-                    <Grid item xs={12} sm={12} md={4}>
-                        <Typography variant="h5" sx={{ color: "#fff", mb: 0.5 }}>
+                    <Grid item xs={12} sm={12} md={6}>
+                        {/* <Typography variant="h5" sx={{ color: "#fff", mb: 0.5 }}>
                             Our Location
-                        </Typography>
+                        </Typography> */}
                         <iframe
                             title="Our Location"
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1751.9590260468199!2d77.32409253866982!3d28.572223393924386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce44e94a2663f%3A0x96317734f1be41f7!2sNoida%20Sector%2018%2C%20Noida%2C%20Uttar%20Pradesh%20201301!5e0!3m2!1sen!2sin!4v1725966414674!5m2!1sen!2sin"
                             width="100%"
-                            height={110}
-                            style={{ border: 0, borderRadius: "8px" }}
+                            // height={110}
+                            height={150}
+                            // style={{ border: 0, borderRadius: "8px" }}
                             allowFullScreen=""
                             loading="lazy"
                             referrerPolicy="no-referrer-when-downgrade"
@@ -202,7 +201,7 @@ const Footer = () => {
                                 {aboutLink.map((list, index) => (
                                     <Stack key={index} direction={'row'} alignItems={'center'} sx={{ py: 0, my: 0 }}>
                                         <ChevronRight sx={{ color: '#000' }} />
-                                        <Button onClick={() => navigate(list.route)} sx={hoverStyle} className='main-size'>{list.name}</Button>
+                                        <Button onClick={() => navigate(list.route)} sx={hoverStyle} className='main-size !capitalize'>{list.name}</Button>
                                     </Stack>
                                 ))}
                             </Stack>
@@ -218,7 +217,7 @@ const Footer = () => {
                                 {links.map((list, index) => (
                                     <Stack key={index} direction={'row'} alignItems={'center'} sx={{ py: 0, my: 0 }}>
                                         <ChevronRight sx={{ color: '#000' }} />
-                                        <Button onClick={() => navigate(list.route)} sx={hoverStyle} className='main-size'>{list.name}</Button>
+                                        <Button onClick={() => navigate(list.route)} sx={hoverStyle} className='main-size !capitalize'>{list.name}</Button>
                                     </Stack>
                                 ))}
                             </Stack>

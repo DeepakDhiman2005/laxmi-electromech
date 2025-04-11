@@ -1,3 +1,8 @@
+:root {
+    /* --main-color: #c3c1b8; */
+    --main-color: #6b7280;
+}
+
 .service-area {
     background: radial-gradient(white, rgba(255, 255, 255, 0.562));
 }
@@ -31,15 +36,14 @@
     position: absolute;
     left: 0;
     top: 0;
+    margin-top: 1.2px;
     text-align: center;
-
-
 }
 
 .service-item img,
 .service-item .icon {
 
-    background-color: #c3c1b8;
+    background-color: var(--main-color);
     border-radius: 50%;
     top: 20px;
     position: relative;
@@ -52,7 +56,8 @@
 
 .service-item:hover {
     /* background-color: #c3c1b8; */
-    background-color: #c3c1b8;
+    /* background-color: var(--main-color); */
+    background-color: #dbdbdb;
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 

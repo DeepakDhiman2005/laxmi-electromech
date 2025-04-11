@@ -1,5 +1,6 @@
 import { Title } from "react-head";
 import FacilityImage from "./FacilityImage";
+import Heading from "../../../components/heading/Heading";
 
 const ManufacturingFacilityMachinery = () => {
     const images = [
@@ -58,11 +59,16 @@ const ManufacturingFacilityMachinery = () => {
     return (
         <>
             <Title>Plant & Machinery</Title>
-            <img src="/banners/Our-Manufacturing-Facility-&-Machinery.png" alt="banner" className="w-full" />
+            <div className="w-auto h-auto bannerCard">
+                <a className="w-auto h-auto">
+                    <img src="/banners/Plant-&-Machinery.png" alt="banner" className="w-full" />
+                </a>
+            </div>
             <div className="w-full py-6 px-2 lg:px-12">
-                <h1 className="text-3xl sm:text-4xl font-extrabold text-center text-gray-900 mb-5">
+                {/* <h1 className="text-3xl sm:text-4xl font-extrabold text-center text-gray-900 mb-5">
                     Plant & Machinery
-                </h1>
+                </h1> */}
+                <Heading startText="Plant &" endText="Machinery" />
                 <p className="text-center text-gray-700 mx-auto mb-10">
                     Our state-of-the-art plant and machinery are equipped with advanced fabrication and power coating systems, ensuring precision, efficiency, and high-quality production to meet diverse industrial needs.
                 </p>

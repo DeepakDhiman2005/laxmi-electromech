@@ -44,11 +44,15 @@ const Careers = () => {
     return (
         <>
             <Title>Careers at Our Company</Title>
-            <img
-                src={isMobile? "/banners/Career-phone-size.png": "/banners/Career.png"}
-                alt="Careers Banner" 
-                className="w-full"
-            />
+            <div className="w-auto h-auto bannerCard">
+                <a className="w-auto h-auto">
+                    <img
+                        src={isMobile ? "/banners/Career-phone-size.png" : "/banners/Career.png"}
+                        alt="Career Banner"
+                        className="w-full"
+                    />
+                </a>
+            </div>
             <div className="w-full py-3 px-4 lg:px-12 bg-gray-50">
                 <h1 className="text-3xl sm:text-4xl font-extrabold text-center text-gray-900 mb-4">
                     Career

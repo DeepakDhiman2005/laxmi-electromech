@@ -62,7 +62,7 @@ const AppNavbar = () => {
                         <ul>
                             <div className="flex justify-center gap-x-4 items-center">
                                 {
-                                    menuData.map((item, index) => (
+                                    menuData.filter(({ name }) => name !== 'Our Manufacturing Range').map((item, index) => (
                                         <li
                                             key={index}
                                         // ><Link to={item.route as string}  className="active">{item.name}</Link></li>
@@ -117,7 +117,7 @@ const AppNavbar = () => {
                                         <li
                                             key={index}
                                         >
-                                            <Link to={item.route} className="main-size">{item.name}</Link>
+                                            <Link to={item.route} className="main-size !py-2">{item.name}</Link>
                                         </li>
                                     ))
                                 }

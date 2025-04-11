@@ -9,34 +9,43 @@ const Quality = () => {
 
     return <>
         <Title>Quality Assurance & Control</Title>
-        <img src={isMobile ? "/banners/Quality--phone-size.png" : "/banners/Quality-banner.png"} alt="banner" className="w-full" />
+        <div className="w-auto h-auto bannerCard">
+            <a className="w-auto h-auto">
+                <img src={isMobile ? "/banners/Quality--phone-size.png" : "/banners/Quality.png"} alt="banner" className="w-full" />
+            </a>
+        </div>
         <div className="flex flex-col w-full items-center justify-center px-4 md:px-12 py-6 bg-white">
-            {/* Title Section */}
-            <div className="w-full flex justify-center items-center mb-6">
-                <Heading startText="Quality" endText="Assurance & Control" justify="start" pb={1} />
-            </div>
-
-            {/* Image Section */}
-            <div className="flex justify-center p-4">
-                <div className="relative">
-                    <div className="rounded-full flex items-center justify-center">
-                        <img src="/images/quality-control.png" alt="Quality Assurance Process" className="w-full max-w-[400px]" />
+            <div className="flex justify-center flex-col-reverse md:flex-row items-center w-full">
+                <div className="flex flex-col justify-start items-start w-full md:w-[60%]">
+                    {/* Title Section */}
+                    <div className="w-full flex justify-start items-center mb-6">
+                        <Heading startText="Quality" endText="Assurance & Control" justify="start" pb={1} />
+                    </div>
+                    {/* Quality Assurance Section */}
+                    <div className="mb-6">
+                        <h2 className="text-xl font-semibold text-blue-700 mb-2">Our Commitment to Quality</h2>
+                        <p className="text-gray-700 leading-relaxed">
+                            Quality is the foundation of our company’s operations. We strictly adhere to ISO 9001 standards, ensuring
+                            that our processes maintain consistent excellence and continuous improvement. Through precision engineering
+                            and cutting-edge technology, we guarantee high reliability and top-tier performance. Our dedicated team
+                            constantly enhances operational procedures to boost efficiency, minimize errors, and deliver superior
+                            solutions to our clients. We invest heavily in training and development to ensure our workforce upholds
+                            the highest quality standards in every project.
+                        </p>
+                    </div>
+                </div>
+                <div className="flex justify-center items-center w-full md:w-[40%]">
+                    {/* Image Section */}
+                    <div className="flex justify-center p-4">
+                        <div className="relative">
+                            <div className="rounded-full flex items-center justify-center">
+                                <img src="/images/quality-control.png" alt="Quality Assurance Process" className="w-full max-w-[400px]" />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            {/* Quality Assurance Section */}
-            <div className="mb-6">
-                <h2 className="text-xl font-semibold text-blue-700 mb-2">Our Commitment to Quality</h2>
-                <p className="text-gray-700 leading-relaxed">
-                    Quality is the foundation of our company’s operations. We strictly adhere to ISO 9001 standards, ensuring
-                    that our processes maintain consistent excellence and continuous improvement. Through precision engineering
-                    and cutting-edge technology, we guarantee high reliability and top-tier performance. Our dedicated team
-                    constantly enhances operational procedures to boost efficiency, minimize errors, and deliver superior
-                    solutions to our clients. We invest heavily in training and development to ensure our workforce upholds
-                    the highest quality standards in every project.
-                </p>
-            </div>
 
             {/* Additional Image Section */}
             <div className="flex justify-center p-4">

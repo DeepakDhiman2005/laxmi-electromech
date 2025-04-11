@@ -4,6 +4,9 @@ import MyTheme from './theme/MyTheme';
 import MainRouter from './router/MainRouter';
 import { HeadProvider } from 'react-head';
 
+// styles
+import "./hover-effect.scss";
+
 function App() {
 
   return (

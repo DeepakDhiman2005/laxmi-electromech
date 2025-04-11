@@ -19,7 +19,7 @@ const ProductSidebar = ({
     }) => {
         return <>
             <Link to={`${route}`} className="w-full">
-                <div className={`w-full px-2 py-2 transition-all ${pathname === route ? "bg-[#2457AA] text-white" : "text-black hover:bg-blue-500 hover:text-white"} duration-300`}>
+                <div className={`w-full px-2 py-1 transition-all ${pathname === route ? "bg-[#2457AA] text-white" : "text-black hover:bg-blue-500 hover:text-white"} duration-300`}>
                     <h2>{name}</h2>
                 </div>
             </Link>

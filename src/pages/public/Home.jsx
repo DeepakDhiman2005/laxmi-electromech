@@ -21,6 +21,7 @@ import OurProjectsSection from '../../components/home-components/OurProjectsSect
 import GallerySection from '../../components/home-components/GallerySection'
 import LaserCuttingSection from '../../components/home-components/LaserCuttingSection'
 import OurServices from '../../components/home-components/OurServices'
+import HomeWhyChooseUs from '../../components/home-components/HomeWhyChooseUs'
 
 const Home = () => {
     return (
@@ -36,7 +37,8 @@ const Home = () => {
             <ProductCategoriesSection />
             <WelcomeMessageSection />
             <OurServices />
-            <WhyChooseUs />
+            {/* <WhyChooseUs /> */}
+            <HomeWhyChooseUs />
             {/* <PlantAndMachinery /> */}
             {/* <License /> */}
             {/* <ClientTestimonials /> */}

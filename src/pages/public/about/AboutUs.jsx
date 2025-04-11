@@ -1,5 +1,6 @@
 import { Box, Stack, Typography, Grid, Divider, useTheme, useMediaQuery } from '@mui/material'
-import React from 'react'
+import React, { useEffect } from 'react'
+import AOS from 'aos';
 import Banner from '../../../utils/Banner'
 import Ab from '../../../assets/images/aboutabnner.webp'
 import A1 from '../../../assets/images/about.avif'
@@ -17,10 +18,18 @@ import Infrastructure from './Infrastructure'
 import Founders from './Founders'
 import CertificateLicense from '../../../components/home-components/License'
 import { FaCheckCircle } from 'react-icons/fa'
+import Heading from '../../../components/heading/Heading'
 
 const AboutUs = () => {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
+    useEffect(() => {
+        AOS.init({
+            duration: 1000,  // animation duration
+            once: true,      // animation only once
+        });
+    }, []);
 
     const CheckPoint = ({ children }) => (
         <div className="flex justify-start items-center gap-x-2">
@@ -32,67 +41,25 @@ const AboutUs = () => {
     return (
         <>
             <Title>About Us</Title>
-            {/* <Banner
-                title="About"
-                image={Ab}
-                // height={{ sm: '35vh', md: '45vh', xs: '40vh', lg: '40vh', xl: '40vh' }}
-                height={{ sm: '35vh', md: '45vh', xs: '40vh', lg: '50vh', xl: '50vh' }}
-                titleVariant="h2"
-                overlayColor="rgba(0,0,0, 0.7)"
-                spacingConfig={{ xl: 6, lg: 6, md: 2, xs: 1 }}
-                containerStyles={{ overflow: "hidden" }}
-                text="About Us"
-            /> */}
             <Box
                 sx={{ width: '100%' }}
             >
-                <img src={isMobile ? "/banners/about-us-banner-mobile.png" : "/banners/about-us-banner.png"} alt="image" style={{ width: '100%', height: 'auto' }} />
+                <div className='w-auto h-auto bannerCard'>
+                    <a className='w-auto h-auto'>
+                        <img src={isMobile ? "/banners/about-us-banner-mobile.png" : "/banners/About.png"} alt="image" />
+                    </a>
+                </div>
             </Box>
-            {/* <Box sx={{ px: { xs: 2, sm: 2, md: 2, lg: 12, xl: 12 }, }}> */}
             <Box>
                 <Box sx={{ py: 3, px: { xs: 2, md: 4, lg: 6 } }}>
                     {/* Header */}
-                    <Box sx={{ pb: 0.5, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                        <Typography variant="h4" fontWeight="bold">
-                            About <Typography component="span" sx={{ color: "primary.main", fontWeight: "bold" }} variant="h4">Us</Typography>
-                            <Divider sx={{ background: theme.palette.primary.deep, height: "3px", width: "50px" }} />
-                        </Typography>
-                    </Box>
 
-                    <Grid container spacing={3} alignItems="center">
+                    <Grid container spacing={3} alignItems="center" sx={{ overflow: 'hidden' }}>
                         {/* Text Content */}
-                        {/* <Grid item xs={12} md={7}>
-                            <Typography variant="h5" fontWeight="bold" gutterBottom>
-                                Powering Innovation, Delivering Excellence
-                            </Typography>
-                            <Typography variant="body1" sx={{ mb: 2 }}>
-                                Laxmi Electromech Pvt. Ltd. is a leading provider of comprehensive electrical solutions, specializing in automation, panel manufacturing, and EPC contracts. We are committed to innovation, quality, and customer satisfaction, delivering tailored solutions that meet diverse industry needs.
-                            </Typography>
-
-                            <Grid container spacing={2}>
-                                <Grid item xs={12} sm={6}>
-                                    <Stack spacing={1}>
-                                        <Typography variant="h6" fontWeight="bold">
-                                            Trusted Electrical Solutions
-                                        </Typography>
-                                        <Typography variant="body2">
-                                            Empowering industries with innovative, reliable, and high-quality electrical products for over 25 years.
-                                        </Typography>
-                                    </Stack>
-                                </Grid>
-                                <Grid item xs={12} sm={6}>
-                                    <Stack spacing={1}>
-                                        <Typography variant="h6" fontWeight="bold">
-                                            Customized for Excellence
-                                        </Typography>
-                                        <Typography variant="body2">
-                                            Tailored solutions in switchboards, panels, and power distribution to meet your unique requirements.
-                                        </Typography>
-                                    </Stack>
-                                </Grid>
-                            </Grid>
-                        </Grid> */}
-                        <Grid item xs={12} md={7}>
+                        <Grid item xs={12} md={7}  data-aos="fade-right">
+                            <div className='flex justify-start items-center'>
+                                <Heading startText='About' endText='Us' />
+                            </div>
                             <Typography variant='body1' sx={{ mb: 1.5 }} className='main-size'>
                                 Laxmi Electromech Pvt. Ltd. (LEPL) is a CPRI-approved and trusted name in the field of electrical and automation solutions.
                                 With a strong commitment to quality and innovation, we specialize in the design, manufacturing, and implementation of
@@ -107,7 +74,7 @@ const AboutUs = () => {
 
 
                         {/* Image Section */}
-                        <Grid item xs={12} md={5}>
+                        <Grid item xs={12} md={5}  data-aos="fade-left">
                             <Box sx={{ height: 300, width: "100%", borderRadius: 2, overflow: "hidden", display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                                 <img src={A1} alt="About Us" style={{ width: "80%", objectFit: "cover" }} />
                             </Box>
@@ -119,7 +86,7 @@ const AboutUs = () => {
                 {/* <OurJourney /> */}
                 <Founders />
                 {/* <WhatWeDo /> */}
-                <WhyChooseUs />
+                {/* <WhyChooseUs /> */}
                 <OurExpertise />
                 <OurTeam />
                 <SustainabilitySection />

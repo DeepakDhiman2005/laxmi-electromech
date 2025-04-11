@@ -5,6 +5,7 @@ export const menuData = [
     // { name: 'Manufacturing Facility Machinery', route: '/manufacturing-facility-machinery' },
     { name: 'Plant and Machinery', route: '/plant-and-machinery' },
     { name: 'Our Clients', route: '/our-clients' },
+    { name: 'Career', route: '/career' },
     { name: 'Quality', route: '/quality' },
     { name: 'Projects', route: '/projects' },
     // {

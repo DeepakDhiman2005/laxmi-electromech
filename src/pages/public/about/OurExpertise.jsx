@@ -43,7 +43,7 @@ const OurExpertise = () => {
                         <Typography variant="h5" gutterBottom sx={{ fontWeight: "bold", color: "#333" }}>
                             Specializations in Electrical Automation & EPC Solutions
                         </Typography>
-                        <Typography variant="body1" sx={{ color: "#555", mb: 2 }}>
+                        <Typography variant="body1" sx={{ color: "#555", mb: 2 }} className="main-size">
                             We specialize in providing top-notch electrical automation and
                             Engineering, Procurement & Construction (EPC) solutions. Our
                             comprehensive services ensure efficiency, safety, and cutting-edge
@@ -53,7 +53,7 @@ const OurExpertise = () => {
                         <Typography variant="h5" gutterBottom sx={{ fontWeight: "bold", color: "#333" }}>
                             Technical Excellence & Advanced Solutions
                         </Typography>
-                        <Typography variant="body1" sx={{ color: "#555" }}>
+                        <Typography variant="body1" sx={{ color: "#555" }} className="main-size">
                             With years of expertise, we deliver high-quality engineering
                             solutions that meet global standards. Our innovative approach and
                             advanced technology enable seamless operations across industries.
