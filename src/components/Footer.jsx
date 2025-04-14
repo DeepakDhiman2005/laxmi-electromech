@@ -222,13 +222,13 @@ const Footer = () => {
                                 Contact Info
                                 <Divider sx={{ background: '#000' }} />
                             </Typography>
-                            <Typography variant='body2'><strong>Registered Address:</strong> A-139, B-06, Gali No. 1, Madhu Vihar, I.P Extension, Delhi 110092</Typography>
-                            <Typography variant='body2'><strong>Manufacturing Address:</strong> A-09, Sector-59, Noida, U.P – 201301</Typography>
+                            <Typography variant='body2'> <a href="https://maps.app.goo.gl/SeyMAJz3ZG4VdFj96" className='text-gray-900 hover:text-blue-700' target='_blank'><strong>Registered Address:</strong> A-139, B-06, Gali No. 1, Madhu Vihar, I.P Extension, Delhi 110092</a></Typography>
+                            <Typography variant='body2'><a href="https://maps.app.goo.gl/Zy6Hcdn3unfpJdgp8" className='text-gray-900 block hover:text-blue-700' target='_blank'><strong>Manufacturing Address:</strong> A-09, Sector-59, Noida, U.P – 201301</a></Typography>
                             <Typography variant='body2'>
-                                <strong>Email:</strong> <span className='text-blue-500'>info@laxmielectromech.com</span><br /><span className='text-blue-500'>apglaxmi2009@gmail.com</span>
+                                <span><strong>Email:</strong></span> <a href='mailto:info@laxmielectromech.com' className='text-blue-600 hover:text-blue-700'>info@laxmielectromech.com</a><a href='mailto:apglaxmi2009@gmail.com' className='text-blue-600 block hover:text-blue-700'>apglaxmi2009@gmail.com</a>
                                 {/* <br /><span className='text-blue-500'>Sap@laxmielectromech.com</span> */}
                             </Typography>
-                            <Typography variant='body2'><strong>Phone:</strong> +91-9811983451, +91-9643401344</Typography>
+                            <Typography variant='body2'><strong>Phone:</strong> <a href="tel:+919811983451" className='text-gray-900 hover:text-blue-700'>+91-981-198-3451</a>, <a href="tel:+919643401344" className='text-gray-900 hover:text-blue-700'>+91-964-340-1344</a></Typography>
                         </Grid>
 
                         {/* Newsletter Subscription */}

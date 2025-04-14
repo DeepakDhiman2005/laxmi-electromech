@@ -48,8 +48,8 @@ const ContactUs = () => {
             title: 'Location',
             details: <>
                 <div className='text-center main-size'>
-                    <p>Registered Address: A-139, B-06, Gali No. 1, Madhu Vihar, I.P Extension, Delhi 110092</p>
-                    <p>Manufacturing Address: A-09, Sector-59, Noida, U.P – 201301</p>
+                    <a href="https://maps.app.goo.gl/SeyMAJz3ZG4VdFj96" className='text-white block hover:text-blue-300' target='_blank'>Registered Address: A-139, B-06, Gali No. 1, Madhu Vihar, I.P Extension, Delhi 110092</a>
+                    <a href="https://maps.app.goo.gl/Zy6Hcdn3unfpJdgp8" className='text-white block hover:text-blue-300' target='_blank'>Manufacturing Address: A-09, Sector-59, Noida, U.P – 201301</a>
                 </div>
             </>,
             // details: ['Registered Address: A-139, B-06, Gali No. 1,', ' Madhu Vihar, I.P Extension, Delhi 110092', 'Manufacturing Address: A-09, Sector-59, Noida, U.P – 201301'],
@@ -60,8 +60,8 @@ const ContactUs = () => {
             icon: <Drafts />, title: 'Send an Email', 
             details: <>
                 <div className="text-center main-size">
-                    <p>info@laxmielectromech.com</p>
-                    <p>apglaxmi2009@gmail.com</p>
+                    <a href='mailto:info@laxmielectromech.com' className='text-white block hover:text-blue-300'>info@laxmielectromech.com</a>
+                    <a href='mailto:apglaxmi2009@gmail.com' className='text-white block hover:text-blue-300'>apglaxmi2009@gmail.com</a>
                 </div>
             </>,
             background: '/contact-us-images/2.png',
@@ -71,7 +71,7 @@ const ContactUs = () => {
             icon: <Headset />, title: 'Contact Us', 
             details: <>
                 <div className="text-center main-size">
-                    <p>+91-96434-01345</p>
+                    <a href="tel:+919643401345" className='text-white hover:text-blue-300'>+91-96434-01345</a>
                 </div>
             </>,
             background: '/contact-us-images/3.png',
