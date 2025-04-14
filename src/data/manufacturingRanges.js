@@ -1,7 +1,9 @@
 const manufacturingRanges = [
     {
+        title: 'Power Control Centre (PCL)',
         category: 'power-control-centre',
-        banner: '/product-images/1.jpg',
+        // banner: '/product-images/1-banner.jpg',
+        banner: '/product-images/PCC-Panels1.png',
         description: `
          <h2 style="font-size: 24px; font-weight: bold; color: #2457AA; margin: 2px 0;">Power Control Centre (PCC) Panels</h2>
             <p style="font-size: 16px; margin: 2px 0;">
@@ -32,8 +34,10 @@ const manufacturingRanges = [
         `,
     },
     {
+        title: 'Mcc Panels',
         category: 'mcc-panels',
-        banner: '/product-images/19.jpg',
+        // banner: '/product-images/19.jpg',
+        banner: '/product-images/MCC-Panels.png',
         description: `
          <h2 style="font-size: 24px; font-weight: bold; color: #2457AA; margin: 2px 0;">MCC Panels</h2>
             <p style="font-size: 16px; margin: 2px 0;">
@@ -65,8 +69,10 @@ const manufacturingRanges = [
         `,
     },
     {
+        title: 'Intelligent Mcc Panels',
         category: 'intelligent-mcc-panels',
-        banner: '/product-images/17.jpg',
+        // banner: '/product-images/17.jpg',
+        banner: '/product-images/Intelligent-MCC-Panels.png',
         description: `
         <h2 style="font-size: 24px; font-weight: bold; color: #2457AA; margin: 2px 0;">Intelligent MCC Panels</h2>
            <p style="font-size: 16px; margin: 2px 0;">
@@ -105,8 +111,10 @@ const manufacturingRanges = [
        `,
     },
     {
+        title: 'DG Synchronization Panels',
         category: 'dg-synchronization-panel',
-        banner: '/product-images/13.jpg',
+        // banner: '/product-images/13.jpg',
+        banner: '/product-images/DG-Synchronization-Panel.png',
         description: `
         <h2 style="font-size: 24px; font-weight: bold; color: #2457AA; margin: 2px 0;">DG Synchronization Panel</h2>
            <p style="font-size: 16px; margin: 2px 0;">
@@ -150,8 +158,10 @@ const manufacturingRanges = [
        `,
     },
     {
+        title: 'Auto Mains Failure Panels',
         category: 'auto-mains-failure-panels',
-        banner: '/product-images/9.jpg',
+        // banner: '/product-images/9.jpg',
+        banner: '/product-images/AMF-Panels.png',
         description: `
          <h2 style="font-size: 24px; font-weight: bold; color: #2457AA; margin: 2px 0;">Auto Mains Failure (AMF) Panels</h2>
             <p style="font-size: 16px; margin: 2px 0;">
@@ -197,8 +207,10 @@ const manufacturingRanges = [
         `,
     },
     {
+        title: 'Automatic Power Factor Control Panels',
         category: 'automatic-power-factor-control-panels',
-        banner: '/product-images/11.jpg',
+        // banner: '/product-images/11.jpg',
+        banner: '/product-images/APFC-Panels.png',
         description: `
         <h2 style="font-size: 24px; font-weight: bold; color: #2457AA; margin: 2px 0;">Automatic Power Factor Control (APFC) Panels</h2>
            <p style="font-size: 16px; margin: 2px 0;">
@@ -237,8 +249,10 @@ const manufacturingRanges = [
        `,
     },
     {
+        title: 'Vfd Panels', 
         category: 'vfd-panels',
-        banner: '/product-images/7.png',
+        // banner: '/product-images/7.png',
+        banner: '/product-images/VFD-Panels.png',
         description: `
         <h2 style="font-size: 24px; font-weight: bold; color: #2457AA; margin: 2px 0;">VFD Panels for Motor Control Applications</h2>
            <p style="font-size: 16px; margin: 2px 0;">
@@ -287,8 +301,10 @@ const manufacturingRanges = [
        `,
     },
     {
+        title: 'Lv Mv Soft Starter Panels', 
         category: 'lv-mv-soft-starter-panels',
-        banner: '/product-images/5.jpg',
+        // banner: '/product-images/5.jpg',
+        banner: '/product-images/Soft-Starter-Panels.png',
         description: `
         <h2 style="font-size: 24px; font-weight: bold; color: #2457AA; margin: 2px 0;">LV/MV Soft Starter Panels</h2>
            <p style="font-size: 16px; margin: 2px 0;">
@@ -335,8 +351,10 @@ const manufacturingRanges = [
        `,
     },
     {
+        title: 'Plc Panel Scada Panels', 
         category: 'plc-panel-scada-panel',
-        banner: '/product-images/2.jpg',
+        // banner: '/product-images/2.jpg',
+        banner: '/product-images/PLC-PanelSCADA-Panel.png',
         description: `
          <h2 style="font-size: 24px; font-weight: bold; color: #2457AA; margin: 2px 0;">PLC Panel/ SCADA Panel for Industrial Automation Systems</h2>
             <p style="font-size: 16px; margin: 2px 0;">
@@ -377,8 +395,10 @@ const manufacturingRanges = [
         `,
     },
     {
+        title: 'Distribution Boards', 
         category: 'distribution-boards',
-        banner: '/product-images/16.jpg',
+        // banner: '/product-images/16.jpg',
+        banner: '/product-images/Distribution-Boards.png',
         description: `
         <h2 style="font-size: 24px; font-weight: bold; color: #2457AA; margin: 2px 0;">Distribution Boards (DB / SMDB / MDB)</h2>
            <p style="font-size: 16px; margin: 2px 0;">

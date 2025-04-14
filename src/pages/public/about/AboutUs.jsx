@@ -46,7 +46,7 @@ const AboutUs = () => {
             >
                 <div className='w-auto h-auto bannerCard'>
                     <a className='w-auto h-auto'>
-                        <img src={isMobile ? "/banners/about-us-banner-mobile.png" : "/banners/About.png"} alt="image" />
+                        <img src={isMobile ? "/banners/About-mobile.png" : "/banners/About.png"} alt="image" />
                     </a>
                 </div>
             </Box>

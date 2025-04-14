@@ -6,6 +6,7 @@ import GoogleMap from './GoogleMap';
 
 import { Title } from 'react-head';
 import ContactForm from './ContactForm';
+import ContactCard from './ContactCard';
 
 const ContactUs = () => {
     const theme = useTheme();
@@ -42,31 +43,50 @@ const ContactUs = () => {
 
     // Contact Cards Data
     const contactCards = [
-        { icon: <Map />, title: 'Location', details: ['Registered Address: A-139, B-06, Gali No. 1,', ' Madhu Vihar, I.P Extension, Delhi 110092', 'Manufacturing Address: A-09, Sector-59, Noida, U.P – 201301'] },
+        {
+            icon: <Map />,
+            title: 'Location',
+            details: <>
+                <div className='text-center main-size'>
+                    <p>Registered Address: A-139, B-06, Gali No. 1, Madhu Vihar, I.P Extension, Delhi 110092</p>
+                    <p>Manufacturing Address: A-09, Sector-59, Noida, U.P – 201301</p>
+                </div>
+            </>,
+            // details: ['Registered Address: A-139, B-06, Gali No. 1,', ' Madhu Vihar, I.P Extension, Delhi 110092', 'Manufacturing Address: A-09, Sector-59, Noida, U.P – 201301'],
+            background: '/contact-us-images/1.png',
+        },
         // { icon: <Drafts />, title: 'Send an Email', details: ['info@laxmielectromech.com', 'Sap@laxmielectromech.com', 'apglaxmi2009@gmail.com'] },
-        { icon: <Drafts />, title: 'Send an Email', details: ['info@laxmielectromech.com', 'apglaxmi2009@gmail.com'] },
-        { icon: <Headset />, title: 'Contact Us', details: ['+91-96434-01345'] },
+        {
+            icon: <Drafts />, title: 'Send an Email', 
+            details: <>
+                <div className="text-center main-size">
+                    <p>info@laxmielectromech.com</p>
+                    <p>apglaxmi2009@gmail.com</p>
+                </div>
+            </>,
+            background: '/contact-us-images/2.png',
+            // details: ['info@laxmielectromech.com', 'apglaxmi2009@gmail.com'],
+        },
+        { 
+            icon: <Headset />, title: 'Contact Us', 
+            details: <>
+                <div className="text-center main-size">
+                    <p>+91-96434-01345</p>
+                </div>
+            </>,
+            background: '/contact-us-images/3.png',
+            // details: ['+91-96434-01345'] 
+        },
     ];
 
     return (
         <>
             <Title>Contact Us</Title>
-            {/* <Banner
-                title="Contact"
-                image={C1}
-                // height={{ sm: '35vh', md: '45vh', xs: '40vh', lg: '40vh', xl: '40vh' }}
-                height={{ sm: '35vh', md: '45vh', xs: '40vh', lg: '50vh', xl: '50vh' }}
-                titleVariant="h2"
-                overlayColor="rgba(0,0,0, 0.7)"
-                spacingConfig={{ xl: 6, lg: 6, md: 2, xs: 1 }}
-                containerStyles={{ overflow: "hidden" }}
-                text="ContactUs"
-            /> */}
             <div
                 className='w-auto h-auto bannerCard'
             >
                 <a className="w-auto h-auto">
-                    <img src={isMobile ? "/banners/contact-us-banner-mobile.png" : "/banners/Contact-Us.png"} alt="image" style={{ width: '100%', height: 'auto' }} />
+                    <img src={isMobile ? "/banners/Contact-Us-mobile.png" : "/banners/Contact-Us.png"} alt="image" style={{ width: '100%', height: 'auto' }} />
                 </a>
             </div>
             {/* Contact Information */}
@@ -75,22 +95,24 @@ const ContactUs = () => {
                 <Grid container spacing={2} justifyContent="space-between" sx={{ display: 'flex', flexWrap: 'wrap' }}>
                     {contactCards.map((card, index) => (
                         <Grid item xs={12} md={4} key={index} sx={{ display: 'flex' }}>
-                            <Card elevation={0} sx={{ background: '#FFFFFF', flexGrow: 1 }}>
+                            {/* <Card elevation={0} sx={{ background: '#FFFFFF', flexGrow: 1 }}>
                                 <CardContent>
                                     <Stack direction="column" spacing={1} alignItems="center" justifyContent="center">
                                         <Box sx={{ ...hoverStyle1, background: theme.palette.error.main, color: '#fff', p: 1 }}>
                                             {card.icon}
                                         </Box>
-                                        <Box sx={{ p: 2, color: theme.palette.primary.main }}>
+                                        <Box sx={{ p: 2, color: theme.palette.primary.main, display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
                                             <Typography variant="h5" fontWeight="bold">{card.title}</Typography>
                                             {card.details.map((detail, i) => (
-                                                <Typography variant="body2" color="info.dark" key={i}>{detail}</Typography>
+                                                <Typography variant="body2" color="info.dark" key={i} sx={{ textAlign: 'center'}}>{detail}</Typography>
                                             ))}
                                         </Box>
                                     </Stack>
                                 </CardContent>
-                                {/* {index < contactCards.length - 1 && <Divider />} */}
-                            </Card>
+                            </Card> */}
+                            <ContactCard
+                                {...card}
+                            />
                         </Grid>
                     ))}
                 </Grid>
@@ -104,10 +126,11 @@ const ContactUs = () => {
 
                     {/* Sidebar */}
                     <Grid item lg={5} xl={4} xs={12} sx={{ display: 'flex' }}>
-                        <Box sx={{ background: theme.palette.info.light, flex: 1 }}>
+                        <GoogleMap />
+                        {/* <Box sx={{ background: theme.palette.info.light, flex: 1 }}>
                             <Card elevation={0} sx={{ p: { lg: 4, xs: 2 }, background: '#FDFDFD', display: 'flex', flexDirection: 'column', height: '100%' }}>
                                 <CardContent sx={{ flex: 1 }}>
-                                    <Typography variant="h3" fontWeight="bold">Get in Touch</Typography>
+                                    <Typography variant="h4" fontWeight="bold">Get in Touch</Typography>
                                     <Typography variant="body1" sx={{ pl: 0.8 }} className='main-size'>
                                         Have any questions or need assistance? Contact us today, and our team will be happy to help.
                                         Whether you’re looking for more information, need technical support, or just want to share feedback,
@@ -115,22 +138,14 @@ const ContactUs = () => {
                                         Reach out via email, phone, or follow us on social media to stay updated on the latest news, updates, and special offers.
                                         We value your input and look forward to hearing from you!
                                     </Typography>
-
-                                    <Stack direction="row">
-                                        {[Facebook, Instagram, Twitter, LinkedIn].map((Icon, i) => (
-                                            <IconButton key={i} sx={hoverStyle}>
-                                                <Icon />
-                                            </IconButton>
-                                        ))}
-                                    </Stack>
                                 </CardContent>
                             </Card>
-                        </Box>
+                        </Box> */}
                     </Grid>
                 </Grid>
 
                 {/* Google Map */}
-                <Box><GoogleMap /></Box>
+                {/* <Box><GoogleMap /></Box> */}
             </Box>
         </>
     );

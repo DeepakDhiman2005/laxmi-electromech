@@ -27,27 +27,29 @@ const Home = () => {
     return (
         <>
             <Title>Laxmi Electromech Pvt. Ltd.</Title>
-            <Introduction />
-            {/* <Banner /> */}
-            <HomeCards />
-            {/* <AboutSection /> */}
-            <GallerySection />
-            {/* <OurMissionPage /> */}
-            <LaserCuttingSection />
-            <ProductCategoriesSection />
-            <WelcomeMessageSection />
-            <OurServices />
-            {/* <WhyChooseUs /> */}
-            <HomeWhyChooseUs />
-            {/* <PlantAndMachinery /> */}
-            {/* <License /> */}
-            {/* <ClientTestimonials /> */}
-            {/* <QualityProcess /> */}
-            {/* <LatestBlog /> */}
-            {/* <OurProjectsSection /> */}
-            {/* <FAQs /> */}
-            <Certifications />
-            <Clientele />
+            <main className='w-full overflow-hidden'>
+                <Introduction />
+                {/* <Banner /> */}
+                <HomeCards />
+                {/* <AboutSection /> */}
+                <GallerySection />
+                {/* <OurMissionPage /> */}
+                <LaserCuttingSection />
+                <ProductCategoriesSection />
+                <WelcomeMessageSection />
+                <OurServices />
+                {/* <WhyChooseUs /> */}
+                <HomeWhyChooseUs />
+                {/* <PlantAndMachinery /> */}
+                {/* <License /> */}
+                {/* <ClientTestimonials /> */}
+                {/* <QualityProcess /> */}
+                {/* <LatestBlog /> */}
+                {/* <OurProjectsSection /> */}
+                {/* <FAQs /> */}
+                <Certifications />
+                <Clientele />
+            </main>
         </>
     )
 }

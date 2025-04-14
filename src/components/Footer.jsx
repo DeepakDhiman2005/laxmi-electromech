@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { Box, Button, Divider, Grid, IconButton, OutlinedInput, Stack, Typography, useTheme } from '@mui/material';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ChevronRight, Facebook, Instagram, LinkedIn, Send, Twitter } from '@mui/icons-material';
 import FooterImg from '../assets/images/footer.jpg';
 import { useMemo } from 'react';
@@ -25,6 +25,7 @@ const socialLinks = [
     { icon: LinkedIn, link: '#', name: 'LinkedIn' }
 ];
 const Footer = () => {
+    const location = useLocation();
     const navigate = useNavigate();
     const theme = useTheme();
 
@@ -77,75 +78,67 @@ const Footer = () => {
                 width: '100%',
             }}
         >
-            <Box
-                sx={{ background: 'white' }}
-            >
-                <Grid
-                    container
-                    justifyContent="space-between"
-                    alignItems="center"
-                    sx={{
-                        // backgroundImage: `url('/images/footer-form-bg.png')`, // or .png / .webp
-                        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)), url('/images/footer-top-bg.jpg')`, // or .png / .webp
-                        backgroundRepeat: 'no-repeat',
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                    }}
-                >
-                    {/* Follow Ups Section */}
-                    <Grid item xs={12} sm={6} md={6}
-                        sx={{
-                            px: { xs: 2, sm: 2, md: 2, lg: 6, xl: 6 },
-                            width: '100%',
-                        }}
+            {
+                !location.pathname.startsWith("/contact-us") ?
+                    <Box
+                        sx={{ background: 'white' }}
                     >
-                        <Typography variant="h5" sx={{ color: "#fff" }}>Talk To Us Now For</Typography>
-                        <Typography variant="body2" sx={{ color: "#fff" }}>
-                            Keep up-to-date with the latest in lighting.
-                        </Typography>
-                        {/* <Box sx={{ display: "flex", alignItems: "center", gap: 1, mt: 1 }}>
-                            {socialLinks.map(({ icon: Icon, name }, index) => (
-                                <IconButton key={index} sx={{ color: "#fff", "&:hover": { color: "info.dark" } }} aria-label={name}>
-                                    <Icon sx={{ fontSize: { xs: "24px", sm: "28px" } }} />
-                                </IconButton>
-                            ))}
-                        </Box> */}
-                        <Link to={"/contact-us"}>
-                            <Button
+                        <Grid
+                            container
+                            justifyContent="space-between"
+                            alignItems="center"
+                            sx={{
+                                // backgroundImage: `url('/images/footer-form-bg.png')`, // or .png / .webp
+                                backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)), url('/images/footer-top-bg.jpg')`, // or .png / .webp
+                                backgroundRepeat: 'no-repeat',
+                                backgroundSize: 'cover',
+                                backgroundPosition: 'center',
+                            }}
+                        >
+                            <Grid item xs={12} sm={6} md={6}
                                 sx={{
-                                    background: '#111827',
-                                    color: 'white',
-                                    borderRadius: '4px',
-                                    fontSize: '14px',
-                                    textTransform: 'none',
-                                    px: 2,
-                                    cursor: 'pointer',
-                                    my: 0.5,
+                                    px: { xs: 2, sm: 2, md: 2, lg: 6, xl: 6 },
+                                    width: '100%',
                                 }}
-                            // className='bg-gray-900'
-                            >Get a Quote</Button>
-                        </Link>
-                    </Grid>
+                            >
+                                <Typography variant="h5" sx={{ color: "#fff" }}>Talk To Us Now For</Typography>
+                                <Typography variant="body2" sx={{ color: "#fff" }}>
+                                    Keep up-to-date with the latest in lighting.
+                                </Typography>
+                                <Link to={"/contact-us"}>
+                                    <Button
+                                        sx={{
+                                            background: '#111827',
+                                            color: 'white',
+                                            borderRadius: '4px',
+                                            fontSize: '14px',
+                                            textTransform: 'none',
+                                            px: 2,
+                                            cursor: 'pointer',
+                                            my: 0.5,
+                                        }}
+                                    // className='bg-gray-900'
+                                    >Get a Quote</Button>
+                                </Link>
+                            </Grid>
 
-                    {/* Location */}
-                    <Grid item xs={12} sm={12} md={6}>
-                        {/* <Typography variant="h5" sx={{ color: "#fff", mb: 0.5 }}>
-                            Our Location
-                        </Typography> */}
-                        <iframe
-                            title="Our Location"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1751.9590260468199!2d77.32409253866982!3d28.572223393924386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce44e94a2663f%3A0x96317734f1be41f7!2sNoida%20Sector%2018%2C%20Noida%2C%20Uttar%20Pradesh%20201301!5e0!3m2!1sen!2sin!4v1725966414674!5m2!1sen!2sin"
-                            width="100%"
-                            // height={110}
-                            height={150}
-                            // style={{ border: 0, borderRadius: "8px" }}
-                            allowFullScreen=""
-                            loading="lazy"
-                            referrerPolicy="no-referrer-when-downgrade"
-                        ></iframe>
-                    </Grid>
-                </Grid>
-            </Box>
+                            {/* Location */}
+                            <Grid item xs={12} sm={12} md={6}>
+                                <iframe
+                                    title="Our Location"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1751.9590260468199!2d77.32409253866982!3d28.572223393924386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce44e94a2663f%3A0x96317734f1be41f7!2sNoida%20Sector%2018%2C%20Noida%2C%20Uttar%20Pradesh%20201301!5e0!3m2!1sen!2sin!4v1725966414674!5m2!1sen!2sin"
+                                    width="100%"
+                                    // height={110}
+                                    height={150}
+                                    // style={{ border: 0, borderRadius: "8px" }}
+                                    allowFullScreen=""
+                                    loading="lazy"
+                                    referrerPolicy="no-referrer-when-downgrade"
+                                ></iframe>
+                            </Grid>
+                        </Grid>
+                    </Box> : null
+            }
             <Box sx={{
                 color: theme.palette.info.main,
                 overflow: "hidden",
@@ -180,13 +173,13 @@ const Footer = () => {
                             <div className='w-full flex flex-col justify-start items-start'>
                                 <img src="/logo-remove.png" alt="image" className='w-full md:w-3/4' />
                                 <Typography variant='body2' className='main-size' sx={{ color: '#000', mt: 2, mb: 1 }}>Laxmi Electromech Pvt. Ltd. is a leading expert in electrical automation, panel manufacturing, and EPC (Engineering, Procurement, and Construction) contracts.</Typography>
-                                <Stack direction="row" spacing={0.5}>
+                                {/* <Stack direction="row" spacing={0.5}>
                                     {socialLinks.map(({ icon: Icon, name }, index) => (
                                         <IconButton key={index} sx={{ color: '#000', '&:hover': { color: theme.palette.info.dark } }} aria-label={name}>
                                             <Icon sx={{ fontSize: '25px' }} />
                                         </IconButton>
                                     ))}
-                                </Stack>
+                                </Stack> */}
                             </div>
                         </Grid>
 

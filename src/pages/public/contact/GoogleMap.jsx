@@ -1,13 +1,16 @@
-import { Box, Grid } from '@mui/material';
+import { Box, Grid, useMediaQuery, useTheme } from '@mui/material';
 
 const GoogleMap = () => {
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down("lg"));
+
     return (
         <Grid container spacing={2}>
             <Grid item xs={12}>
                 <Box
                     sx={{
                         width: '100%',
-                        height: '400px',
+                        height: isMobile ? '400px': '100%',
                         overflow: 'hidden',
                         position: 'relative',
                         boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)',

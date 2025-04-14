@@ -37,7 +37,7 @@ const Clientele = React.memo(() => {
           navigation={false}
           className="w-full"
           breakpoints={{
-            0: { slidesPerView: 1, spaceBetween: 0 },
+            0: { slidesPerView: 2, spaceBetween: 0 },
             600: { slidesPerView: 3, spaceBetween: 0 },
             960: { slidesPerView: 4, spaceBetween: 0 },
             1280: { slidesPerView: 10 , spaceBetween: 0 },

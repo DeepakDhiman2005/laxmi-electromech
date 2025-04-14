@@ -4,14 +4,17 @@ import { Navigation, Pagination, Autoplay, EffectFade, EffectCube } from 'swiper
 import PrevArrow from '../arrows/PrevArrow';
 import NextArrow from '../arrows/NextArrow';
 import { useRef } from 'react';
+import { useMediaQuery, useTheme } from '@mui/material';
 
 const Introduction = () => {
     const swiperRef1 = useRef(null);
     const swiperRef2 = useRef(null);
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
     const images = [
-        '/home-banners/control-panel.png',
-        '/home-banners/Electrical-Panels.png'
+        isMobile ? '/home-banners/Control-Panel-mobile.png': '/home-banners/control-panel.png',
+        isMobile ? '/home-banners/Electrical-Panels-mobile.png': '/home-banners/Electrical-Panels.png'
     ];
 
     const images2 = [

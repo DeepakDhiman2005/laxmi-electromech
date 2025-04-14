@@ -25,7 +25,7 @@ const Projects = () => {
         <Title>Our Projects</Title>
         <div className='w-auto h-auto bannerCard'>
             <a className="w-auto h-auto">
-                <img src={isMobile ? "/banners/Our-projectphone.png" : "/banners/Our-project.png"} alt="image" className="w-auto" />
+                <img src={isMobile ? "/banners/Our-Project-mobile.png" : "/banners/Our-project.png"} alt="image" className="w-auto" />
             </a>
         </div>
 

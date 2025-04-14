@@ -10,7 +10,7 @@ const OurClients = () => {
         <Title>Our Clients</Title>
         <div className='w-auto h-auto bannerCard'>
             <a className="w-auto h-auto">
-                <img src={isMobile ? "/banners/our-client-phone-page.png" : "/banners/our-client.png"} alt="image" className="w-auto" />
+                <img src={isMobile ? "/banners/Our-Client-mobile.png" : "/banners/our-client.png"} alt="image" className="w-auto" />
             </a>
         </div>
         <main className="w-full px-4 py-6 lg:px-12">

@@ -11,7 +11,7 @@ const Quality = () => {
         <Title>Quality Assurance & Control</Title>
         <div className="w-auto h-auto bannerCard">
             <a className="w-auto h-auto">
-                <img src={isMobile ? "/banners/Quality--phone-size.png" : "/banners/Quality.png"} alt="banner" className="w-full" />
+                <img src={isMobile ? "/banners/Quality-mobile.png" : "/banners/Quality.png"} alt="banner" className="w-full" />
             </a>
         </div>
         <div className="flex flex-col w-full items-center justify-center px-4 md:px-12 py-6 bg-white">

@@ -47,7 +47,7 @@ const Careers = () => {
             <div className="w-auto h-auto bannerCard">
                 <a className="w-auto h-auto">
                     <img
-                        src={isMobile ? "/banners/Career-phone-size.png" : "/banners/Career.png"}
+                        src={isMobile ? "/banners/Career-mobile.png" : "/banners/Career.png"}
                         alt="Career Banner"
                         className="w-full"
                     />

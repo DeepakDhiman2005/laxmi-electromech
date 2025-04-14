@@ -5,7 +5,7 @@ import { FaUserCircle } from "react-icons/fa";
 
 import { GiHamburgerMenu } from "react-icons/gi";
 import { menuData } from "./menuData";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -16,6 +16,15 @@ const AppNavbar = () => {
     const { pathname } = useLocation();
     const [menuOpen, setMenuOpen] = useState(false);
     const [scrolling, setScrolling] = useState(false);
+    const searchRef = useRef(null);
+    const [isSearch, setIsSearch] = useState('');
+
+    useEffect(() => {
+        if (pathname) {
+            setIsSearch('');
+            searchRef.current.value = '';
+        }
+    }, [pathname]);
 
     useEffect(() => {
         AOS.init({ once: true });
@@ -50,7 +59,7 @@ const AppNavbar = () => {
 
     return (
         <>
-            <header className={`header ${scrolling ? '!fixed top-0 left-0 z-[1000] shadow-md' : ''}`} id="header">
+            <header className={`header ${scrolling ? '!fixed top-0 left-0 z-[1000] shadow-md overflow-hidden' : ''}`} id="header">
                 <nav className="navBar">
                     <div className="brandLogo">
                         <a href="https://laxmielectromech.com/">
@@ -98,41 +107,43 @@ const AppNavbar = () => {
             <header className="headerTwo">
                 <div className="navTwo">
                     <div className="catTwoSection">
-                        <button
-                            id="toggleBtn"
-                            className="flex gap-x-2 px-4 py-2 bg-[#F6F9FF] border border-[#e9eef6] text-black font-semibold !rounded-none"
-                        >
-                            {/* <i className="fa-solid fa-bars">
+                        <Link to={"/manufacturing-ranges/power-control-centre"} className="w-auto h-auto">
+                            <button
+                                id="toggleBtn"
+                                className="flex gap-x-2 px-4 py-2 bg-[#F6F9FF] border border-[#e9eef6] text-black font-semibold !rounded-none"
+                            >
+                                {/* <i className="fa-solid fa-bars">
                             </i> */}
-                            <i className="bg-[var(--colorOne)] flex justify-center items-center text-white">
-                                <span className="w-full h-full flex justify-center items-center">
-                                    <GiHamburgerMenu size={18} />
-                                </span>
-                            </i>
-                            {/* <span>All Products</span> */}
-                            <span>Our Manufacturing Range</span>
-                            <ul id="catList">
-                                {
-                                    links.map((item, index) => (
-                                        <li
-                                            key={index}
-                                        >
-                                            <Link to={item.route} className="main-size !py-2">{item.name}</Link>
-                                        </li>
-                                    ))
-                                }
-                            </ul>
-                        </button>
+                                <i className="bg-[var(--colorOne)] flex justify-center items-center text-white">
+                                    <span className="w-full h-full flex justify-center items-center">
+                                        <GiHamburgerMenu size={18} />
+                                    </span>
+                                </i>
+                                {/* <span>All Products</span> */}
+                                <span>Our Manufacturing Range</span>
+                                <ul id="catList">
+                                    {
+                                        links.map((item, index) => (
+                                            <li
+                                                key={index}
+                                            >
+                                                <Link to={item.route} className="main-size !py-2">{item.name}</Link>
+                                            </li>
+                                        ))
+                                    }
+                                </ul>
+                            </button>
+                        </Link>
                     </div>
                     <div className="searchSection relative" id="searchMenu">
                         <form>
-                            <input type="search" placeholder="Search Here..." id="search" />
+                            <input ref={searchRef} type="text" placeholder="Search Here..." id="search" onChange={(e) => setIsSearch(e.target.value)} />
                             <button type="button" className="!rounded-none">
                                 <img src="https://bweld.in/frontend/assets/img/search.gif" />
                             </button>
                         </form>
                         <div id="searchContent" style={{ display: 'none' }}></div>
-                        {/* <SearchMenu /> */}
+                        <SearchMenu search={isSearch} />
                     </div>
 
                     <Link to={"/contact-us"}>
