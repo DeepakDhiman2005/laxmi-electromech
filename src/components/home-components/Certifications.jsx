@@ -80,22 +80,26 @@ const CertificateLicense = () => {
                             ))}
                         </Swiper>
                     </> : <>
-
-                        <div className="flex flex-wrap items-center justify-center w-full px-4 lg:px-8 gap-6 relative">
-                            {certificates.map((cert, index) => (
-                                <div key={index} className="relative z-10">
-                                    <div
-                                        className="group relative border-2 border-gray-300 bg-white rounded-lg shadow-lg transition-transform duration-300 ease-in-out w-[160px] cursor-pointer overflow-visible"
-                                        onClick={() => openOverlay(cert.src)}
-                                    >
-                                        <img
-                                            src={cert.src}
-                                            alt={cert.alt}
-                                            className="w-full h-auto rounded-md transition-transform duration-300 ease-in-out origin-center z-50"
-                                        />
+                        <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[1fr_2fr] px-4 lg:px-8'>
+                            <div className='flex justify-center items-center'>
+                                <img src="/certification-image.png" alt="image" className='w-full h-full rounded-md' />
+                            </div>
+                            <div className="flex flex-wrap items-center justify-center w-full gap-6 relative">
+                                {certificates.map((cert, index) => (
+                                    <div key={index} className="relative z-10">
+                                        <div
+                                            className="group relative border-2 border-gray-300 bg-white rounded-lg shadow-lg transition-transform duration-300 ease-in-out w-[160px] cursor-pointer overflow-visible"
+                                            onClick={() => openOverlay(cert.src)}
+                                        >
+                                            <img
+                                                src={cert.src}
+                                                alt={cert.alt}
+                                                className="w-full h-auto rounded-md transition-transform duration-300 ease-in-out origin-center z-50"
+                                            />
+                                        </div>
                                     </div>
-                                </div>
-                            ))}
+                                ))}
+                            </div>
                         </div>
                     </>
                 }

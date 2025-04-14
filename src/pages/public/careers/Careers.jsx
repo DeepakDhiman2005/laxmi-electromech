@@ -9,6 +9,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { useMediaQuery, useTheme } from "@mui/material";
+import CareerForm from "./CareerForm";
 
 const Careers = () => {
     const theme = useTheme();
@@ -78,8 +79,10 @@ const Careers = () => {
                     </div>
                 </section>
 
+                <CareerForm />
+
                 {/* Employee Reviewers with Swiper Slider */}
-                <section className="mb-12">
+                {/* <section className="mb-12">
                     <h2 className="text-2xl sm:text-3xl font-semibold text-gray-800 mb-6 text-center">
                         Employee Reviewers
                     </h2>
@@ -116,7 +119,7 @@ const Careers = () => {
                             </SwiperSlide>
                         ))}
                     </Swiper>
-                </section>
+                </section> */}
             </div>
         </>
     );

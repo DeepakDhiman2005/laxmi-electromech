@@ -1,6 +1,6 @@
-import { useMemo } from "react"
+import { useEffect, useMemo } from "react"
 import manufacturingRanges from "../../data/manufacturingRanges"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 const Item = ({
     title = "",
@@ -23,15 +23,27 @@ const Item = ({
 
 const SearchMenu = ({
     search = '',
+    submitEvent = "",
 }) => {
+    const navigate = useNavigate();
     const isSearch = useMemo(() => {
+        if(submitEvent && submitEvent !== ""){
+            let category = manufacturingRanges.filter((item) => (
+                item.title.toLowerCase().includes(search.toLowerCase())
+            ))?.[0]?.category;
+            if(category && category !== ""){
+                navigate(`/manufacturing-ranges/${category}`);
+                return 0;
+            }
+        }
+
         if (search && search !== "") {
             return manufacturingRanges.filter((item) => (
                 item.title.toLowerCase().includes(search.toLowerCase())
             ))
         }
         else return [];
-    }, [search]);
+    }, [search, submitEvent]);
 
     return <>
         {

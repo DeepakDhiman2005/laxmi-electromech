@@ -18,13 +18,21 @@ const AppNavbar = () => {
     const [scrolling, setScrolling] = useState(false);
     const searchRef = useRef(null);
     const [isSearch, setIsSearch] = useState('');
+    const [isSubmit, setIsSubmit] = useState('');
 
     useEffect(() => {
         if (pathname) {
             setIsSearch('');
+            setIsSubmit('');
             searchRef.current.value = '';
         }
     }, [pathname]);
+
+    const handleSearch = (e) => {
+        e.preventDefault();
+        setIsSubmit(isSearch);
+        // console.log(isSearch);
+    }
 
     useEffect(() => {
         AOS.init({ once: true });
@@ -136,14 +144,14 @@ const AppNavbar = () => {
                         </Link>
                     </div>
                     <div className="searchSection relative" id="searchMenu">
-                        <form>
+                        <form onSubmit={handleSearch}>
                             <input ref={searchRef} type="text" placeholder="Search Here..." id="search" onChange={(e) => setIsSearch(e.target.value)} />
-                            <button type="button" className="!rounded-none">
+                            <button type="submit" className="!rounded-none">
                                 <img src="https://bweld.in/frontend/assets/img/search.gif" />
                             </button>
                         </form>
                         <div id="searchContent" style={{ display: 'none' }}></div>
-                        <SearchMenu search={isSearch} />
+                        <SearchMenu search={isSearch} submitEvent={isSubmit} />
                     </div>
 
                     <Link to={"/contact-us"}>

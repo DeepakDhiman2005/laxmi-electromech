@@ -14,7 +14,8 @@ const Introduction = () => {
 
     const images = [
         isMobile ? '/home-banners/Control-Panel-mobile.png': '/home-banners/control-panel.png',
-        isMobile ? '/home-banners/Electrical-Panels-mobile.png': '/home-banners/Electrical-Panels.png'
+        isMobile ? '/home-banners/Electrical-Panels-mobile.png': '/home-banners/Electrical-Panels.png',
+        isMobile ? '/home-banners/PDUs-mobile.png': '/home-banners/PDUs.png',
     ];
 
     const images2 = [
@@ -32,7 +33,7 @@ const Introduction = () => {
                     effect="fade"
                     fadeEffect={{ crossFade: true }}
                     pagination={{ clickable: true }}
-                    autoplay={{ delay: 3000 }}
+                    autoplay={{ delay: 2000 }}
                     speed={1500}
                     loop={true}
                     className="w-full"
@@ -61,7 +62,7 @@ const Introduction = () => {
                         shadow: false,
                         slideShadows: false,
                     }}
-                    autoplay={{ delay: 3000 }}
+                    autoplay={{ delay: 2000 }}
                     speed={1500}
                     loop={true}
                     className="w-full"

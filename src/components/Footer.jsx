@@ -126,7 +126,7 @@ const Footer = () => {
                             <Grid item xs={12} sm={12} md={6}>
                                 <iframe
                                     title="Our Location"
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1751.9590260468199!2d77.32409253866982!3d28.572223393924386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce44e94a2663f%3A0x96317734f1be41f7!2sNoida%20Sector%2018%2C%20Noida%2C%20Uttar%20Pradesh%20201301!5e0!3m2!1sen!2sin!4v1725966414674!5m2!1sen!2sin"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.7831221681317!2d77.3679156!3d28.606282399999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ceff9d9a29621%3A0xb9929d4a37f85697!2sLaxmi%20Electromech%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1744623377193!5m2!1sen!2sin"
                                     width="100%"
                                     // height={110}
                                     height={150}

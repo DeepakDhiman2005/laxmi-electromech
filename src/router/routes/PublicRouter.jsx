@@ -15,8 +15,8 @@ const PublicRouter = () => {
         <>
             {/* Add ToastContainer at the top of your component */}
             <ToastContainer
-                position="top-right"
-                autoClose={5000}
+                position="top-center"
+                autoClose={2000}
                 hideProgressBar={false}
                 newestOnTop={false}
                 closeOnClick
