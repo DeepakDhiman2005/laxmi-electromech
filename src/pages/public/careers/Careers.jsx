@@ -58,9 +58,10 @@ const Careers = () => {
                 <h1 className="text-3xl sm:text-4xl font-extrabold text-center text-gray-900 mb-4">
                     Career
                 </h1>
-                <p className="text-base sm:text-lg text-gray-700 leading-relaxed text-center mb-8 mx-auto">
-                    We are always looking for talented and passionate individuals to join our growing team. If you have the skills, dedication, and ambition to make a difference, explore our career opportunities below.
+                <p className="text-[17px] text-gray-700 leading-relaxed text-center mb-8 mx-auto">
+                    We're always on the lookout for passionate, driven individuals who are ready to grow, innovate, and make a real impact. If you're eager to be part of a dynamic team that values talent and ambition — we’d love to hear from you!
                 </p>
+
 
                 {/* Why Work With Us Section */}
                 <section className="mb-12 flex flex-col sm:flex-row justify-center w-full items-center gap-6">
@@ -72,7 +73,7 @@ const Careers = () => {
                     </div>
                     <div className="sm:w-1/2 w-full flex justify-center items-center">
                         <img
-                            src="https://neoprene.vn/wp-content/uploads/2021/09/work-with-us-header-2.jpg"
+                            src="/images/work-with-us-header.png"
                             alt="Why Work With Us"
                             className="w-full h-auto object-cover rounded-lg shadow-md"
                         />
@@ -80,46 +81,6 @@ const Careers = () => {
                 </section>
 
                 <CareerForm />
-
-                {/* Employee Reviewers with Swiper Slider */}
-                {/* <section className="mb-12">
-                    <h2 className="text-2xl sm:text-3xl font-semibold text-gray-800 mb-6 text-center">
-                        Employee Reviewers
-                    </h2>
-                    <Swiper
-                        modules={[Navigation, Pagination, Autoplay]}
-                        spaceBetween={20}
-                        slidesPerView={1}
-                        breakpoints={{
-                            640: { slidesPerView: 2 },
-                            1024: { slidesPerView: 3 },
-                        }}
-                        navigation
-                        pagination={{ clickable: true }}
-                        autoplay={{ delay: 3000 }}
-                        className="mySwiper"
-                    >
-                        {employees.map((reviewer, index) => (
-                            <SwiperSlide key={index}>
-                                <div className="border border-gray-300 rounded-lg shadow-lg p-6 bg-white flex flex-col items-center text-center h-full">
-                                    <div className="flex justify-center mb-2">
-                                        {Array(5)
-                                            .fill(0)
-                                            .map((_, i) => (
-                                                <StarIcon key={i} fontSize="small" className="text-yellow-400" />
-                                            ))}
-                                    </div>
-                                    <p className="text-gray-700 text-sm mb-4 italic flex-1">
-                                        "{reviewer.description}"
-                                    </p>
-                                    <h3 className="text-lg font-semibold text-gray-900">
-                                        - {reviewer.name}
-                                    </h3>
-                                </div>
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
-                </section> */}
             </div>
         </>
     );

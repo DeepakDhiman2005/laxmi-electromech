@@ -84,7 +84,7 @@ if (!empty($errors)) {
 // === Email Configuration ===
 $to = "dhimandeepak957@gmail.com";
 $from = "dhimandeepak957@gmail.com";
-$fromName = "Career Submission";
+$fromName = "Deepak Dhiman";
 $subject = "New Application from $fullName";
 
 // === Email Body ===
@@ -106,7 +106,7 @@ try {
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
     $mail->Username = $from;
-    $mail->Password = 'your_app_password_here'; // 🔒 Replace with App Password
+    $mail->Password = 'baub jfff ugcm sdnf'; // 🔒 Replace with App Password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port = 587;
 

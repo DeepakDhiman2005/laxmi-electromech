@@ -71,7 +71,7 @@ const Founders = () => {
                 >
                     <Heading
                         startText="Our"
-                        endText="Founders"
+                        endText="Founder & Promoter"
                         pb={0.5}
                     />
                     <p className="mt-1 text-gray-600">The visionary minds behind our success</p>

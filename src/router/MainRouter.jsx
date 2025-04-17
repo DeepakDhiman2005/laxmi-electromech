@@ -27,7 +27,7 @@ const AdminBlogs = lazy(() => import("../admin/blogs/AdminBlogs"));
 // Define routes
 const routes = [
     { path: "/", element: <Home />, index: true },
-    { path: "/about-us", element: <About /> },
+    { path: "/about", element: <About /> },
     { path: "/contact-us", element: <Contact /> },
     { path: "/blogs", element: <Blogs /> },
     { path: "/singleblog/:id", element: <SingleBlogPage /> },

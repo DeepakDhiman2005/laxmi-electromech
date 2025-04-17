@@ -62,14 +62,14 @@ const ManufacturingFacilityMachinery = () => {
 
     return (
         <>
-            <Title>Plant & Machinery</Title>
+            <Title>Our Plant & Machinery</Title>
             <div className='w-auto h-auto bannerCard'>
                 <a className='w-auto h-auto'>
                     <img src={isMobile ? "/banners/Plant-&-Machinery-mobile.png" : "/banners/Plant-&-Machinery.png"} alt="image" />
                 </a>
             </div>
             <div className="w-full py-6 px-2 lg:px-12">
-                <Heading startText="Plant &" endText="Machinery" />
+                <Heading startText="Our Plant" endText="& Machinery" />
                 <p className="text-center text-gray-700 mx-auto mb-10">
                     Our state-of-the-art plant and machinery are equipped with advanced fabrication and power coating systems, ensuring precision, efficiency, and high-quality production to meet diverse industrial needs.
                 </p>

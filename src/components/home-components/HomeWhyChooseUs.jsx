@@ -31,7 +31,7 @@ const HomeWhyChooseUs = () => {
                 <div className="flex flex-col justify-start w-full items-start gap-y-2">
                     <h2 className="font-bold text-white text-[28px]">Why Choose Us?</h2>
                     <p className="main-size">
-                        At Laxmi Electromech Pvt. Ltd., we deliver innovative and reliable electrical and automation solutions that drive operational excellence. Backed by decades of expertise, we blend cutting-edge technology with a customer-centric approach to provide tailored, high-performance solutions across diverse industries.
+                        At Laxmi Electromech Pvt. Ltd., we deliver innovative, reliable electrical and automation solutions that drive operational excellence. Backed by decades of expertise, we blend cutting-edge technology with a customer-centric approach to provide tailored, high-performance solutions across diverse industries.
                     </p>
                     <div className="w-full grid grid-cols-1 gap-y-2">
                         <div className="flex justify-start items-center main-size gap-x-2">

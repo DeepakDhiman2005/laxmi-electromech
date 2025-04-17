@@ -47,19 +47,15 @@ const CareerForm = () => {
       formData.append('message', data.message);
       formData.append('file', data.file[0]);
 
-      for(let i of formData){
-        console.log(i);
+      const response = await axios.postForm("http://localhost:3000/career.php", formData);
+      if (response.status === 200 || response.status === 201) {
+        console.log("Form Submitted", response.data);
+        // reset();
+        toast.success('Thank you for applying! We’ve received your details and will be in touch soon.', {
+          autoClose: 1500,
+          position: 'top-center'
+        });
       }
-
-      // const response = await axios.postForm("http://localhost:3000/career.php", data);
-      // if (response.status === 200 || response.status === 201) {
-      //   console.log("Form Submitted", data);
-      //   // reset();
-      //   toast.success('Thank you for applying! We’ve received your details and will be in touch soon.', {
-      //     autoClose: 1500,
-      //     position: 'top-center'
-      //   });
-      // }
     } catch (error) {
       toast.error("Internal server error.");
     }
@@ -70,7 +66,7 @@ const CareerForm = () => {
       {/* Image Section */}
       <section className="w-full">
         <img
-          src="https://marvel-b1-cdn.bc0a.com/f00000000100045/www.elmhurst.edu/wp-content/uploads/2021/04/keys-for-career-success-illustration.jpg"
+          src="/images/career-image.png"
           alt="career-img"
           className="w-full h-auto"
         />

@@ -39,7 +39,8 @@ const Quality = () => {
                     <div className="flex justify-center p-4">
                         <div className="relative">
                             <div className="rounded-full flex items-center justify-center">
-                                <img src="/images/quality-control.png" alt="Quality Assurance Process" className="w-full max-w-[400px]" />
+                                {/* <img src="/images/quality-control.png" alt="Quality Assurance Process" className="w-full max-w-[400px]" /> */}
+                                <img src="/images/Quality-Assurance-vs-Quality-Control.png" alt="Quality Assurance Process" className="w-full" />
                             </div>
                         </div>
                     </div>
@@ -51,7 +52,7 @@ const Quality = () => {
             <div className="flex justify-center p-4">
                 <div className="relative w-full max-w-3xl">
                     <div className="rounded-lg flex items-center justify-center">
-                        <img src="/images/qa-process-and-stages.jpg"
+                        <img src="/images/post.png"
                             alt="Quality Assurance Process" className="w-full" />
                     </div>
                 </div>

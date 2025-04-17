@@ -19,7 +19,7 @@ const OurClients = () => {
 
             {/* Top Section: Trusted Clients & Testimonials */}
             <div className="w-full flex flex-col justify-center items-center">
-                <h2 className="text-2xl sm:text-3xl text-gray-900 font-bold my-4">See what our clients say about us</h2>
+                <h2 className="text-[20px] text-gray-900 font-bold my-4">See what our clients say about us</h2>
                 <section className="flex w-full justify-center gap-6 flex-col sm:flex-row">
                     {/* Trusted Clients Card */}
                     <div className="bg-gradient-to-br from-blue-50 to-white shadow-sm border border-gray-200 p-8 rounded-xl w-full sm:w-1/2 text-center transform hover:-translate-y-2 transition-all duration-300">
@@ -48,11 +48,11 @@ const OurClients = () => {
                         </h3>
                         <p className="text-gray-600 mb-4">
                             "The team consistently delivers high-quality solutions that help us drive innovation. Their
-                            dedication to excellence is unparalleled." – <strong>John Doe, CEO of TechCorp</strong>
+                            dedication to excellence is unparalleled." – <strong>Ashish Gupta, CEO of Laxmi Electromech Pvt. Ltd.</strong>
                         </p>
                         <p className="text-gray-600 text-sm">
                             "Their proactive approach and attention to detail have transformed our business operations." –
-                            <strong> Jane Smith, COO of InnovateX</strong>
+                            <strong> Bhuvan Pichai JT Electrical Engineer CPWD, Ashish Gupta G.M DLF India Ltd.</strong>
                         </p>
                         <div className="mt-6">
                             <span className="inline-block bg-blue-100 text-blue-700 text-sm font-semibold px-4 py-1 rounded-full">

@@ -1,9 +1,9 @@
 export const menuData = [
     { name: "Home", route: "/" },
-    { name: "About Us", route: "/about-us" },
+    { name: "About Us", route: "/about" },
     { name: 'Our Manufacturing Range', route: '/manufacturing-ranges/power-control-centre' },
     // { name: 'Manufacturing Facility Machinery', route: '/manufacturing-facility-machinery' },
-    { name: 'Plant and Machinery', route: '/plant-and-machinery' },
+    { name: 'Our Plant and Machinery', route: '/plant-and-machinery' },
     { name: 'Our Clients', route: '/our-clients' },
     { name: 'Career', route: '/career' },
     { name: 'Quality', route: '/quality' },

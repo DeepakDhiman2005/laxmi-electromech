@@ -7,7 +7,7 @@ import { useMemo } from 'react';
 
 const aboutLink = [
     { name: 'Home', route: '/' },
-    { name: "About Us", route: '/about-us' },
+    { name: "About Us", route: '/about' },
     // { name: 'Our Products', route: '/category/electrical-automation/plc-control-panel' },
     // { name: 'Manufacturing Facility Machinery', route: '/manufacturing-facility-machinery' },
     { name: 'Plant and Machinery', route: '/plant-and-machinery' },
@@ -172,14 +172,15 @@ const Footer = () => {
                             </Stack> */}
                             <div className='w-full flex flex-col justify-start items-start'>
                                 <img src="/logo-remove.png" alt="image" className='w-full md:w-3/4' />
-                                <Typography variant='body2' className='main-size' sx={{ color: '#000', mt: 2, mb: 1 }}>Laxmi Electromech Pvt. Ltd. is a leading expert in electrical automation, panel manufacturing, and EPC (Engineering, Procurement, and Construction) contracts.</Typography>
-                                {/* <Stack direction="row" spacing={0.5}>
+                                {/* <Typography variant='body2' className='main-size' sx={{ color: '#000', mt: 2, mb: 1 }}>Laxmi Electromech Pvt. Ltd. is a leading expert in electrical automation, panel manufacturing, and EPC (Engineering, Procurement, and Construction) contracts.</Typography> */}
+                                <Typography variant='body2' className='main-size' sx={{ color: '#000', mt: 2, mb: 1 }}>Laxmi Electromech Pvt. Ltd. specializes in electrical automation, panel manufacturing, and end-to-end EPC solutions, delivering reliable and innovative services across industries.</Typography>
+                                <Stack direction="row" spacing={0.5} sx={{ mx: 0, px:0 }}>
                                     {socialLinks.map(({ icon: Icon, name }, index) => (
-                                        <IconButton key={index} sx={{ color: '#000', '&:hover': { color: theme.palette.info.dark } }} aria-label={name}>
+                                        <IconButton key={index} sx={{ color: '#000', '&:hover': { color: theme.palette.info.dark }, mx: 0, p: 0.5 }} aria-label={name}>
                                             <Icon sx={{ fontSize: '25px' }} />
                                         </IconButton>
                                     ))}
-                                </Stack> */}
+                                </Stack>
                             </div>
                         </Grid>
 

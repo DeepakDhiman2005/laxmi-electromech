@@ -76,7 +76,7 @@ const AboutUs = () => {
                         {/* Image Section */}
                         <Grid item xs={12} md={5}  data-aos="fade-left">
                             <Box sx={{ height: 300, width: "100%", borderRadius: 2, overflow: "hidden", display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                                <img src={A1} alt="About Us" style={{ width: "80%", objectFit: "cover" }} />
+                                <img src={'/images/about.png'} className='rounded-md' alt="About Us" style={{ width: "90%", objectFit: "cover" }} />
                             </Box>
                         </Grid>
                     </Grid>

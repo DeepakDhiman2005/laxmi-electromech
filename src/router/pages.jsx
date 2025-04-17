@@ -29,7 +29,7 @@ const pages = [
                 }
             },
             {
-                path: "about-us",
+                path: "about",
                 element: <About />,
                 meta: {
                     title: 'About Us'
