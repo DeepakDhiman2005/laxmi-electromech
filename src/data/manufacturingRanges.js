@@ -408,7 +408,7 @@ const manufacturingRanges = [
     {
         title: 'Air Insulated Bus Duct', 
         category: 'air-insulated-bus-duct',
-        banner: '/product-images/Distribution-Boards.png',
+        banner: '/product-images/Air-Insulated-Bus-Duct-2.png',
         description: `<h2 style="font-size: 24px; font-weight: bold; color: #2457AA; margin: 2px 0;">Air Insulated Bus Duct (AIBD)</h2>
 <p style="font-size: 16px; margin: 2px 0;" class="main-size">
     An Air Insulated Bus Duct is a type of electrical power distribution system that uses air as the primary insulation between conductors. It consists of:

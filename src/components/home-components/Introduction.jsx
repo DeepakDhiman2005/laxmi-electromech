@@ -15,7 +15,8 @@ const Introduction = () => {
     const images = [
         isMobile ? '/home-banners/Control-Panel-mobile.png': '/home-banners/control-panel.png',
         isMobile ? '/home-banners/Electrical-Panels-mobile.png': '/home-banners/Electrical-Panels.png',
-        isMobile ? '/home-banners/PDUs-mobile.png': '/home-banners/PDUs.png',
+        // isMobile ? '/home-banners/PDUs-mobile.png': '/home-banners/PDUs.png',
+        isMobile ? '/home-banners/Air-Insulated-1.png': '/home-banners/Air-Insulated-Bus-Duct-d.png',
     ];
 
     const images2 = [
