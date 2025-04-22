@@ -7,9 +7,33 @@ import DashboardLayout from "../../pages/layouts/DashboardLayout";
 import "react-toastify/dist/ReactToastify.css"; // Import the CSS
 import { ToastContainer } from "react-toastify";
 import AppNavbar from "../../components/Appbar/AppNavbar";
+import { useEffect } from "react";
 
 const PublicRouter = () => {
     const { pathname } = useLocation();
+
+    useEffect(() => {
+        // Disable right-click
+        const handleContextMenu = (e) => e.preventDefault();
+        document.addEventListener('contextmenu', handleContextMenu);
+
+        // Disable F12, Ctrl+Shift+I/J, Ctrl+U
+        const handleKeyDown = (e) => {
+            if (
+                e.key === 'F12' ||
+                (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) ||
+                (e.ctrlKey && e.key === 'U')
+            ) {
+                e.preventDefault();
+            }
+        };
+        document.addEventListener('keydown', handleKeyDown);
+
+        return () => {
+            document.removeEventListener('contextmenu', handleContextMenu);
+            document.removeEventListener('keydown', handleKeyDown);
+        };
+    }, []);
 
     return (
         <>

@@ -1,14 +1,20 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Heading from '../heading/Heading';
 import { useMediaQuery, useTheme } from '@mui/material';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const CertificateLicense = () => {
     const theme = useTheme();
     const [lightboxOpen, setLightboxOpen] = useState(false);
     const [selectedImage, setSelectedImage] = useState('');
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+
+    useEffect(() => {
+        AOS.init({ duration: 800, once: true });
+    }, []);
 
     const certificates = [
         { src: '/certificates/INCORPORATION CERTIFICATE_page-0001.jpg', alt: 'Incorporation Certificate' },
@@ -63,8 +69,10 @@ const CertificateLicense = () => {
                                 <SwiperSlide key={index} className='flex justify-center items-center w-full'>
                                     <div className='flex justify-center items-center w-full'>
                                         <div
-                                            className="relative border-2 border-gray-300 bg-white rounded-lg shadow-lg hover:shadow-xl transition-transform duration-300 ease-in-out w-[260px] cursor-pointer overflow-hidden group"
-                                            onClick={() => openOverlay(cert.src)}
+                                            className="relative border-2 border-gray-300 bg-white rounded-lg shadow-lg hover:shadow-xl transition-transform duration-300 ease-in-out w-[260px] overflow-hidden group"
+                                            // onClick={() => openOverlay(cert.src)}
+                                            data-aos="zoom-in"
+                                            data-aos-once="true"
                                         >
                                             <img
                                                 src={cert.src}
@@ -88,8 +96,10 @@ const CertificateLicense = () => {
                                 {certificates.map((cert, index) => (
                                     <div key={index} className="relative z-10">
                                         <div
-                                            className="group relative border-2 border-gray-300 bg-white rounded-lg shadow-lg transition-transform duration-300 ease-in-out w-[160px] cursor-pointer overflow-visible"
-                                            onClick={() => openOverlay(cert.src)}
+                                            className="group relative border-2 border-gray-300 bg-white rounded-lg shadow-lg transition-transform duration-300 ease-in-out w-[160px] overflow-visible"
+                                            // onClick={() => openOverlay(cert.src)}
+                                            data-aos="zoom-in"
+                                            data-aos-once="true"
                                         >
                                             <img
                                                 src={cert.src}

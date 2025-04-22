@@ -2,8 +2,15 @@ import { FaRegCheckCircle } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { IoIosCall } from "react-icons/io";
 import { IoLocationSharp } from "react-icons/io5";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const HomeWhyChooseUs = () => {
+    useEffect(() => {
+        AOS.init({ duration: 800, once: true });
+    }, []);
+
     const points = [
         "Comprehensive electrical solutions under one roof – Panels, Automation, and EPC.",
         "Expertise in custom-designed automation systems for critical infrastructure.",
@@ -13,9 +20,17 @@ const HomeWhyChooseUs = () => {
 
     const Point = ({ item = "" }) => {
         return (
-            <div className="w-full flex bg-white text-gray-900 rounded-md shadow-md py-3 px-4 justify-start items-center gap-x-2 main-size">
-                <FaRegCheckCircle size={16} className="text-[var(--colorOne)]" />
-                <span>{item}</span>
+            <div className="w-full flex bg-white overflow-hidden text-gray-900 rounded-md shadow-md py-3 px-4 justify-start items-center gap-x-2 main-size">
+                <FaRegCheckCircle
+                    size={16} className="text-[var(--colorOne)]"
+                    data-aos="zoom-in"
+                    data-aos-offset="100"
+                />
+                <span
+                    data-aos="fade-right"
+                    data-aos-offset="100"
+                    data-aos-easing="ease-in-sine"
+                >{item}</span>
             </div>
         );
     };
@@ -26,6 +41,7 @@ const HomeWhyChooseUs = () => {
             style={{
                 backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/images/why-choose-bg.png')`
             }}
+
         >
             <div className="bg-[url('/images/curve.png')] bg-cover bg-bottom grid md:grid-cols-2 gap-6 justify-center items-center w-full h-full px-4 md:px-12 py-4">
                 <div className="flex flex-col justify-start w-full items-start gap-y-2">
@@ -51,8 +67,8 @@ const HomeWhyChooseUs = () => {
                                 <IoLocationSharp size={16} className="text-gray-500" />
                             </div>
                             <span>
-                                <p>Manufacturing Address: A-09, Sector-59, Noida, U.P - 201301</p>
                                 <p>Registered Address: A-139, B-06, Gali No. 1, Madhu Vihar, I.P Extension, Delhi 110092</p>
+                                <p>Manufacturing Address: A-09, Sector-59, Noida, U.P - 201301</p>
                             </span>
                         </div>
                     </div>

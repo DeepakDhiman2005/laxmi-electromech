@@ -47,8 +47,8 @@ const Home = () => {
                 {/* <LatestBlog /> */}
                 {/* <OurProjectsSection /> */}
                 {/* <FAQs /> */}
-                <Certifications />
-                <Clientele />
+                {/* <Certifications /> */}
+                {/* <Clientele /> */}
             </main>
         </>
     )

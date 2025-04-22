@@ -1,19 +1,20 @@
 import { Title } from "react-head";
 import Heading from "../../../components/heading/Heading";
-import StarIcon from '@mui/icons-material/Star';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 import { useMediaQuery, useTheme } from "@mui/material";
 import CareerForm from "./CareerForm";
+import { useEffect } from "react";
 
 const Careers = () => {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
+    useEffect(() => {
+        AOS.init({ duration: 800, once: true });
+    }, []);
 
     const employees = [
         {
@@ -55,23 +56,37 @@ const Careers = () => {
                 </a>
             </div>
             <div className="w-full py-3 px-4 lg:px-12 bg-gray-50">
-                <h1 className="text-3xl sm:text-4xl font-extrabold text-center text-gray-900 mb-4">
+                <h1 className="text-3xl sm:text-4xl font-extrabold text-center text-gray-900 mb-4"
+                    data-aos="fade-up"
+                    data-aos-offset="100"
+                >
                     Career
                 </h1>
-                <p className="text-[17px] text-gray-700 leading-relaxed text-center mb-8 mx-auto">
+                <p className="text-[17px] text-gray-700 leading-relaxed text-center mb-8 mx-auto"
+                    data-aos="fade-up"
+                    data-aos-offset="100"
+                >
                     We're always on the lookout for passionate, driven individuals who are ready to grow, innovate, and make a real impact. If you're eager to be part of a dynamic team that values talent and ambition — we’d love to hear from you!
                 </p>
 
 
                 {/* Why Work With Us Section */}
-                <section className="mb-12 flex flex-col sm:flex-row justify-center w-full items-center gap-6">
-                    <div className="sm:w-1/2 w-full flex justify-start items-start flex-col">
+                <section className="mb-12 flex flex-col sm:flex-row justify-center w-full items-center gap-6 overflow-hidden">
+                    <div className="sm:w-1/2 w-full flex justify-start items-start flex-col"
+                        data-aos="fade-right"
+                        data-aos-offset="100"
+                        data-aos-easing="ease-in-sine"
+                    >
                         <Heading startText="Why Work" endText="With Us?" pb={1} />
                         <p className="text-gray-800 text-[17px] leading-relaxed">
                             We offer competitive salaries and benefits, providing our employees with financial security and growth opportunities. Our company fosters a culture of continuous learning, ensuring that every team member has access to career development resources. We prioritize work-life balance with a flexible and supportive work environment, allowing employees to thrive both professionally and personally. Our inclusive and collaborative company culture promotes teamwork and innovation, ensuring that every voice is heard.
                         </p>
                     </div>
-                    <div className="sm:w-1/2 w-full flex justify-center items-center">
+                    <div className="sm:w-1/2 w-full flex justify-center items-center"
+                        data-aos="fade-left"
+                        data-aos-offset="100"
+                        data-aos-easing="ease-in-sine"
+                    >
                         <img
                             src="/images/work-with-us-header.png"
                             alt="Why Work With Us"

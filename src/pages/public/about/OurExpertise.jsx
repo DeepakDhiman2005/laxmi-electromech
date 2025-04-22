@@ -1,9 +1,16 @@
 import { Container, Typography, Grid, Box, Divider, useTheme, useMediaQuery } from "@mui/material";
 import Heading from "../../../components/heading/Heading";
+import { useEffect } from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const OurExpertise = () => {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
+    useEffect(() => {
+        AOS.init({ duration: 800, once: true });
+    }, []);
 
     return (
         <Container maxWidth="xl" sx={{ py: 3, width: "100%" }}>
@@ -33,27 +40,45 @@ const OurExpertise = () => {
                                 boxShadow: "0px 5px 20px rgba(0,0,0,0.2)",
                                 objectFit: "cover",
                             }}
+                            data-aos="zoom-in"
+                            data-aos-once="true"
                         />
                     </Box>
                 </Grid>
 
                 {/* Right Side: Text Content */}
                 <Grid item xs={12} md={6}>
-                    <Box sx={{ px: { xs: 2, sm: 3 }, py: { xs: 2, sm: 3 } }}>
-                        <Typography variant="h5" gutterBottom sx={{ fontWeight: "bold", color: "#333" }}>
+                    <Box sx={{ px: { xs: 2, sm: 3 }, py: { xs: 2, sm: 3 }, overflow: 'hidden' }}>
+                        <Typography variant="h5" gutterBottom sx={{ fontWeight: "bold", color: "#333" }}
+                            data-aos="fade-right"
+                            data-aos-offset="100"
+                            data-aos-easing="ease-in-sine"
+                        >
                             Specializations in Electrical Automation & EPC Solutions
                         </Typography>
-                        <Typography variant="body1" sx={{ color: "#555", mb: 2 }} className="main-size">
+                        <Typography variant="body1" sx={{ color: "#555", mb: 2 }} className="main-size"
+                            data-aos="fade-right"
+                            data-aos-offset="100"
+                            data-aos-easing="ease-in-sine"
+                        >
                             We specialize in providing top-notch electrical automation and
                             Engineering, Procurement & Construction (EPC) solutions. Our
                             comprehensive services ensure efficiency, safety, and cutting-edge
                             technology integration.
                         </Typography>
 
-                        <Typography variant="h5" gutterBottom sx={{ fontWeight: "bold", color: "#333" }}>
+                        <Typography variant="h5" gutterBottom sx={{ fontWeight: "bold", color: "#333" }}
+                            data-aos="fade-right"
+                            data-aos-offset="100"
+                            data-aos-easing="ease-in-sine"
+                        >
                             Technical Excellence & Advanced Solutions
                         </Typography>
-                        <Typography variant="body1" sx={{ color: "#555" }} className="main-size">
+                        <Typography variant="body1" sx={{ color: "#555" }} className="main-size"
+                            data-aos="fade-right"
+                            data-aos-offset="100"
+                            data-aos-easing="ease-in-sine"
+                        >
                             With years of expertise, we deliver high-quality engineering
                             solutions that meet global standards. Our innovative approach and
                             advanced technology enable seamless operations across industries.

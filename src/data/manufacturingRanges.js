@@ -404,6 +404,46 @@ const manufacturingRanges = [
                <li>Internal arrangement of components and bus bars designed for ease of maintenance and sufficient space for cooling.</li>
            </ul>
        `,
+    },
+    {
+        title: 'Air Insulated Bus Duct', 
+        category: 'air-insulated-bus-duct',
+        banner: '/product-images/Distribution-Boards.png',
+        description: `<h2 style="font-size: 24px; font-weight: bold; color: #2457AA; margin: 2px 0;">Air Insulated Bus Duct (AIBD)</h2>
+<p style="font-size: 16px; margin: 2px 0;" class="main-size">
+    An Air Insulated Bus Duct is a type of electrical power distribution system that uses air as the primary insulation between conductors. It consists of:
+</p>
+
+<ul style="font-size: 15px; margin: 2px 0; list-style: disc; padding-left: 20px;" class="main-size">
+    <li>Copper or aluminium conductors</li>
+    <li>A protective casing or enclosure</li>
+    <li>Air gaps between conductors for insulation</li>
+</ul>
+
+<p style="font-size: 16px; margin: 2px 0;" class="main-size">
+    AIBDs are designed for efficient and safe power transmission in various applications, including industrial, commercial, and infrastructure projects.
+</p>
+
+<h3 style="font-size: 22px; font-weight: bold; color: #2457AA; margin: 2px 0;">Key Benefits</h3>
+<ul style="font-size: 15px; margin: 2px 0; list-style: disc; padding-left: 20px;" class="main-size">
+    <li>High current-carrying capacity</li>
+    <li>Low maintenance requirements</li>
+    <li>Cost-effective compared to other bus duct systems</li>
+    <li>Suitable for high-power applications</li>
+</ul>
+
+<h3 style="font-size: 22px; font-weight: bold; color: #2457AA; margin: 2px 0;">Common Applications</h3>
+<ul style="font-size: 15px; margin: 2px 0; list-style: disc; padding-left: 20px;" class="main-size">
+    <li>Industrial power distribution</li>
+    <li>Commercial buildings</li>
+    <li>Data centres</li>
+    <li>Infrastructure projects</li>
+</ul>
+
+<p style="font-size: 16px; margin: 2px 0;" class="main-size">
+    Air Insulated Bus Ducts offer a reliable and efficient solution for power distribution needs, particularly in applications where high current-carrying capacity and cost-effectiveness are essential.
+</p>
+`,
     }
 ]
 

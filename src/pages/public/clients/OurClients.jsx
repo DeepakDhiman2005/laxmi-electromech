@@ -1,10 +1,17 @@
 import { Title } from "react-head";
 import Heading from "../../../components/heading/Heading";
 import { useMediaQuery, useTheme } from "@mui/material";
+import { useEffect } from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const OurClients = () => {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
+    useEffect(() => {
+        AOS.init({ duration: 800 });
+    }, []);
 
     return <>
         <Title>Our Clients</Title>
@@ -22,7 +29,11 @@ const OurClients = () => {
                 <h2 className="text-[20px] text-gray-900 font-bold my-4">See what our clients say about us</h2>
                 <section className="flex w-full justify-center gap-6 flex-col sm:flex-row">
                     {/* Trusted Clients Card */}
-                    <div className="bg-gradient-to-br from-blue-50 to-white shadow-sm border border-gray-200 p-8 rounded-xl w-full sm:w-1/2 text-center transform hover:-translate-y-2 transition-all duration-300">
+                    <div className="bg-gradient-to-br from-blue-50 to-white shadow-sm border border-gray-200 p-8 rounded-xl w-full sm:w-1/2 text-center transform hover:-translate-y-2 transition-all duration-300"
+                        data-aos="fade-up"
+                        data-aos-offset="100"
+                        data-aos-easing="ease-in-sine"
+                    >
                         <h2 className="text-2xl sm:text-3xl text-orange-500 font-bold mb-4">
                             Trusted by Industry Leaders
                         </h2>
@@ -42,7 +53,11 @@ const OurClients = () => {
                     </div>
 
                     {/* Testimonials Card */}
-                    <div className="bg-gradient-to-br from-blue-50 to-white shadow-sm border border-gray-200 p-8 rounded-xl w-full sm:w-1/2 text-center transform hover:-translate-y-2 transition-all duration-300">
+                    <div className="bg-gradient-to-br from-blue-50 to-white shadow-sm border border-gray-200 p-8 rounded-xl w-full sm:w-1/2 text-center transform hover:-translate-y-2 transition-all duration-300"
+                        data-aos="fade-up"
+                        data-aos-offset="100"
+                        data-aos-easing="ease-in-sine"
+                    >
                         <h3 className="text-2xl sm:text-3xl text-orange-500 font-bold mb-4">
                             What Our Clients Say
                         </h3>

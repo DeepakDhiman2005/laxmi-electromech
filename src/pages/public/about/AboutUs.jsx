@@ -19,6 +19,7 @@ import Founders from './Founders'
 import CertificateLicense from '../../../components/home-components/License'
 import { FaCheckCircle } from 'react-icons/fa'
 import Heading from '../../../components/heading/Heading'
+import Clientele from '../../../components/home-components/Clientele';
 
 const AboutUs = () => {
     const theme = useTheme();
@@ -82,16 +83,17 @@ const AboutUs = () => {
                     </Grid>
                 </Box>
                 <OurMissionPage />
-                <Infrastructure />
+                {/* <Infrastructure /> */}
                 {/* <OurJourney /> */}
                 <Founders />
                 {/* <WhatWeDo /> */}
                 {/* <WhyChooseUs /> */}
                 <OurExpertise />
                 <OurTeam />
-                <SustainabilitySection />
+                {/* <SustainabilitySection /> */}
                 <ClientTestimonials />
                 <Certifications />
+                <Clientele />
                 {/* <CertificateLicense/> */}
             </Box>
         </>

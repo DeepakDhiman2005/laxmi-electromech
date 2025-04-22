@@ -43,7 +43,7 @@ const Clientele = React.memo(() => {
             1280: { slidesPerView: 10 , spaceBetween: 0 },
           }}
         >
-          {Array(12)
+          {Array(11)
             .fill(0)
             .map((_, index) => (
               <SwiperSlide key={index} className="py-3 mx-2 flex justify-center items-center">

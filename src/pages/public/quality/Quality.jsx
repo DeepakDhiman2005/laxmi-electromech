@@ -3,9 +3,18 @@ import Heading from "../../../components/heading/Heading";
 import { Title } from "react-head";
 import { useMediaQuery, useTheme } from "@mui/material";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+
 const Quality = () => {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
+    useEffect(() => {
+        AOS.init({ duration: 800, once: true });
+    }, []);
+
 
     return <>
         <Title>Quality Assurance & Control</Title>
@@ -15,14 +24,21 @@ const Quality = () => {
             </a>
         </div>
         <div className="flex flex-col w-full items-center justify-center px-4 md:px-12 py-6 bg-white">
-            <div className="flex justify-center flex-col-reverse md:flex-row items-center w-full">
+            <div className="flex justify-center flex-col-reverse md:flex-row items-center overflow-hidden w-full">
                 <div className="flex flex-col justify-start items-start w-full md:w-[60%]">
                     {/* Title Section */}
-                    <div className="w-full flex justify-start items-center mb-6">
+                    <div className="w-full flex justify-start items-center mb-6"
+                        data-aos="fade-down"
+                        data-aos-easing="ease-in-sine"
+                    >
                         <Heading startText="Quality" endText="Assurance & Control" justify="start" pb={1} />
                     </div>
                     {/* Quality Assurance Section */}
-                    <div className="mb-6">
+                    <div className="mb-6"
+                        data-aos="fade-right"
+                        data-aos-offset="100"
+                        data-aos-easing="ease-in-sine"
+                    >
                         <h2 className="text-xl font-semibold text-blue-700 mb-2">Our Commitment to Quality</h2>
                         <p className="text-gray-700 leading-relaxed">
                             Quality is the foundation of our company’s operations. We strictly adhere to ISO 9001 standards, ensuring
@@ -37,7 +53,10 @@ const Quality = () => {
                 <div className="flex justify-center items-center w-full md:w-[40%]">
                     {/* Image Section */}
                     <div className="flex justify-center p-4">
-                        <div className="relative">
+                        <div className="relative"
+                            data-aos="zoom-in"
+                            data-aos-easing="ease-in-sine"
+                        >
                             <div className="rounded-full flex items-center justify-center">
                                 {/* <img src="/images/quality-control.png" alt="Quality Assurance Process" className="w-full max-w-[400px]" /> */}
                                 <img src="/images/Quality-Assurance-vs-Quality-Control.png" alt="Quality Assurance Process" className="w-full" />
@@ -49,9 +68,12 @@ const Quality = () => {
 
 
             {/* Additional Image Section */}
-            <div className="flex justify-center p-4">
+            <div className="flex justify-center p-4 overflow-hidden">
                 <div className="relative w-full max-w-3xl">
-                    <div className="rounded-lg flex items-center justify-center">
+                    <div className="rounded-lg flex items-center justify-center"
+                        data-aos="fade-up"
+                        data-aos-easing="ease-in-sine"
+                    >
                         <img src="/images/post.png"
                             alt="Quality Assurance Process" className="w-full" />
                     </div>

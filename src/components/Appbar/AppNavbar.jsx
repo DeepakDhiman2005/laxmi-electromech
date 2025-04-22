@@ -63,6 +63,7 @@ const AppNavbar = () => {
         { name: "LV/MV Soft Starter Panels", route: "/manufacturing-ranges/lv-mv-soft-starter-panels" },
         { name: "PLC Panel/ SCADA Panel", route: "/manufacturing-ranges/plc-panel-scada-panel" },
         { name: "Distribution Boards", route: "/manufacturing-ranges/distribution-boards" },
+        { name: 'Air Insulated Bus Duct', route: '/manufacturing-ranges/air-insulated-bus-duct' }
     ], [pathname]);
 
     return (
@@ -90,12 +91,11 @@ const AppNavbar = () => {
                             {/* <li className="request">
                                 <a href="https://bweld.in/service-request">Services Request</a>
                             </li> */}
-                            <li>
-                                {/* <a href="https://bweld.in/dashboard">Admin Login</a> */}
+                            {/* <li>
                                 <Link to={"/login"}>
                                     <FaUserCircle size={25} />
                                 </Link>
-                            </li>
+                            </li> */}
                         </ul>
                     </div>
                     <div className="headerBtn"
