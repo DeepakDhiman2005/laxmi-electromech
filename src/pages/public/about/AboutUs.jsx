@@ -20,6 +20,7 @@ import CertificateLicense from '../../../components/home-components/License'
 import { FaCheckCircle } from 'react-icons/fa'
 import Heading from '../../../components/heading/Heading'
 import Clientele from '../../../components/home-components/Clientele';
+import OrganizationChart from './OrganizationChart';
 
 const AboutUs = () => {
     const theme = useTheme();
@@ -89,7 +90,8 @@ const AboutUs = () => {
                 {/* <WhatWeDo /> */}
                 {/* <WhyChooseUs /> */}
                 <OurExpertise />
-                <OurTeam />
+                {/* <OurTeam /> */}
+                <OrganizationChart />
                 {/* <SustainabilitySection /> */}
                 <ClientTestimonials />
                 <Certifications />

@@ -94,7 +94,7 @@ const Projects = () => {
         <Title>Our Projects</Title>
         <div className='w-auto h-auto bannerCard'>
             <a className="w-auto h-auto">
-                <img src={isMobile ? "/banners/Our-Project-mobile.png" : "/banners/Our-project.png"} alt="image" className="w-auto" />
+                <img src={isMobile ? "/banners/our-projct-phone.png" : "/banners/our-project-1.png"} alt="image" className="w-full" />
             </a>
         </div>
 
@@ -200,9 +200,9 @@ const Projects = () => {
                 </div>
 
                 {/* Capabilities Section */}
-                <div className="bg-gray-100 py-16">
+                <div className="bg-gray-100 py-10">
                     <div className="container mx-auto px-6">
-                        <h2 className="text-3xl font-bold text-center mb-12 text-gray-800"
+                        <h2 className="text-3xl font-bold text-center mb-6 text-gray-800"
                             data-aos="zoom-in"
                         >Our Electrical Capabilities</h2>
 

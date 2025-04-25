@@ -24,7 +24,7 @@ const Quality = () => {
             </a>
         </div>
         <div className="flex flex-col w-full items-center justify-center px-4 md:px-12 py-6 bg-white">
-            <div className="flex justify-center flex-col-reverse md:flex-row items-center overflow-hidden w-full">
+            <div className="flex justify-center flex-col md:flex-row items-center overflow-hidden w-full">
                 <div className="flex flex-col justify-start items-start w-full md:w-[60%]">
                     {/* Title Section */}
                     <div className="w-full flex justify-start items-center mb-6"
@@ -68,30 +68,32 @@ const Quality = () => {
 
 
             {/* Additional Image Section */}
-            <div className="flex justify-center p-4 overflow-hidden">
-                <div className="relative w-full max-w-3xl">
-                    <div className="rounded-lg flex items-center justify-center"
-                        data-aos="fade-up"
-                        data-aos-easing="ease-in-sine"
-                    >
-                        <img src="/images/post.png"
-                            alt="Quality Assurance Process" className="w-full" />
+            <div className="grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-6">
+                <div className="flex justify-center p-4 overflow-hidden">
+                    <div className="relative w-full">
+                        <div className="rounded-lg flex items-center justify-center"
+                            data-aos="fade-up"
+                            data-aos-easing="ease-in-sine"
+                        >
+                            <img src="/images/post.png"
+                                alt="Quality Assurance Process" className="w-full" />
+                        </div>
                     </div>
+                </div>
+                {/* Quality Control Section */}
+                <div className="w-full">
+                    <h2 className="text-xl font-semibold text-blue-700 mb-2">Ensuring Excellence</h2>
+                    <p className="text-gray-700 leading-relaxed">
+                        Our approach to quality control is built on rigorous inspections and advanced automated testing systems.
+                        Every product undergoes multiple levels of assessment to ensure it meets or exceeds industry benchmarks.
+                        From selecting premium raw materials to conducting final inspections, we enforce strict quality control
+                        measures. Our automated testing procedures minimize human error, ensuring enhanced precision and reliability.
+                        Additionally, we have a dedicated failure analysis team that investigates defects, identifies root causes,
+                        and implements corrective measures to prevent future issues.
+                    </p>
                 </div>
             </div>
 
-            {/* Quality Control Section */}
-            <div className="">
-                <h2 className="text-xl font-semibold text-blue-700 mb-2">Ensuring Excellence</h2>
-                <p className="text-gray-700 leading-relaxed">
-                    Our approach to quality control is built on rigorous inspections and advanced automated testing systems.
-                    Every product undergoes multiple levels of assessment to ensure it meets or exceeds industry benchmarks.
-                    From selecting premium raw materials to conducting final inspections, we enforce strict quality control
-                    measures. Our automated testing procedures minimize human error, ensuring enhanced precision and reliability.
-                    Additionally, we have a dedicated failure analysis team that investigates defects, identifies root causes,
-                    and implements corrective measures to prevent future issues.
-                </p>
-            </div>
 
             {/* Innovation in Quality Management */}
             <div className="mt-6">

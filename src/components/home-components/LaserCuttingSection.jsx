@@ -38,18 +38,20 @@ const LaserCuttingSection = () => {
                             className="w-full max-h-[300px]"
                         >
                             {[
-                                // "/images/product-images/fabrication-plant/1.png",
-                                // "/images/product-images/fabrication-plant/1.png"
-                                'https://detricaelectromechanical.com/assets/img/service/Commercial-electrical-works.jpg',
-                                'https://detricaelectromechanical.com/assets/img/service/Commercial-electrical-works.jpg',
-                                'https://detricaelectromechanical.com/assets/img/service/Commercial-electrical-works.jpg',
+                                // 'https://detricaelectromechanical.com/assets/img/service/Commercial-electrical-works.jpg',
+                                // 'https://detricaelectromechanical.com/assets/img/service/Commercial-electrical-works.jpg',
+                                // 'https://detricaelectromechanical.com/assets/img/service/Commercial-electrical-works.jpg',
+                                "/projects/1.png",
+                                "/projects/2.png",
                             ].map((img, idx) => (
                                 <SwiperSlide key={idx}>
-                                    <img
-                                        src={img}
-                                        alt={`Slide ${idx + 1}`}
-                                        className="w-full h-auto max-h-[300px] object-contain mx-auto rounded"
-                                    />
+                                    <div className='w-full h-[200px]'>
+                                        <img
+                                            src={img}
+                                            alt={`Slide ${idx + 1}`}
+                                            className="w-full h-full object-cover mx-auto rounded"
+                                        />
+                                    </div>
                                 </SwiperSlide>
                             ))}
                         </Swiper>
@@ -62,7 +64,8 @@ const LaserCuttingSection = () => {
                         }}
                         className="w-full h-full rounded-lg p-2 text-white flex flex-col justify-start items-center gap-y-1"
                     >
-                        <p className="text-[14px] text-center">We provide custom electrical panels with design, installation, and commissioning for safe, efficient power control in industrial and commercial use.</p>
+                        {/* <p className="text-[14px] text-center">We provide custom electrical panels with design, installation, and commissioning for safe, efficient power control in industrial and commercial use.</p> */}
+                        <p className="text-[14px] text-center">Comprehensive design, installation, and commissioning of 11kV substations, including VCB panels with protection relays, transformer setup, SCADA integration, and power backup with DG set installation.</p>
 
                     </div>
 
@@ -99,18 +102,25 @@ const LaserCuttingSection = () => {
                             dir='rtl' // reverse
                         >
                             {[
-                                // "/images/product-images/fabrication-plant/luser-cutting-2.png",
-                                // "/images/product-images/fabrication-plant/luser-cutting-2.png",
-                                'https://tiimg.tistatic.com/fp/1/003/230/commercial-electrical-contractors-service-965.jpg',
-                                'https://tiimg.tistatic.com/fp/1/003/230/commercial-electrical-contractors-service-965.jpg',
-                                'https://tiimg.tistatic.com/fp/1/003/230/commercial-electrical-contractors-service-965.jpg',
+                                // 'https://tiimg.tistatic.com/fp/1/003/230/commercial-electrical-contractors-service-965.jpg',
+                                // 'https://tiimg.tistatic.com/fp/1/003/230/commercial-electrical-contractors-service-965.jpg',
+                                // 'https://tiimg.tistatic.com/fp/1/003/230/commercial-electrical-contractors-service-965.jpg',
+                                "/projects/2.png",
+                                "/projects/3.png",
                             ].map((img, idx) => (
                                 <SwiperSlide key={idx}>
-                                    <img
+                                    <div className='w-full h-[200px]'>
+                                        <img
+                                            src={img}
+                                            alt={`Slide ${idx + 1}`}
+                                            className="w-full h-full object-cover mx-auto rounded"
+                                        />
+                                    </div>
+                                    {/* <img
                                         src={img}
                                         alt={`Slide ${idx + 1}`}
-                                        className="w-full h-auto max-h-[300px] object-contain mx-auto rounded"
-                                    />
+                                        className="w-full h-auto max-h-[200px] object-contain mx-auto rounded"
+                                    /> */}
                                 </SwiperSlide>
                             ))}
                         </Swiper>
@@ -122,7 +132,8 @@ const LaserCuttingSection = () => {
                         }}
                         className="w-full h-full rounded-lg p-2 text-white flex flex-col justify-start items-center gap-y-1"
                     >
-                        <p className="text-[14px] text-center">Reliable control and PLC panels designed for efficient automation and seamless industrial performance.</p>
+                        {/* <p className="text-[14px] text-center">Reliable control and PLC panels designed for efficient automation and seamless industrial performance.</p> */}
+                        <p className="text-[14px] text-center">End-to-end installation of diesel generator systems with exhaust and acoustic solutions, along with professional VCB panel setup featuring relay configuration, busbar connections, and system interlocking.</p>
                     </div>
                     {/* <CountCard
                         number={900}
