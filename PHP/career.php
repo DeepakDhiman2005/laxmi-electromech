@@ -4,17 +4,16 @@ session_start();
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-// Load PHPMailer
 require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 
 ob_start();
 
-// === CORS Headers ===
+// === Enhanced CORS Headers ===
 header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Methods: POST, OPTIONS");
-header("Access-Control-Allow-Headers: Content-Type");
+header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With");
 header("Content-Type: application/json");
 
 // === Handle Preflight Request ===
@@ -28,6 +27,14 @@ if ($_SERVER["REQUEST_METHOD"] === "OPTIONS") {
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     http_response_code(405);
     echo json_encode(["error" => "Only POST requests allowed"]);
+    ob_end_flush();
+    exit();
+}
+
+// === Check if FormData was received ===
+if (empty($_POST) && empty($_FILES)) {
+    http_response_code(400);
+    echo json_encode(["error" => "No form data received"]);
     ob_end_flush();
     exit();
 }
@@ -106,7 +113,7 @@ try {
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
     $mail->Username = $from;
-    $mail->Password = 'baub jfff ugcm sdnf'; // 🔒 Replace with App Password
+    $mail->Password = 'baub jfff ugcm sdnf';
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port = 587;
 

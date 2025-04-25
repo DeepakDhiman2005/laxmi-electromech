@@ -11,11 +11,13 @@ import { useFormik } from "formik";
 import { useCallback, useMemo, useState, useEffect } from "react";
 import * as yup from "yup";
 import emailjs from "@emailjs/browser";
-import axios from "axios";
+import useAxios from "../../../hooks/useAxios";
+// import axios from "axios";
 
 const ContactForm = () => {
   const [status, setStatus] = useState("");
   const [isLoad, setIsLoad] = useState(false);
+  const axios = useAxios();
 
   const validationSchema = useMemo(
     () =>
@@ -37,7 +39,15 @@ const ContactForm = () => {
 
   const sendData = async (data) => {
     try {
-      const response = await axios.post("http://localhost:3000/server.php", data);
+      // const response = await axios.post("http://localhost:3000/server.php", data);
+      const formData = new FormData();
+      formData.append('name', data?.name);
+      formData.append('email', data?.email);
+      formData.append('contact', data?.contact);
+      formData.append('address', data?.address);
+      formData.append('message', data?.message);
+      
+      const response = await axios.postForm('/server.php', formData);
       if (response.status === 200 || response.status === 201) {
         console.log(response.data);
       }

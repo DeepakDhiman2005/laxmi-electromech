@@ -1,9 +1,10 @@
-import { Button } from "@mui/material";
+import { Button, CircularProgress } from "@mui/material";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import axios from "axios";
 import { toast } from "react-toastify";
+import useAxios from "../../../hooks/useAxios";
+import { useState } from "react";
 
 // Validation Schema
 const schema = yup.object().shape({
@@ -27,6 +28,8 @@ const schema = yup.object().shape({
 });
 
 const CareerForm = () => {
+  const axios = useAxios();
+  const [isLoad, setIsLoad] = useState(false);
   const {
     register,
     handleSubmit,
@@ -46,11 +49,14 @@ const CareerForm = () => {
       formData.append('position', data.position);
       formData.append('message', data.message);
       formData.append('file', data.file[0]);
+      setIsLoad(true);
 
-      const response = await axios.postForm("http://localhost:3000/career.php", formData);
+      // const response = await axios.postForm("http://localhost:3000/career.php", formData);
+      const response = await axios.postForm('/career.php', formData);
       if (response.status === 200 || response.status === 201) {
         console.log("Form Submitted", response.data);
-        // reset();
+        setIsLoad(false);
+        reset();
         toast.success('Thank you for applying! We’ve received your details and will be in touch soon.', {
           autoClose: 1500,
           position: 'top-center'
@@ -150,9 +156,10 @@ const CareerForm = () => {
         {/* Submit */}
         <Button
           type="submit"
-          className="!capitalize !bg-[var(--colorOne)] !text-white !rounded-md !py-1.5 !px-4"
+          className="!capitalize flex justify-center items-center gap-x-2 !bg-[var(--colorOne)] !text-white !rounded-md !py-1.5 !px-4"
         >
-          Send Now
+          { isLoad ? <CircularProgress color="white" size={14} />: null }
+          <span>Send Now</span>
         </Button>
       </section>
     </form>

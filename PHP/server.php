@@ -12,10 +12,10 @@ require 'PHPMailer/src/SMTP.php';
 // Start output buffering
 ob_start();
 
-// CORS headers for React
+// Enhanced CORS headers
 header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Methods: POST, OPTIONS");
-header("Access-Control-Allow-Headers: Content-Type");
+header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With");
 header("Content-Type: application/json");
 
 // Handle OPTIONS preflight
@@ -32,20 +32,30 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     exit();
 }
 
-// Process form data from React
-$data = json_decode(file_get_contents("php://input"), true);
-if (!$data) {
-    http_response_code(400);
-    echo json_encode(["error" => "Invalid JSON data"]);
-    ob_end_flush();
-    exit();
+// Check if content type is multipart/form-data (FormData)
+if (strpos($_SERVER['CONTENT_TYPE'], 'multipart/form-data') !== false) {
+    // Process as FormData
+    $name = htmlspecialchars(trim($_POST["name"] ?? ""));
+    $email = htmlspecialchars(trim($_POST["email"] ?? ""));
+    $phone = htmlspecialchars(trim($_POST["contact"] ?? ""));
+    $position = htmlspecialchars(trim($_POST["address"] ?? ""));
+    $message = htmlspecialchars(trim($_POST["message"] ?? ""));
+} else {
+    // Process as JSON
+    $data = json_decode(file_get_contents("php://input"), true);
+    if (!$data) {
+        http_response_code(400);
+        echo json_encode(["error" => "Invalid data format"]);
+        ob_end_flush();
+        exit();
+    }
+    $name = htmlspecialchars(trim($data["name"] ?? ""));
+    $email = htmlspecialchars(trim($data["email"] ?? ""));
+    $phone = htmlspecialchars(trim($data["contact"] ?? ""));
+    $position = htmlspecialchars(trim($data["address"] ?? ""));
+    $message = htmlspecialchars(trim($data["message"] ?? ""));
 }
 
-$name = htmlspecialchars(trim($data["name"] ?? ""));
-$email = htmlspecialchars(trim($data["email"] ?? ""));
-$phone = htmlspecialchars(trim($data["contact"] ?? ""));
-$position = htmlspecialchars(trim($data["address"] ?? ""));
-$message = htmlspecialchars(trim($data["message"] ?? ""));
 $errors = [];
 
 if (empty($name) || strlen($name) > 100 || !preg_match("/^[a-zA-Z\s]+$/", $name)) {
@@ -72,13 +82,13 @@ if (!empty($errors)) {
 }
 
 // Email setup
-$to = "dhimandeepak957@gmail.com"; // Consistent email
+$to = "dhimandeepak957@gmail.com";
 $from = "dhimandeepak957@gmail.com";
 $fromName = "Deepak Dhiman";
-$subject = "Resume Submission from $name";
+$subject = "Contact Us from $name";
 $body = "
     <table width='100%' align='center' cellspacing='5' cellpadding='5' style='border:2px solid #000;'>
-        <tr><td colspan='2' align='center' style='font-size:20px;border:1px solid #000;'>Resume</td></tr>
+        <tr><td colspan='2' align='center' style='font-size:20px;border:1px solid #000;'>Contact</td></tr>
         <tr bgcolor='#f2f2f2'><td>Name:</td><td>$name</td></tr>
         <tr bgcolor='#f2f2f2'><td>Email:</td><td>$email</td></tr>
         <tr bgcolor='#f2f2f2'><td>Phone:</td><td>$phone</td></tr>
@@ -94,7 +104,7 @@ try {
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
     $mail->Username = 'dhimandeepak957@gmail.com';
-    $mail->Password = 'baub jfff ugcm sdnf'; // Replace with new App Password
+    $mail->Password = 'baub jfff ugcm sdnf';
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port = 587;
 
