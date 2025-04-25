@@ -36,10 +36,10 @@ const Home = () => {
                 {/* <OurMissionPage /> */}
                 <LaserCuttingSection />
                 <ProductCategoriesSection />
-                <WelcomeMessageSection />
-                <OurServices />
-                {/* <WhyChooseUs /> */}
                 <HomeWhyChooseUs />
+                <OurServices />
+                <WelcomeMessageSection />
+                {/* <WhyChooseUs /> */}
                 {/* <PlantAndMachinery /> */}
                 {/* <License /> */}
                 {/* <ClientTestimonials /> */}

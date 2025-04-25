@@ -4,6 +4,7 @@ import { useMediaQuery, useTheme } from "@mui/material";
 import { useEffect } from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { Swiper, SwiperSlide } from "swiper/react";
 
 const OurClients = () => {
     const theme = useTheme();
@@ -79,12 +80,42 @@ const OurClients = () => {
             </div>
 
             {/* Clients Logos Grid */}
-            <div className="flex flex-col w-full justify-center items-center gap-y-2">
-                {/* <h2 className="text-2xl sm:text-3xl text-gray-900 font-bold my-4">
-                    We have served over <strong>12 customers</strong> across <strong>8 countries</strong>
-                </h2> */}
+            <Swiper
+                spaceBetween={0} // No space between slides
+                slidesPerView={9} // Adjusted to match max breakpoint for consistency
+                // centeredSlides={true}
+                loop={true}
+                autoplay={{
+                    delay: 0,
+                    disableOnInteraction: false,
+                    speed: 1500,
+                }}
+                speed={5000}
+                pagination={false}
+                navigation={false}
+                className="w-full"
+                breakpoints={{
+                    0: { slidesPerView: 2, spaceBetween: 0 },
+                    600: { slidesPerView: 3, spaceBetween: 0 },
+                    960: { slidesPerView: 4, spaceBetween: 0 },
+                    1280: { slidesPerView: 10, spaceBetween: 0 },
+                }}
+            >
+                {Array(11)
+                    .fill(0)
+                    .map((_, index) => (
+                        <SwiperSlide key={index} className="py-3 my-3 mx-2 flex justify-center items-center">
+                            <img
+                                src={`/images/clients/${index + 1}.png`}
+                                alt={`Client ${index + 1}`}
+                                // className="w-24 h-24 object-contain rounded-lg m-0 px-8 border border-solid border-gray-300" // Added h-24 for consistent height
+                                className="w-[72px] h-[72px] object-contain rounded-lg m-0 px-8 border border-solid shadow-[0px_0px_1px_1px_#dbdbdb] border-gray-300" // Added h-24 for consistent height
+                            />
+                        </SwiperSlide>
+                    ))}
+            </Swiper>
+            {/* <div className="flex flex-col w-full justify-center items-center gap-y-2">
                 <div className="w-full grid grid-cols-2 sm:grid-cols-4 my-6 md:grid-cols-6 lg:grid-cols-8 gap-y-6">
-                    {/* {Array.from({ length: 12 }).map((_, index) => ( */}
                     {Array.from({ length: 11 }).map((_, index) => (
                         <div key={index} className="flex w-full justify-center items-center">
                             <img
@@ -95,7 +126,7 @@ const OurClients = () => {
                         </div>
                     ))}
                 </div>
-            </div>
+            </div> */}
         </main>
     </>
 };

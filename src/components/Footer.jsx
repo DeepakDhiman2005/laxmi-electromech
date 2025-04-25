@@ -29,19 +29,6 @@ const Footer = () => {
     const navigate = useNavigate();
     const theme = useTheme();
 
-    // const links = useMemo(() => [
-    //     { name: "PLC Control Panel", route: "/category/electrical-automation/plc-control-panel" },
-    //     { name: "HMI Touch Panel", route: "/category/electrical-automation/hmi-touch-panel" },
-    //     { name: "SCADA System", route: "/category/electrical-automation/scada-system" },
-    //     // { name: "Motor Control Centre", route: "/category/electrical-automation/motor-control-centre" },
-    //     { name: "VFD Drive", route: "/category/electrical-automation/vfd-drive" },
-    //     { name: "Soft Starter", route: "/category/electrical-automation/soft-starter" },
-    //     // { name: "Electrical Control Panel", route: "/category/electrical-automation/electrical-control-panel" },
-    //     // { name: "Automation Control Panel", route: "/category/electrical-automation/automation-control-panel" },
-    //     { name: "Remote I/O Module", route: "/category/electrical-automation/remote-io-module" },
-    //     { name: 'More...', route: "/category/electrical-automation/plc-control-panel" },
-    // ], []);
-
     const links = useMemo(() => [
         // { name: "Power Control Centre", route: "/manufacturing-ranges/power-control-centre" },
         { name: "MCC Panels", route: "/manufacturing-ranges/mcc-panels" },
@@ -150,31 +137,21 @@ const Footer = () => {
                     height: '100%', width: '100%', py: 3,
                     px: { xs: 2, sm: 2, md: 2, lg: 6, xl: 8 },
                 }}>
-                    <Grid
-                        container
-                        justifyContent="space-between"
-                        sx={{
-                            width: '100%',
-                            rowGap: { xs: 1.5, sm: 1, md: 1, lg: 0 }, // Decreased vertical gap
-                            columnGap: { xs: 1, sm: 1, md: 1, lg: 2 } // Added horizontal gap control
-                        }}
+                    <div
+                        className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6"
+                        // style={{
+                        //     rowGap: '1.5rem', /* xs: 1.5 */
+                        //     columnGap: '0.25rem', /* xs: 1 */
+                        // }}
                     >
                         {/* About Section */}
-                        <Grid item xs={12} sm={6} md={6} lg={3} xl={3}>
-                            {/* <Typography variant='h5' color="primary" fontWeight="bold" textTransform="uppercase" mb={1}>
-                                About Us
-                                <Divider sx={{ background: '#fff' }} />
-                            </Typography>
-                            <Stack spacing={2}>
-                                <Typography variant='body2' className='main-size'>
-                                    Laxmi Electromech Pvt. Ltd. is a leading expert in electrical automation, panel manufacturing, and EPC (Engineering, Procurement, and Construction) contracts. With a strong commitment to innovation, quality, and reliability, we design and deliver cutting-edge solutions that cater to a wide range of industries. Our expertise lies in developing customized, high-performance electrical systems that enhance efficiency, safety, and productivity.
-                                </Typography>
-                            </Stack> */}
+                        <div className="col-span-1 sm:col-span-1 md:col-span-1 lg:col-span-1">
                             <div className='w-full flex flex-col justify-start items-start'>
                                 <img src="/logo-remove.png" alt="image" className='w-full md:w-3/4' />
-                                {/* <Typography variant='body2' className='main-size' sx={{ color: '#000', mt: 2, mb: 1 }}>Laxmi Electromech Pvt. Ltd. is a leading expert in electrical automation, panel manufacturing, and EPC (Engineering, Procurement, and Construction) contracts.</Typography> */}
-                                <Typography variant='body2' className='main-size' sx={{ color: '#000', mt: 2, mb: 1 }}>Laxmi Electromech Pvt. Ltd. specializes in electrical automation, panel manufacturing, and end-to-end EPC solutions, delivering reliable and innovative services across industries.</Typography>
-                                <Stack direction="row" spacing={0.5} sx={{ mx: 0, px:0 }}>
+                                <Typography variant='body2' className='main-size' sx={{ color: '#000', mt: 2, mb: 1 }}>
+                                    Laxmi Electromech Pvt. Ltd. specializes in electrical automation, panel manufacturing, and end-to-end EPC solutions, delivering reliable and innovative services across industries.
+                                </Typography>
+                                <Stack direction="row" spacing={0.5} sx={{ mx: 0, px: 0 }}>
                                     {socialLinks.map(({ icon: Icon, name }, index) => (
                                         <IconButton key={index} sx={{ color: '#000', '&:hover': { color: theme.palette.info.dark }, mx: 0, p: 0.5 }} aria-label={name}>
                                             <Icon sx={{ fontSize: '25px' }} />
@@ -182,13 +159,12 @@ const Footer = () => {
                                     ))}
                                 </Stack>
                             </div>
-                        </Grid>
+                        </div>
 
                         {/* About Links */}
-                        <Grid item xs={12} sm={6} md={3} lg={2} xl={3}>
+                        <div className="col-span-1 sm:col-span-1 md:col-span-1 lg:col-span-1">
                             <Typography variant='h5' color="primary" fontWeight="bold" textTransform="uppercase" mb={1}>
                                 Quick Link
-                                {/* <Divider sx={{ background: '#fff' }} /> */}
                                 <Divider sx={{ background: '#000' }} />
                             </Typography>
                             <Stack>
@@ -199,11 +175,11 @@ const Footer = () => {
                                     </Stack>
                                 ))}
                             </Stack>
-                        </Grid>
+                        </div>
 
-                        <Grid item xs={12} sm={6} md={3} lg={2} xl={3}>
+                        {/* Manufacturing Links */}
+                        <div className="col-span-1 sm:col-span-1 md:col-span-1 lg:col-span-1">
                             <Typography variant='h5' color="primary" fontWeight="bold" textTransform="uppercase" mb={1}>
-                                {/* Products */}
                                 Manufacturing
                                 <Divider sx={{ background: '#000' }} />
                             </Typography>
@@ -215,52 +191,36 @@ const Footer = () => {
                                     </Stack>
                                 ))}
                             </Stack>
-                        </Grid>
+                        </div>
 
                         {/* Contact Info */}
-                        <Grid item xs={12} sm={6} md={6} lg={2.4} xl={3} className='main-size' sx={{ color: '#000' }}>
+                        <div className="col-span-1 sm:col-span-2 md:col-span-1 lg:col-span-1 main-size" style={{ color: '#000' }}>
                             <Typography variant='h5' color="primary" fontWeight="bold" textTransform="uppercase" mb={1}>
                                 Contact Info
                                 <Divider sx={{ background: '#000' }} />
                             </Typography>
-                            <Typography variant='body2'> <a href="https://maps.app.goo.gl/SeyMAJz3ZG4VdFj96" className='text-gray-900 hover:text-blue-700' target='_blank'><strong>Registered Address:</strong> A-139, B-06, Gali No. 1, Madhu Vihar, I.P Extension, Delhi 110092</a></Typography>
-                            <Typography variant='body2'><a href="https://maps.app.goo.gl/Zy6Hcdn3unfpJdgp8" className='text-gray-900 block hover:text-blue-700' target='_blank'><strong>Manufacturing Address:</strong> A-09, Sector-59, Noida, U.P – 201301</a></Typography>
                             <Typography variant='body2'>
-                                <span><strong>Email:</strong></span> <a href='mailto:info@laxmielectromech.com' className='text-blue-600 hover:text-blue-700'>info@laxmielectromech.com</a><a href='mailto:apglaxmi2009@gmail.com' className='text-blue-600 block hover:text-blue-700'>apglaxmi2009@gmail.com</a>
-                                {/* <br /><span className='text-blue-500'>Sap@laxmielectromech.com</span> */}
-                            </Typography>
-                            <Typography variant='body2'><strong>Phone:</strong> <a href="tel:+919811983451" className='text-gray-900 hover:text-blue-700'>+91-981-198-3451</a>, <a href="tel:+919643401344" className='text-gray-900 hover:text-blue-700'>+91-964-340-1344</a></Typography>
-                        </Grid>
-
-                        {/* Newsletter Subscription */}
-                        {/* <Grid item xs={12} sm={6} md={6} lg={2.4} xl={3}>
-                            <Typography variant='h5' color="primary" fontWeight="bold" textTransform="uppercase" mb={1}>
-                                Stay Updated
-                                <Divider sx={{ background: '#fff' }} />
+                                <a href="https://maps.app.goo.gl/SeyMAJz3ZG4VdFj96" className='text-gray-900 hover:text-blue-700' target='_blank'>
+                                    <strong>Registered Address:</strong> A-139, B-06, Gali No. 1, Madhu Vihar, I.P Extension, Delhi 110092
+                                </a>
                             </Typography>
                             <Typography variant='body2'>
-                                Subscribe to our newsletter to receive updates on our latest collections.
+                                <a href="https://maps.app.goo.gl/Zy6Hcdn3unfpJdgp8" className='text-gray-900 block hover:text-blue-700' target='_blank'>
+                                    <strong>Manufacturing Address:</strong> A-09, Sector-59, Noida, U.P – 201301
+                                </a>
                             </Typography>
-                            <Stack direction="row" spacing={1} sx={{ mt: 1 }}>
-                                <OutlinedInput
-                                    fullWidth
-                                    type="email"
-                                    size="small"
-                                    placeholder="Enter your email"
-                                    sx={{
-                                        backgroundColor: '#fff',
-                                        borderRadius: '4px',
-                                        outline: 'none'
-                                    }}
-                                    endAdornment={
-                                        <IconButton color="#000">
-                                            <Send fontSize="small" sx={{ outline: 'none' }} />
-                                        </IconButton>
-                                    }
-                                />
-                            </Stack>
-                        </Grid> */}
-                    </Grid>
+                            <Typography variant='body2'>
+                                <span><strong>Email:</strong></span>
+                                <a href='mailto:info@laxmielectromech.com' className='text-blue-600 hover:text-blue-700'>info@laxmielectromech.com</a>
+                                <a href='mailto:apglaxmi2009@gmail.com' className='text-blue-600 block hover:text-blue-700'>apglaxmi2009@gmail.com</a>
+                            </Typography>
+                            <Typography variant='body2'>
+                                <strong>Phone:</strong>
+                                <a href="tel:+919811983451" className='text-gray-900 hover:text-blue-700'>+91-981-198-3451</a>,
+                                <a href="tel:+919643401344" className='text-gray-900 hover:text-blue-700'>+91-964-340-1344</a>
+                            </Typography>
+                        </div>
+                    </div>
 
                     <Divider sx={{ background: '#000', my: 2.5 }} />
 
@@ -269,13 +229,6 @@ const Footer = () => {
                         <Typography variant="body2">
                             © {new Date().getFullYear()} <strong>Laxmi Electromech</strong>. All Rights Reserved.
                         </Typography>
-                        {/* <Stack direction="row" spacing={0.5}>
-                            {socialLinks.map(({ icon: Icon, name }, index) => (
-                                <IconButton key={index} sx={{ color: '#000', '&:hover': { color: theme.palette.info.dark } }} aria-label={name}>
-                                    <Icon sx={{ fontSize: '25px' }} />
-                                </IconButton>
-                            ))}
-                        </Stack> */}
                         <Typography variant='body2'>Designed & Developed by <a href='https://www.jaikviktechnology.com/' target="_blank" className='hover:underline'>Jaikvik Technology India Pvt. Ltd.</a></Typography>
                     </Box>
                 </Box>
